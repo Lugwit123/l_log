@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Minimal Test</title>
+    <style>
+        body { font-family: monospace; background: #1e1e1e; color: #d4d4d4; padding: 20px; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { border: 1px solid #444; padding: 10px; margin: 10px 0; }
+        .tree-node { padding: 2px 0; }
+        .tree-node-content { cursor: pointer; padding: 2px 6px; border-radius: 4px; }
+        .tree-node-content:hover { background: rgba(24,144,255,0.15); }
+        .tree-children { margin-left: 20px; }
+        .tree-toggle { cursor: pointer; color: #1890ff; margin-right: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Minimal Trace Tree Test</h1>
+    <div id="trace-tree-view-container"></div>
+    
+    <div class="lprint-trace-tree">
+        <div>├─ main [深度1 路径1 #1] [100ms] 🔥 → result (file.py:10)</div>
+        <div>│   └─ helper [深度2 路径1-1 #2] [50ms] ⚡ → 42 (file.py:20)</div>
+        <div>└─ other [深度1 路径2 #3] [200ms] 🔥 (file.py:30)</div>
+    </div>
+    
+    <script>
+        console.log("=== 测试开始 ===");
+        
+        // 简化版的buildTraceTreeView函数
+        function buildTraceTreeView() {
+            console.log("buildTraceTreeView 被调用");
+            var container = document.getElementById('trace-tree-view-container');
+            if (!container) {
+                console.log("未找到容器");
+                return;
+            }
+            
+            var treeSection = document.querySelector('.lprint-trace-tree');
+            if (!treeSection) {
+                console.log("未找到树数据");
+                return;
+            }
+            
+            var lines = [];
+            treeSection.querySelectorAll('div').forEach(function(div) {
+                lines.push(div.textContent);
+            });
+            
+            console.log("解析到的行数:", lines.length);
+            lines.forEach(function(line, i) {
+                console.log("行" + (i+1) + ":", line);
+            });
+            
+            // 简单渲染
+            var html = '<div class="tree-node">✅ 成功解析 ' + lines.length + ' 行</div>';
+            container.innerHTML = html;
+        }
+        
+        // 只调用一次
+        window.addEventListener('DOMContentLoaded', function() {
+            console.log("DOMContentLoaded 触发");
+            buildTraceTreeView();
+        });
+    </script>
+</body>
+</html>

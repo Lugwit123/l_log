@@ -1,0 +1,53 @@
+/* || TRACE COMPONENTS */
+.lprint-trace-call {
+    margin: 8px 0;
+    padding: 8px;
+    background: #f0f0f0;
+    border-left: 3px solid #1890ff;
+}
+
+.lprint-trace-code-block {
+    margin: 8px 0;
+}
+
+.lprint-trace-tree {
+    margin: 12px 0;
+}
+
+.tree-node-content {
+    padding: 6px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tree-node-content:hover {
+    background: #f0f0f0;
+}
+
+.tree-toggle {
+    display: inline-block;
+    width: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Line numbers */
+.line-number {
+    display: inline-block;
+    min-width: 40px;
+    padding-right: 12px;
+    color: #888;
+    text-align: right;
+    user-select: none;
+}
+
+/* Function references */
+.function-ref {
+    color: #1890ff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.function-ref:hover {
+    color: #40a9ff;
+}

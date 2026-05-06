@@ -1,0 +1,507 @@
+/* Markdown/日志查看器样式：日志行、追踪块、代码块、.py 链接等（紧凑、小字号） */
+body { background:#1e1e1e; color:#d4d4d4; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size:11px; padding:10px; line-height:1.35; }
+.lprint-log-entry { margin:4px 0; padding:4px 0; border-bottom:1px solid #2d2d2d; }
+.lprint-log-time { color:#6a6a6a; font-size:0.85em; }
+.lprint-log-body { color:#d4d4d4; }
+.lprint-log-level-error { color:#e06c75; font-weight:bold; }
+.lprint-log-level-warning { color:#e5c07b; font-weight:bold; }
+.lprint-log-level-info { color:#61afef; }
+.lprint-log-level-debug { color:#9ca0a0; }
+.lprint-log-file-ref { color:#98c379; }
+.lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+
+/* 追踪日志元数据（<<<LPRINT_TRACE_META>>> → parser 展开，网页可见） */
+.lprint-trace-metadata-panel {
+  margin: 12px 0 16px 0;
+  padding: 12px 14px;
+  background: #252526;
+  border: 1px solid #3c3c3c;
+  border-left: 4px solid #52c41a;
+  border-radius: 6px;
+  color: #d4d4d4;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.lprint-trace-metadata-panel h3 {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+  color: #98c379;
+  font-weight: 600;
+}
+.lprint-trace-metadata-panel h4 {
+  margin: 12px 0 6px 0;
+  font-size: 12px;
+  color: #61afef;
+}
+.lprint-trace-metadata-panel ul { margin: 6px 0; padding-left: 1.25em; }
+.lprint-trace-metadata-panel li { margin: 3px 0; }
+.lprint-trace-metadata-panel code {
+  background: #1e1e1e;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #ce9178;
+}
+.lprint-trace-metadata-panel strong { color: #e0e0e0; }
+.lprint-trace-func { margin:6px 0 8px 0; }
+.lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+  background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+/* 仅在进入视口时渲染代码块，降低大日志首屏开销 */
+.lprint-trace-code-block,
+.lprint-trace-expand-container,
+.lprint-trace-return-pre-wrap {
+  content-visibility: auto;
+  contain-intrinsic-size: 220px;
+}
+.lprint-trace-code-block .lprint-trace-pre { margin:0 0 4px 0; padding:0; background:transparent; border:none; }
+.lprint-trace-code-block .lprint-trace-pre:last-child { margin-bottom:0; }
+.lprint-trace-code-block pre.lprint-trace-pre code,
+.lprint-trace-code-block pre.lprint-trace-semantic-code code {
+  padding: 0;
+  background: transparent;
+  font-size: 11px;
+  /* 长行自动换行：避免横向撑爆（保留缩进/换行） */
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.lprint-trace-code-block pre.lprint-trace-pre,
+.lprint-trace-code-block pre.lprint-trace-semantic-code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* 内联行号：每行 pre 自带行号 span，彻底消灭两列对齐错位 */
+.lprint-trace-code-block-inner { margin:0; padding:0; }
+.lprint-trace-code-block-inner pre.lprint-trace-pre-line {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  padding: 0;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+.lprint-trace-inline-num {
+  flex-shrink: 0;
+  width: 3.2em;
+  min-width: 3.2em;
+  text-align: right;
+  padding-right: 6px;
+  font-family: "Consolas","Monaco",monospace;
+  font-size: 11px;
+  line-height: 1.35;
+  user-select: none;
+  color: #6a6a6a;
+}
+.lprint-trace-inline-num.lprint-trace-line-num {
+  color: #52c41a;
+  font-weight: 700;
+}
+.lprint-trace-inline-num.lprint-trace-line-num-unexecuted {
+  color: #6a6a6a;
+  font-weight: 400;
+}
+.lprint-trace-inline-num.lprint-trace-line-num-call-jump {
+  color: #e9a71c;
+  font-weight: 700;
+}
+/* c0：有子调用标记但本展开未执行该行（虚线 + 暗色行号，与 c1 实线高亮区分） */
+.lprint-trace-inline-num.lprint-trace-line-num-call-dormant {
+  color: #8a6d3a;
+  font-weight: 600;
+}
+.lprint-trace-line-call-jump-dormant {
+  border-left: 2px dashed rgba(233, 167, 28, 0.4);
+  padding-left: 4px;
+  margin-left: -4px;
+}
+/* 函数定义行（.md 第三列标记 d：def / async def） */
+.lprint-trace-inline-num.lprint-trace-line-num-def {
+  color: #569cd6;
+  font-weight: 700;
+}
+.lprint-trace-call { 
+  color:#9cdcfe; 
+  margin:4px 0 2px 0; 
+  font-size:11px; 
+  font-family:monospace; 
+  white-space: pre-wrap; 
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+.lprint-trace-skip { color:#858585; margin:2px 0; font-size:0.85em; }
+.lprint-trace-inline { margin:2px 0; font-size:0.85em; color:#b0b0b0; padding-left:67px; display:block; outline:none; border:none; font-family: "Consolas", "Monaco", monospace; }
+.lprint-trace-inline:focus { outline:none; border:none; }
+.lprint-trace-inline summary { cursor:pointer; color:#ce9178; list-style:none; text-decoration:underline; text-underline-offset:2px; outline:none; border:none; }
+.lprint-trace-inline summary:hover { color:#e0a070; }
+.lprint-trace-inline summary:focus { outline:none; border:none; }
+.lprint-trace-inline summary::-webkit-details-marker { display:none; }
+
+/* 展开容器样式 */
+.lprint-trace-expand-container { 
+  margin:4px 0; 
+  padding:8px 10px; 
+  background:#252526; 
+  border:1px solid #3c3c3c; 
+  border-radius:4px;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size:0.85em;
+}
+/* 接在某行 <pre> 之后时，与代码列对齐（跳过行号列宽度） */
+.lprint-trace-code-block-inner > pre.lprint-trace-pre-line + .lprint-trace-expand-container {
+  margin-left: calc(3.2em + 6px);
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+.lprint-trace-expand-header {
+  color:#ce9178;
+  font-weight:bold;
+  margin-bottom:6px;
+  padding-bottom:4px;
+  border-bottom:1px solid #3c3c3c;
+}
+.lprint-trace-expand-link {
+  color:#e9a71c !important;
+  font-weight:bold !important;
+  cursor:pointer !important;
+  text-decoration:underline !important;
+}
+.lprint-trace-expand-link:hover {
+  color:#f0b040 !important;
+}
+.lprint-trace-vars-inline { 
+  margin:2px 0; font-size:0.85em; color:#b0b0b0; display:block; 
+  font-family: "Consolas", "Monaco", monospace;
+  padding-left:67px;
+  text-indent: -8ch;
+  margin-left: 8ch;
+  word-wrap: break-word; 
+  white-space: pre-wrap;
+}
+.lprint-trace-return-inline { 
+  margin:2px 0; font-size:0.85em; color:#b0b0b0; display:block; 
+  font-family: "Consolas", "Monaco", monospace;
+  padding-left:67px;
+  text-indent: -8ch;
+  margin-left: 8ch;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.lprint-trace-exception-inline {
+  margin:2px 0; font-size:0.85em; color:#ff6b6b; display:block;
+  font-family: "Consolas", "Monaco", monospace;
+  padding-left:67px;
+  text-indent: -8ch;
+  margin-left: 8ch;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  background: rgba(255, 80, 80, 0.08);
+  border-left: 2px solid rgba(255, 80, 80, 0.5);
+}
+.lprint-trace-return-pre-wrap { display:flex; align-items:stretch; margin:4px 0 0 0; background:#1e1e1e;
+  border:none; border-radius:4px; overflow:hidden; max-height:min(480px,60vh); outline:none; }
+.lprint-trace-return-pre-wrap:focus { outline:none; border:none; }
+.lprint-trace-return-pre-wrap .lprint-trace-line-nums { flex-shrink:0; width:2.8em; min-width:2.8em; margin:0; padding:6px 4px 6px 6px;
+  font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.4; color:#6a6a6a; background:#252526;
+  border-right:1px solid #3c3c3c; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+.lprint-trace-return-pre-wrap .lprint-trace-return-pre { margin:0; padding:6px; flex:1; min-width:0;
+  background:#1e1e1e; color:#d4d4d4; font-size:11px; line-height:1.4;
+  overflow-y:auto; white-space:pre-wrap; word-break:break-all; overflow-wrap:break-word; border:none; border-radius:0; }
+.lprint-trace-return-pre { margin:4px 0 0 0; padding:6px; background:#1e1e1e; color:#d4d4d4; font-size:11px;
+  border:none; border-radius:4px; overflow-y:auto; max-height:min(480px,60vh);
+  white-space:pre-wrap; word-break:break-all; overflow-wrap:break-word; outline:none; }
+.lprint-trace-return-pre:focus { outline:none; border:none; }
+.lprint-trace-fold { margin:4px 0; padding:0; }
+.lprint-trace-fold summary { cursor:pointer; color:#ce9178; font-size:0.85em; list-style:none; text-decoration:underline; text-underline-offset:2px; }
+.lprint-trace-fold summary:hover { color:#e0a070; }
+.lprint-trace-fold summary::-webkit-details-marker { display:none; }
+.lprint-trace-fold-body { margin-top:4px; padding-left:10px; border-left:2px solid #3c3c3c; }
+.lprint-log-fold { margin:4px 0; padding:0; }
+.lprint-log-fold summary { cursor:pointer; color:#ce9178; font-size:0.85em; list-style:none; text-decoration:underline; text-underline-offset:2px; }
+.lprint-log-fold summary:hover { color:#e0a070; }
+.lprint-log-fold summary::-webkit-details-marker { display:none; }
+.lprint-log-fold-body { margin-top:4px; padding-left:10px; border-left:2px solid #3c3c3c; }
+.lprint-file-link { color:#9cdcfe; text-decoration:underline; text-underline-offset:2px; cursor:pointer; }
+.lprint-file-link:hover { color:#b3d9ff; }
+.lprint-file-link:focus, .lprint-file-link:active { outline:none; border:none; }
+pre code { font-family: "Consolas", "Monaco", monospace; background:transparent; color:#d4d4d4; padding:0; display:block; overflow-x:auto; font-size:11px; }
+
+.lprint-trace-code-block code[class*="language-"],
+.lprint-trace-code-block pre[class*="language-"] {
+  font-family: "Consolas", "Monaco", monospace !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  background: transparent !important;
+  color: #d4d4d4;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  background: #252526 !important;
+  text-shadow: none !important;
+}
+
+.token {
+  font-family: "Consolas", "Monaco", monospace !important;
+}
+
+/* 树视图样式 */
+.lprint-trace-tree { display: none; }
+#trace-tree-view-container { margin: 15px 0; }
+.lprint-trace-divider { color: #888; margin: 10px 0; }
+
+/* Function Code 标题样式 */
+.lprint-trace-func-code {
+  color: #4ec9b0;
+  font-weight: bold;
+  margin: 8px 0 4px 0;
+  font-size: 12px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+
+/* 逐行代码 pre 容器：去除默认 margin，保留缩进 */
+.lprint-trace-semantic-multiline { display: block; }
+.lprint-trace-pre-line {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  white-space: pre-wrap;
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 11px;
+  line-height: 1.35;
+}
+.lprint-trace-pre-line code { background: transparent; padding: 0; }
+.lprint-trace-pre-line code {
+  /* 让代码列在 flex 中可收缩并自动换行 */
+  flex: 1;
+  min-width: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* 覆盖 markdown.css 的 ".markdown-body pre" 通用样式，避免逐行 pre 被渲染成独立卡片 */
+.markdown-body pre.lprint-trace-pre-line {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+.markdown-body pre.lprint-trace-pre-line code.language-python {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 未执行代码行：灰显 + 左侧色条 */
+.lprint-trace-line-unexecuted {
+  color: #555a5f;
+  background: rgba(80, 80, 80, 0.10);
+  border-left: 2px solid #444;
+  padding-left: 4px;
+  margin-left: -4px;
+  opacity: 0.62;
+}
+.lprint-trace-line-unexecuted code {
+  color: #555a5f !important;
+}
+
+/* tracer 停止后未观测行：斜体 + 橙色左侧色条，与"真正未执行"灰色区分 */
+.lprint-trace-line-unobserved {
+  color: #7a6a4a;
+  background: rgba(180, 120, 40, 0.08);
+  border-left: 2px solid rgba(200, 140, 50, 0.55);
+  padding-left: 4px;
+  margin-left: -4px;
+  opacity: 0.72;
+  font-style: italic;
+}
+.lprint-trace-line-unobserved code {
+  color: #8a7a5a !important;
+  font-style: italic;
+}
+.lprint-trace-inline-num.lprint-trace-line-num-unobserved {
+  color: #8a7040;
+  font-weight: 400;
+  font-style: italic;
+}
+.lprint-trace-inline-num.lprint-trace-line-num-unobserved::before {
+  content: "⏸";
+  font-size: 0.7em;
+  margin-right: 2px;
+  font-style: normal;
+  opacity: 0.8;
+}
+.lprint-trace-line-call-jump code {
+  color: #d4d4d4 !important;
+}
+.lprint-trace-line-def {
+  border-left: 2px solid rgba(86, 156, 214, 0.65);
+  padding-left: 4px;
+  margin-left: -4px;
+}
+.lprint-trace-line-def code {
+  color: #d4d4d4 !important;
+}
+
+/* 已执行代码行：强制正常亮度，避免与绿色行号形成“行号亮但代码灰”的错觉 */
+pre.lprint-trace-pre-line:not(.lprint-trace-line-unexecuted) {
+  color: #d4d4d4;
+}
+pre.lprint-trace-pre-line:not(.lprint-trace-line-unexecuted) code {
+  color: #d4d4d4 !important;
+  opacity: 1 !important;
+}
+pre.lprint-trace-pre-line:not(.lprint-trace-line-unexecuted) .token {
+  opacity: 1 !important;
+}
+pre.lprint-trace-pre-line code.language-python .token.comment { color: #6a9955 !important; }
+pre.lprint-trace-pre-line code.language-python .token.string,
+pre.lprint-trace-pre-line code.language-python .token.triple-quoted-string { color: #ce9178 !important; }
+pre.lprint-trace-pre-line code.language-python .token.keyword { color: #c586c0 !important; }
+pre.lprint-trace-pre-line code.language-python .token.function { color: #dcdcaa !important; }
+pre.lprint-trace-pre-line code.language-python .token.class-name { color: #4ec9b0 !important; }
+pre.lprint-trace-pre-line code.language-python .token.number { color: #b5cea8 !important; }
+pre.lprint-trace-pre-line code.language-python .token.operator,
+pre.lprint-trace-pre-line code.language-python .token.punctuation { color: #d4d4d4 !important; }
+pre.lprint-trace-pre-line code.language-python .token.builtin { color: #4fc1ff !important; }
+
+/* 标签页左上角固定开关：显示/隐藏未运行代码（挂在 tabs-container 非滚动层） */
+.tabs-container {
+  position: relative;
+}
+.tabs-container .unexecuted-toggle-wrap {
+  position: absolute;
+  top: 56px;
+  left: 100px;
+  z-index: 120;
+  display: inline-flex;
+  background: rgba(28, 28, 30, 0.88);
+  border: 1px solid #4a4a4f;
+  border-radius: 999px;
+  padding: 6px 10px;
+  margin: 0;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  opacity: 0.2!important;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease;
+}
+.tabs-container .unexecuted-toggle-wrap:hover,
+.tabs-container .unexecuted-toggle-wrap:focus-within {
+  opacity: 1!important;
+}
+.tabs-container .unexecuted-toggle-wrap.is-off {
+  opacity: 0.62;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+.tabs-container .unexecuted-toggle-wrap.is-off:hover,
+.tabs-container .unexecuted-toggle-wrap.is-off:focus-within {
+  opacity: 0.86;
+}
+.tabs-container .unexecuted-toggle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #d4d4d4;
+  font-size: 12px;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.88;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+.tabs-container .unexecuted-toggle-label:hover,
+.tabs-container .unexecuted-toggle-label:focus-within {
+  opacity: 1;
+}
+.tabs-container .unexecuted-toggle-input {
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 34px;
+  height: 18px;
+  border-radius: 999px;
+  background: #4b4f56;
+  border: 1px solid #666b73;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.tabs-container .unexecuted-toggle-input::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.tabs-container .unexecuted-toggle-input:checked {
+  background: #2f9e44;
+  border-color: #54b86a;
+}
+.tabs-container .unexecuted-toggle-input:checked::after {
+  transform: translateX(16px);
+  background: #ffffff;
+}
+.tabs-container .unexecuted-toggle-input + span {
+  color: #d4d4d4;
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.2s ease, opacity 0.2s ease, color 0.2s ease;
+}
+.tabs-container .unexecuted-toggle-wrap:hover .unexecuted-toggle-input + span,
+.tabs-container .unexecuted-toggle-wrap:focus-within .unexecuted-toggle-input + span {
+  max-width: 120px;
+  opacity: 1;
+}
+.tabs-container .unexecuted-toggle-input:not(:checked) + span {
+  color: #a0a4ab;
+}
+.tabs-container .unexecuted-toggle-wrap:hover .unexecuted-toggle-input:not(:checked) + span,
+.tabs-container .unexecuted-toggle-wrap:focus-within .unexecuted-toggle-input:not(:checked) + span {
+  opacity: 0.72;
+}
+.tabs-container .unexecuted-toggle-input:not(:checked) {
+  opacity: 0.82;
+}
+
+.tabs-container .unexecuted-toggle-wrap.is-disabled {
+  opacity: 0.62;
+}
+.tabs-container .unexecuted-toggle-wrap.is-disabled .unexecuted-toggle-label {
+  cursor: default;
+}
+.tabs-container .unexecuted-toggle-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* 隐藏未运行代码行与对应行号 */
+.tab-pane.hide-unexecuted-lines .lprint-trace-pre-line.lprint-trace-line-unexecuted {
+  display: none !important;
+}
+.tab-pane.hide-unexecuted-lines .lprint-trace-code-line-nums .lprint-trace-line-num-unexecuted {
+  display: none !important;
+}

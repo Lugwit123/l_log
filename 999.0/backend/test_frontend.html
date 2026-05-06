@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>前端规则字典测试</title>
+    <style>
+        body { font-family: monospace; padding: 20px; background: #1e1e1e; color: #d4d4d4; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #444; border-radius: 4px; }
+        .success { color: #4ec9b0; }
+        .error { color: #f48771; }
+        .info { color: #4a9eff; }
+    </style>
+</head>
+<body>
+    <h1>🧪 前端规则字典格式测试</h1>
+    
+    <div class="test-section">
+        <h2>📊 测试结果</h2>
+        <div id="test-results"></div>
+    </div>
+
+    <script>
+        // 模拟规则字典数据
+        window.traceJsonData = {
+            "rules": {
+                "id_pattern": "call-{seq}",
+                "depth_range": [1, 5],
+                "components": {
+                    "tree_view": "trace-tree-view",
+                    "call_node": "call-node-{depth}-{path}"
+                }
+            },
+            "metadata": {
+                "total_calls": 23,
+                "max_depth": 5,
+                "total_time": 4152,
+                "avg_time": 180.52
+            },
+            "highlights": {
+                "slow_calls": ["2", "3", "9"],
+                "deep_calls": ["12", "13", "15"],
+                "error_calls": []
+            },
+            "format": "rules_dict"
+        };
+
+        // 测试函数
+        function runTests() {
+            const results = document.getElementById('test-results');
+            let output = '';
+
+            // 测试1: 检查JSON数据格式
+            output += '<div class="info">📋 测试1: JSON数据格式检测</div>';
+            if (window.traceJsonData && window.traceJsonData.format === 'rules_dict') {
+                output += '<div class="success">✅ 通过: 检测到规则字典格式</div>';
+            } else {
+                output += '<div class="error">❌ 失败: 未检测到规则字典格式</div>';
+            }
+
+            // 测试2: 检查规则字段
+            output += '<div class="info">📋 测试2: 规则字段检查</div>';
+            if (window.traceJsonData.rules) {
+                const rules = window.traceJsonData.rules;
+                output += `<div class="success">✅ 通过: 规则字段存在，包含${Object.keys(rules).length}个属性</div>`;
+                output += `<div class="info">📝 ID模式: ${rules.id_pattern}</div>`;
+                output += `<div class="info">📝 深度范围: ${JSON.stringify(rules.depth_range)}</div>`;
+            } else {
+                output += '<div class="error">❌ 失败: 规则字段不存在</div>';
+            }
+
+            // 测试3: 检查元数据
+            output += '<div class="info">📋 测试3: 元数据检查</div>';
+            if (window.traceJsonData.metadata) {
+                const metadata = window.traceJsonData.metadata;
+                output += `<div class="success">✅ 通过: 元数据字段存在</div>`;
+                output += `<div class="info">📊 总调用: ${metadata.total_calls}</div>`;
+                output += `<div class="info">📊 最大深度: ${metadata.max_depth}</div>`;
+                output += `<div class="info">📊 平均时间: ${metadata.avg_time}ms</div>`;
+            } else {
+                output += '<div class="error">❌ 失败: 元数据字段不存在</div>';
+            }
+
+            // 测试4: 检查高亮数据
+            output += '<div class="info">📋 测试4: 高亮数据检查</div>';
+            if (window.traceJsonData.highlights) {
+                const highlights = window.traceJsonData.highlights;
+                output += `<div class="success">✅ 通过: 高亮字段存在</div>`;
+                output += `<div class="info">🎯 慢调用: ${highlights.slow_calls.length}个</div>`;
+                output += `<div class="info">🎯 深调用: ${highlights.deep_calls.length}个</div>`;
+                output += `<div class="info">🎯 错误调用: ${highlights.error_calls.length}个</div>`;
+            } else {
+                output += '<div class="error">❌ 失败: 高亮字段不存在</div>';
+            }
+
+            // 测试5: 模拟HTML ID生成
+            output += '<div class="info">📋 测试5: HTML ID生成测试</div>';
+            const rules = window.traceJsonData.rules;
+            if (rules && rules.id_pattern) {
+                const testId = '1';
+                const htmlId = rules.id_pattern.replace('{seq}', testId);
+                output += `<div class="success">✅ 通过: 生成的HTML ID为 ${htmlId}</div>`;
+            } else {
+                output += '<div class="error">❌ 失败: 无法生成HTML ID</div>';
+            }
+
+            results.innerHTML = output;
+        }
+
+        // 页面加载完成后运行测试
+        window.addEventListener('DOMContentLoaded', runTests);
+    </script>
+</body>
+</html>

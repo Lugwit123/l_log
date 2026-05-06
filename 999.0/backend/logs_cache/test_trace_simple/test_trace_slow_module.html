@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: test_trace_simple/test_trace_slow_module.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+        
+        /* 完整的 lprint-trace 样式 */
+        .lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+        .lprint-trace-func { margin:6px 0 8px 0; }
+        .lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+          background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+        .lprint-trace-code-pre-wrap { display:flex; align-items:stretch; margin:0 0 4px 0; background:transparent; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-line-nums { flex-shrink:0; width:3.2em; min-width:3.2em; margin:0; padding:0 4px 0 0;
+          font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.35; color:#6a6a6a; background:transparent;
+          border:none; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-pre-inner { flex:1; min-width:0; overflow:auto; }
+        .lprint-trace-code-pre-wrap .lprint-trace-pre { margin:0; padding:0; flex:1; min-width:0; background:transparent; border:none; white-space:pre; }
+        .lprint-trace-call { color:#9cdcfe; margin:4px 0 2px 0; font-size:11px; font-family:monospace; 
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-func-code { color: #4ec9b0; font-weight: bold; margin: 8px 0 4px 0; font-size: 12px; font-family: monospace;
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-divider { color: #888; margin: 10px 0; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { margin: 15px 0; }
+        
+        /* USAGE_GUIDE 代码块样式 */
+        [data-component="usage-guide"] pre, [data-component="usage-guide"] code, [data-component="usage-guide"] pre code {
+            font-size: 15px !important; line-height: 1.6 !important; font-family: "Consolas", "Monaco", monospace !important; }
+        div[data-component="usage-guide"] { font-size: 15px !important; }
+        div[data-component="usage-guide"] * { font-size: inherit !important; }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> test_trace_simple/test_trace_slow_module.md</p>
+            <p><strong>Log ID:</strong> test_trace_simple/test_trace_slow_module</p>
+            <p><strong>生成时间:</strong> 2026-04-13 20:57:44</p>
+        </div>
+    </div>
+    <div class="log-content">
+        <div class='empty-log-notice'><h2>📝 日志文件为空</h2><p>该日志文件当前没有任何内容。</p><p>可能的原因：</p><ul><li>追踪尚未开始或未生成任何数据</li><li>追踪过程中没有记录任何事件</li><li>日志文件已被清空</li></ul><p>建议：检查追踪配置或重新运行追踪。</p></div>
+    </div>
+    <!-- 引入 marked.js CDN 用于渲染 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+            
+            // 延迟绑定滚动监听器和恢复滚动位置，确保 .tab-pane.active 已生成
+            setTimeout(() => {
+                // 保存滚动位置 - 监听可滚动容器
+                let scrollTimeout;
+                const saveScrollPosition = (event) => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const target = event.target;
+                        const scrollPos = target.scrollTop || 0;
+                        if (scrollPos > 0) {
+                            localStorage.setItem('scrollPosition_test_trace_simple/test_trace_slow_module', scrollPos);
+                            console.log('[Debug HTML] 保存滚动位置:', scrollPos, '容器:', target.className);
+                        }
+                    }, 100);
+                };
+                
+                // 查找可滚动容器
+                const scrollContainer = document.querySelector('.tab-pane.active') || 
+                                      document.querySelector('.log-content') ||
+                                      document.body;
+                
+                if (scrollContainer) {
+                    // 绑定滚动监听器
+                    scrollContainer.addEventListener('scroll', saveScrollPosition);
+                    console.log('[Debug HTML] 已绑定滚动监听器到:', scrollContainer.className);
+                    
+                    // 恢复滚动位置
+                    const savedScrollPos = localStorage.getItem('scrollPosition_test_trace_simple/test_trace_slow_module');
+                    if (savedScrollPos) {
+                        const scrollPos = parseInt(savedScrollPos);
+                        scrollContainer.scrollTop = scrollPos;
+                        console.log('[Debug HTML] 恢复滚动位置:', scrollPos, '容器:', scrollContainer.className);
+                    }
+                } else {
+                    console.log('[Debug HTML] 未找到滚动容器');
+                }
+                
+                // 备用：也监听 document 的滚动捕获
+                document.addEventListener('scroll', saveScrollPosition, true);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

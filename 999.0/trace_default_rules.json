@@ -1,0 +1,119 @@
+{
+  "id_pattern": "call-{seq}",
+  "depth_range": [
+    1,
+    0
+  ],
+  "path_format": "{parent}-{child}",
+  "time_unit": "ms",
+  "slow_threshold": 500,
+  "deep_threshold": 4,
+  "parsing": {
+    "call_pattern": "callBy\\(深度(\\d+)\\s+路径([\\d\\-]+)\\s+#(\\d+)\\)",
+    "func_pattern": "in\\s+(\\w+)\\(\\)",
+    "file_pattern": "([^:]+:\\d+)",
+    "time_pattern": "⏱️\\[([\\d.]+)ms\\]",
+    "return_pattern": "⬅️\\s*返回值\\s*\\([^)]+\\)\\s*(.+?)(?:\\s*[═\\n]|$)",
+    "param_pattern": "💡\\s*变量\\s+(.+)",
+    "error_pattern": "(?i)error|exception|failed"
+  },
+  "components": {
+    "tree_view": {
+      "container": "trace-tree-view",
+      "header": "tree-view-header",
+      "controls": "tree-controls",
+      "content": "tree-content",
+      "node": "tree-node",
+      "node_content": "tree-node-content",
+      "children": "tree-children",
+      "toggle": "tree-toggle"
+    },
+    "call_elements": {
+      "call": "lprint-trace-call",
+      "func": "lprint-trace-func",
+      "code_block": "lprint-trace-code-block",
+      "expand_container": "lprint-trace-expand-container",
+      "expand_header": "lprint-trace-expand-header",
+      "return_pre": "lprint-trace-return-pre",
+      "inline": "lprint-trace-inline",
+      "skip": "lprint-trace-skip"
+    },
+    "interactive_elements": {
+      "expand_toggle": "ret-val-toggle",
+      "return_block": "return-value-block",
+      "ai_button": "ask-ai-code-btn",
+      "back_button": "back-to-tree-code-btn",
+      "search_input": "tree-search",
+      "expand_all": "expand-all-btn",
+      "collapse_all": "collapse-all-btn"
+    },
+    "ai_components": {
+      "modal": "ai-modal",
+      "question_list": "ai-question-list",
+      "answer_area": "ai-answer-area"
+    },
+    "ui_components": {
+      "toast": "toast",
+      "toast_container": "toast-container",
+      "modal": "modal",
+      "context_menu": "context-menu",
+      "tooltip": "tooltip"
+    }
+  },
+  "id_patterns": {
+    "call": "call-{seq}",
+    "func": "func-{seq}",
+    "expand": "expand-{call_id}",
+    "return": "return-{call_id}",
+    "tree_node": "node-{depth}-{path}",
+    "code_block": "code-{func_id}"
+  },
+  "css_classes": {
+    "prefixes": {
+      "trace": "lprint-trace",
+      "tree": "tree",
+      "ai": "ai",
+      "ui": "ui"
+    },
+    "modifiers": {
+      "active": "active",
+      "collapsed": "collapsed",
+      "expanded": "expanded",
+      "highlighted": "highlighted",
+      "slow": "slow",
+      "deep": "deep",
+      "error": "error"
+    },
+    "elements": {
+      "call": "call",
+      "func": "func",
+      "code": "code",
+      "return": "return",
+      "param": "param",
+      "variable": "variable"
+    }
+  },
+  "display": {
+    "max_return_length": 200,
+    "param_separator": ", ",
+    "time_precision": 2,
+    "depth_indent": 4,
+    "expand_button_text": "展开",
+    "collapse_button_text": "收起"
+  },
+  "styling": {
+    "slow_call_color": "#ff6b6b",
+    "deep_call_color": "#4ecdc4",
+    "error_call_color": "#ff4757",
+    "normal_call_color": "#1890ff",
+    "return_value_color": "#98c379",
+    "param_color": "#61afef"
+  },
+  "features": {
+    "enable_params_extraction": true,
+    "enable_return_expansion": true,
+    "enable_performance_analysis": true,
+    "enable_error_highlighting": true,
+    "enable_deep_call_detection": true
+  }
+}

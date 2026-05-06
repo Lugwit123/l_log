@@ -1,0 +1,104 @@
+/* || LAYOUT */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menubar {
+    flex-shrink: 0;
+}
+
+.toolbar {
+    flex-shrink: 0;
+}
+
+.main-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar {
+    width: 250px;
+    min-width: 150px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #3e3e42;
+    background: #252526;
+    transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+    width: 0;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* 侧边栏展开按钮 */
+.sidebar-expand-btn {
+    display: none;
+    position: fixed;
+    left: 5px;
+    top: 80px;
+    z-index: 100;
+    background: #3e3e42;
+    color: #cccccc;
+    border: 1px solid #5a5a5a;
+    border-radius: 2px;
+    width: 24px;
+    height: 32px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0;
+    line-height: 32px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: all 0.15s;
+}
+
+.sidebar-expand-btn:hover {
+    background: #4e4e52;
+    color: #ffffff;
+    border-color: #007acc;
+    box-shadow: 0 2px 6px rgba(0, 122, 204, 0.3);
+}
+
+/* 当侧边栏收缩时显示展开按钮 - 使用body类标记 */
+body.sidebar-collapsed .sidebar-expand-btn {
+    display: block;
+}
+
+.resizer {
+    width: 4px;
+    cursor: col-resize;
+    background: #3e3e42;
+    transition: background 0.2s;
+}
+
+.resizer:hover {
+    background: #007acc;
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tabs-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

@@ -1,0 +1,15 @@
+# PyQt6 - 系统集成
+PyQt6==6.6.1
+
+# pywebview - Web视图（使用最新6.1版本）
+pywebview==6.1
+
+# FastAPI - 后端服务
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# 模板和工具
+jinja2==3.1.2
+requests==2.31.0
+markdown==3.5.1

@@ -1,0 +1,14 @@
+{
+  "name": "shiki-service",
+  "version": "1.0.0",
+  "description": "Shiki syntax highlighting microservice",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "shiki": "^1.1.6",
+    "express": "^4.18.2"
+  }
+}

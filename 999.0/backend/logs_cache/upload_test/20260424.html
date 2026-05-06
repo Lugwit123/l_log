@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: upload_test/20260424.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+        
+        /* 完整的 lprint-trace 样式 */
+        .lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+        .lprint-trace-func { margin:6px 0 8px 0; }
+        .lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+          background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+        .lprint-trace-code-pre-wrap { display:flex; align-items:stretch; margin:0 0 4px 0; background:transparent; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-line-nums { flex-shrink:0; width:3.2em; min-width:3.2em; margin:0; padding:0 4px 0 0;
+          font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.35; color:#6a6a6a; background:transparent;
+          border:none; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-pre-inner { flex:1; min-width:0; overflow:auto; }
+        .lprint-trace-code-pre-wrap .lprint-trace-pre { margin:0; padding:0; flex:1; min-width:0; background:transparent; border:none; white-space:pre; }
+        .lprint-trace-call { color:#9cdcfe; margin:4px 0 2px 0; font-size:11px; font-family:monospace; 
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-func-code { color: #4ec9b0; font-weight: bold; margin: 8px 0 4px 0; font-size: 12px; font-family: monospace;
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-divider { color: #888; margin: 10px 0; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { margin: 15px 0; }
+        
+        /* USAGE_GUIDE 代码块样式 */
+        [data-component="usage-guide"] pre, [data-component="usage-guide"] code, [data-component="usage-guide"] pre code {
+            font-size: 15px !important; line-height: 1.6 !important; font-family: "Consolas", "Monaco", monospace !important; }
+        div[data-component="usage-guide"] { font-size: 15px !important; }
+        div[data-component="usage-guide"] * { font-size: inherit !important; }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> upload_test/20260424.md</p>
+            <p><strong>Log ID:</strong> upload_test/20260424</p>
+            <p><strong>生成时间:</strong> 2026-04-24 15:26:51</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            
+            <p>[LogFileHandler] ====== 批量写入 1 条 @ 2026-04-24 15:23:42 ======
+[2026-04-24 15:23:38] [2026-04-24 15:23:38] {WARNING}
+[arg0] "[PYTRACEMP][DATE_LOG_PATH]"
+[arg1] ["module_name", "upload_test"]
+[arg2] ["log_base_dir", "D:\Temp\Log"]
+[arg3] ["date_log_path", "D:\Temp\Log\upload_test\20260424.md"]
+[arg4] ["cleared", true]
+[arg5] ["clear_error", null]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\@baselibs\pytracemp__init__.py:54, -fn: _print_date_log_path_on_import, 打印次数: 1/2   </p>
+<p>[LogFileHandler] ====== 批量写入 9 条 @ 2026-04-24 15:23:51 ======
+[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "从文件加载标签规则: D:\TD_Depot\Wuzu_dev\mywork\muse_work\mark_rule\H42.json"   ----code_context : lprint(f"从文件加载标签规则: {json_file_path}") 
+File: D:\TD_Depot\Wuzu_dev\mywork\muse_work\read_mark_rule.py:120, -fn: load_tag_rules_from_file, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "成功加载 40 条标签规则"   ----code_context : lprint(f"成功加载 {len(rules)} 条标签规则") 
+File: D:\TD_Depot\Wuzu_dev\mywork\muse_work\read_mark_rule.py:122, -fn: load_tag_rules_from_file, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] 本地配置匹配: upload_dir=D:/PTrack/hangzhou/H42项目美术资源/正式资源/03角色动画/主角_坐骑 yaml=D:\TD_Depot\Wuzu_dev\mywork\muse_work\H42\h42_p4_to_muse.yaml"   ----code_context : lprint(f'[init_muse] 本地配置匹配: upload_dir={upload_dir} yaml={yaml_path}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:913, -fn: _load_local_config, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] 本地配置命中: source=D:/PTrack/hangzhou/H42项目美术资源/正式资源/03角色动画/主角_坐骑 muse_lib=h42 muse_asset_type=simpleaction"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:919, -fn: _load_local_config, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] 使用本地配置: D:/PTrack/hangzhou/H42项目美术资源/正式资源/03角色动画/主角_坐骑"   ----code_context : lprint(f'[init_muse] 使用本地配置: {local_cfg.get("source")}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1022, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse][config公共分类根]"
+[arg1] ["config_path", "D:\TD_Depot\Wuzu_dev\mywork\muse_work\H42\h42_p4_to_muse.yaml"]
+[arg2] [
+    "common_category_root",
+    [
+        "动作资源"
+    ]
+]
+[arg3] ["mapping_count", 55]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1041, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] lib=h42 asset_type=simpleaction user=wb.fengqingqing@mesg.corp.netease.com force_update=False sync_ext='max'"   ----code_context : lprint(f'[init_muse] lib={self.muse_lib} asset_type={self.muse_asset_type} user={self.muse_user} force_update={self.force_update} sync_ext={self.sync_ext!r}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1064, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] category_root=['动作资源', '坐骑', '主角_坐骑']"   ----code_context : lprint(f'[init_muse] category_root={self.category_root}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1065, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:48] [2026-04-24 15:23:48] {WARNING}
+[arg0] "[init_muse] 最终 sync_ext 来源=local_yaml 值='max'"   ----code_context : lprint(f'[init_muse] 最终 sync_ext 来源={self.sync_ext_source} 值={self.sync_ext!r}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1067, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[LogFileHandler] ====== 批量写入 8 条 @ 2026-04-24 15:23:54 ======
+[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[MuseHelper] 创建新的 MuseClient 实例"   ----code_context : lprint(f'[MuseHelper] 创建新的 MuseClient 实例') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\main.py:117, -fn: <strong>init</strong>, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "AssetService 初始化完成"   ----code_context : lprint("AssetService 初始化完成") 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\asset_service.py:104, -fn: initialize, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "CategoryService 初始化完成"   ----code_context : lprint("CategoryService 初始化完成") 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\category_service.py:106, -fn: initialize, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[init_muse][asset_cache_dir_name]"
+[arg1] ["assets_batch_cache_dir_name", "动作资源"]
+[arg2] [
+    "target_category_path",
+    [
+        "动作资源"
+    ]
+]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1098, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[init_muse] MuseHelper 初始化完成 cache_dir='D:\\TD_Depot\\Wuzu_dev\\mywork\\muse_work\\.cache' max_concurrent=10 timeout_s=60.0"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1103, -fn: init_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[report] 初始化报告文件: muse_lib=h42 sync_report_jsonl=D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.jsonl sync_report_json=D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.json scan_report=D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_scan_progress.jsonl scan_manifest=D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_scan_manifest.jsonl"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:377, -fn: _init_report_files, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[Muse验证][jsonl去重][心跳]"
+[arg1] ["phase", "read"]
+[arg2] ["jsonl", "D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.jsonl"]
+[arg3] ["line_no", 1]
+[arg4] ["entries_raw", 0]
+[arg5] ["elapsed_s", 0.001]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:514, -fn: _dedupe_sync_report_jsonl_inplace, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:52] [2026-04-24 15:23:52] {WARNING}
+[arg0] "[Muse验证][jsonl去重][心跳]"
+[arg1] ["phase", "read"]
+[arg2] ["jsonl", "D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.jsonl"]
+[arg3] ["line_no", 2000]
+[arg4] ["entries_raw", 1999]
+[arg5] ["elapsed_s", 0.036]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:514, -fn: _dedupe_sync_report_jsonl_inplace, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 10 条 @ 2026-04-24 15:23:57 ======
+[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[Muse验证]"
+[arg1] ["快照条目数", 51248]
+[arg2] ["当前 upload_dir 范围内待核", 5868]
+[arg3] ["verify_mapping_preset", null]
+[arg4] ["jsonl", "D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.jsonl"]
+[arg5] ["json", "D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_sync_report.json"]   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:3332, -fn: _run_verify_sync_report_against_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[Muse验证][limit] 已启用 limit=1，待核条目从 5868 裁剪到 1"   ----code_context : lprint(f'[Muse验证][limit] 已启用 limit={limit_n}，待核条目从 {len(work)} 裁剪到 {limit_n}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:3353, -fn: _run_verify_sync_report_against_muse, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[category_tree_cache] use_cache=True use_file_cache=True save_to_file=True org=h42 asset_type=simpleaction muse_base_path_segments=None"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\category_service.py:590, -fn: get_category_tree_cache, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "从缓存文件加载分类树: D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\muse_category_tree_h42_simpleaction.pkl"   ----code_context : lprint(f"从缓存文件加载分类树: {full_cache_file}") 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\category_service.py:844, -fn: get_category_tree_cache, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[批量查询] 发现缓存文件，直接读取: D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\h42_muse_asset_index_cache.json"   ----code_context : lprint(f'[批量查询] 发现缓存文件，直接读取: {cache_file}') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1353, -fn: _load_or_rebuild_name_path_cache, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[批量查询] 缓存读取完成，共 25346 个资产（17754 个唯一名称）"   ----code_context : lprint(f'[批量查询] 缓存读取完成，共 {total_assets} 个资产（{len(loaded_map)} 个唯一名称）') 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1365, -fn: _load_or_rebuild_name_path_cache, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[分类比对] find_muse_assets 入参 asset_name='主驾上车_qxzq_up_成男' 本地 category_list 元素类型=('str', 'str', 'str', 'str', 'str') 值=['动作资源', '坐骑', '主角_坐骑', '晴雪仙气坐骑', '成男'] path_str='动作资源 / 坐骑 / 主角_坐骑 / 晴雪仙气坐骑 / 成男'"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1679, -fn: find_muse_assets, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[category_tree_cache] use_cache=True use_file_cache=True save_to_file=True org=h42 asset_type=simpleaction muse_base_path_segments=None"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\category_service.py:590, -fn: get_category_tree_cache, 打印次数: 2/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "命中内存缓存的分类树（当前未读取文件；关联文件缓存路径: D:\TD_Depot\Wuzu_dev\mywork\muse_work\.cache\muse_category_tree_h42_simpleaction.pkl）"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\muse_helper\services\category_service.py:815, -fn: get_category_tree_cache, 打印次数: 1/2   </p>
+<p>[2026-04-24 15:23:54] [2026-04-24 15:23:54] {WARNING}
+[arg0] "[缓存命中-ID键] 主驾上车_qxzq_up_成男 本地中文路径='动作资源 / 坐骑 / 主角_坐骑 / 晴雪仙气坐骑 / 成男' id_key='482174690918401 / 482174795513857 / 482179145269249 / 483380743766017 / 483381599404033'"   ----code_context : lprint( 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:1731, -fn: _try_match_with_category_list, 打印次数: 1/2   </p>
+<p>[LogFileHandler] ====== 批量写入 1 条 @ 2026-04-24 15:25:16 ======
+[2026-04-24 15:25:14] [2026-04-24 15:25:14] {WARNING}
+[arg0] "[Muse验证]"
+[arg1] "Muse验证完成：范围内 1 条，写入 jsonl 1 行（Muse存在 1，不存在 0，异常 0）"   ----code_context : lprint("[Muse验证]", summary) 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\p4_to_muse_new\p4_to_muse_new.py:3548, -fn: _run_verify_sync_report_against_muse, 打印次数: 1/2   </p>
+        </div>
+        
+    </div>
+    <!-- 引入 marked.js CDN 用于渲染 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+            
+            // 延迟绑定滚动监听器和恢复滚动位置，确保 .tab-pane.active 已生成
+            setTimeout(() => {
+                // 保存滚动位置 - 监听可滚动容器
+                let scrollTimeout;
+                const saveScrollPosition = (event) => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const target = event.target;
+                        const scrollPos = target.scrollTop || 0;
+                        if (scrollPos > 0) {
+                            localStorage.setItem('scrollPosition_upload_test/20260424', scrollPos);
+                            console.log('[Debug HTML] 保存滚动位置:', scrollPos, '容器:', target.className);
+                        }
+                    }, 100);
+                };
+                
+                // 查找可滚动容器
+                const scrollContainer = document.querySelector('.tab-pane.active') || 
+                                      document.querySelector('.log-content') ||
+                                      document.body;
+                
+                if (scrollContainer) {
+                    // 绑定滚动监听器
+                    scrollContainer.addEventListener('scroll', saveScrollPosition);
+                    console.log('[Debug HTML] 已绑定滚动监听器到:', scrollContainer.className);
+                    
+                    // 恢复滚动位置
+                    const savedScrollPos = localStorage.getItem('scrollPosition_upload_test/20260424');
+                    if (savedScrollPos) {
+                        const scrollPos = parseInt(savedScrollPos);
+                        scrollContainer.scrollTop = scrollPos;
+                        console.log('[Debug HTML] 恢复滚动位置:', scrollPos, '容器:', scrollContainer.className);
+                    }
+                } else {
+                    console.log('[Debug HTML] 未找到滚动容器');
+                }
+                
+                // 备用：也监听 document 的滚动捕获
+                document.addEventListener('scroll', saveScrollPosition, true);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

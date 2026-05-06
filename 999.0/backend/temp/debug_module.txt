@@ -1,0 +1,11 @@
+call_filename='d:\\TD_Depot\\Software\\Lugwit_syncPlug\\lugwit_insapp\\trayapp\\Lib\\Lugwit_Module\\l_src\\test_trace_simple.py'
+call_function='<module>'
+call_depth=0
+total_events=160
+
+idx=1 type=line depth=0 fn='<module>' lineno=106 locals_keys=['lprint_info', 'lprint']
+idx=56 type=return depth=0 fn='main_function' lineno=76 locals_keys=[]
+idx=57 type=line depth=0 fn='<module>' lineno=107 locals_keys=['lprint_info', 'lprint', 'result1']
+idx=58 type=line depth=0 fn='<module>' lineno=108 locals_keys=['lprint_info', 'lprint', 'result1']
+idx=158 type=return depth=0 fn='secondary_function' lineno=93 locals_keys=[]
+idx=159 type=line depth=0 fn='<module>' lineno=111 locals_keys=['lprint_info', 'lprint', 'result1', 'result2']

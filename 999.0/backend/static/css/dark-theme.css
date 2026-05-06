@@ -1,0 +1,309 @@
+/* || DARK THEME */
+body {
+    background: #1e1e1e;
+    color: #d4d4d4;
+}
+
+/* Base styles override */
+.loading,
+.error {
+    color: #d4d4d4;
+}
+
+.error {
+    color: #f48771;
+}
+
+/* Tabs */
+.tabs-header {
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.tab {
+    color: #cccccc;
+    border-right: 1px solid #3e3e42;
+}
+
+.tab:hover {
+    background: #2d2d30;
+}
+
+.tab.active {
+    background: #1e1e1e;
+    border-bottom: 2px solid #007acc;
+    color: #ffffff;
+}
+
+.tab-close:hover {
+    color: #f48771;
+}
+
+.tab-new,
+.tab-list {
+    color: #007acc;
+}
+
+.tab-new:hover,
+.tab-list:hover {
+    background: #2d2d30;
+}
+
+.tab-pane {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+}
+
+/* 内容区域暗色背景 */
+.log-content,
+.tab-content,
+.tabs-content {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+}
+
+.content-area {
+    background: #252526 !important;
+}
+
+.tabs-container {
+    background: #252526 !important;
+}
+
+/* Markdown body */
+.markdown-body {
+    color: #d4d4d4;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+    color: #ffffff;
+    border-bottom-color: #3e3e42;
+}
+
+.markdown-body code {
+    background-color: #2d2d30;
+    color: #ce9178;
+}
+
+.markdown-body pre {
+    background-color: #2d2d30;
+    color: #d4d4d4;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+    border-color: #3e3e42;
+}
+
+.markdown-body table th {
+    background-color: #2d2d30;
+}
+
+.markdown-body table tr {
+    background-color: #1e1e1e;
+    border-top-color: #3e3e42;
+}
+
+.markdown-body table tr:nth-child(2n) {
+    background-color: #252526;
+}
+
+.markdown-body blockquote {
+    color: #858585;
+    border-left-color: #3e3e42;
+}
+
+.markdown-body hr {
+    background-color: #3e3e42;
+}
+
+.markdown-body a {
+    color: #4fc1ff;
+}
+
+.markdown-body a:hover {
+    color: #75beff;
+}
+
+/* Lprint trace block */
+.markdown-body .lprint-trace-block {
+    background: #2d2d30;
+    border-left-color: #007acc;
+}
+
+.markdown-body .lprint-trace-block pre {
+    color: #d4d4d4;
+}
+
+/* Log viewer */
+.lprint-log-entry {
+    color: #d4d4d4;
+}
+
+.lprint-log-time {
+    color: #858585;
+}
+
+.log-error {
+    color: #f48771;
+}
+
+.log-warning {
+    color: #dcdcaa;
+}
+
+.log-info {
+    color: #4fc1ff;
+}
+
+.log-debug {
+    color: #4ec9b0;
+}
+
+pre {
+    background: #2d2d30;
+    color: #d4d4d4;
+}
+
+code {
+    color: #ce9178;
+}
+
+/* Modal */
+.modal {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #252526;
+}
+
+.modal-header {
+    border-bottom-color: #3e3e42;
+}
+
+.modal-header h3 {
+    color: #ffffff;
+}
+
+.modal-close {
+    color: #858585;
+}
+
+.modal-close:hover {
+    color: #f48771;
+    background: #2d2d30;
+}
+
+/* Log list */
+.log-list-item {
+    border-color: #3e3e42;
+    background: #1e1e1e;
+}
+
+.log-list-item:hover {
+    background: #2d2d30;
+    border-color: #007acc;
+}
+
+.log-list-item-name {
+    color: #ffffff;
+}
+
+.log-list-item-meta {
+    color: #858585;
+}
+
+.log-list-item-btn {
+    border-color: #3e3e42;
+    background: #252526;
+    color: #cccccc;
+}
+
+.log-list-item-btn:hover {
+    border-color: #007acc;
+    color: #4fc1ff;
+}
+
+.log-list-empty {
+    color: #858585;
+}
+
+/* Trace */
+.lprint-trace-call {
+    background: #2d2d30;
+    border-left-color: #007acc;
+}
+
+.tree-node-content:hover {
+    background: #2d2d30;
+}
+
+.line-number {
+    color: #858585;
+}
+
+.function-ref {
+    color: #4fc1ff;
+}
+
+.function-ref:hover {
+    color: #75beff;
+}
+
+/* Highlight */
+.highlight {
+    background: #2d2d30;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4e4e4e;
+}
+
+/* 跳转高亮：流金色从左到右流动效果 */
+@keyframes rainbow-flow {
+    0% { background-position: 0% center; }
+    16.67% { background-position: 200% center; }
+    83.33% { background-position: 200% center; }
+    100% { background-position: 200% center; }
+}
+
+.highlight-rainbow {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 215, 0, 0.5) 0%,
+        rgba(255, 131, 15, 0.5) 20%,
+        rgba(255, 223, 100, 0.5) 40%,
+        rgba(218, 165, 32, 0.5) 60%,
+        rgba(255, 200, 50, 0.5) 80%,
+        rgba(255, 215, 0, 0.5) 100%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-flow 3s linear 1;
+    font-weight: bold;
+    display: inline-block;
+    transform-origin: left top;
+}

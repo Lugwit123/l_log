@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: LogList/maya/maya_manual_trace.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+        
+        /* 完整的 lprint-trace 样式 */
+        .lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+        .lprint-trace-func { margin:6px 0 8px 0; }
+        .lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+          background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+        .lprint-trace-code-pre-wrap { display:flex; align-items:stretch; margin:0 0 4px 0; background:transparent; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-line-nums { flex-shrink:0; width:3.2em; min-width:3.2em; margin:0; padding:0 4px 0 0;
+          font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.35; color:#6a6a6a; background:transparent;
+          border:none; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-pre-inner { flex:1; min-width:0; overflow:auto; }
+        .lprint-trace-code-pre-wrap .lprint-trace-pre { margin:0; padding:0; flex:1; min-width:0; background:transparent; border:none; white-space:pre; }
+        .lprint-trace-call { color:#9cdcfe; margin:4px 0 2px 0; font-size:11px; font-family:monospace; 
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-func-code { color: #4ec9b0; font-weight: bold; margin: 8px 0 4px 0; font-size: 12px; font-family: monospace;
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-divider { color: #888; margin: 10px 0; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { margin: 15px 0; }
+        
+        /* USAGE_GUIDE 代码块样式 */
+        [data-component="usage-guide"] pre, [data-component="usage-guide"] code, [data-component="usage-guide"] pre code {
+            font-size: 15px !important; line-height: 1.6 !important; font-family: "Consolas", "Monaco", monospace !important; }
+        div[data-component="usage-guide"] { font-size: 15px !important; }
+        div[data-component="usage-guide"] * { font-size: inherit !important; }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> LogList/maya/maya_manual_trace.md</p>
+            <p><strong>Log ID:</strong> LogList/maya/maya_manual_trace</p>
+            <p><strong>生成时间:</strong> 2026-03-31 19:51:28</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            
+                <div style="background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); 
+                            color: #cbd5e0; 
+                            padding: 12px 20px; 
+                            border-radius: 8px; 
+                            margin-bottom: 20px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                            font-size: 13px;
+                            border-left: 4px solid #4a5568;">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                        <span style="margin-right: 15px; font-size: 16px;">📋</span>
+                        <span style="margin-right: 20px;"><strong>生成时间:</strong> 2026-03-31 19:51:23</span> <span style="margin-right: 20px;"><strong>pytracemp 版本:</strong> 0.1.0</span>
+                    </div>
+                </div>
+                
+            <!-- 日志元数据
+生成时间: 2026-03-31 19:51:23
+pytracemp 版本: 0.1.0
+-->
+
+<p>[向前追踪] 总事件数: 24 (调用: 3, 返回: 6, 异常: 0)
+[向前追踪] 总耗时: 246.590 秒</p>
+<div class="lprint-forward-trace">
+<div class="lprint-cmd-info" style="background:#2d3748;color:#e2e8f0;padding:8px 12px;margin:10px 0;border-radius:4px;font-family:monospace;font-size:12px;border-left:4px solid #4299e1;">
+<div style="font-weight:bold;color:#4299e1;margin-bottom:4px;">🔧 执行命令</div>
+<div>C:\ProgramData\PCGM_Apps\App\Autodesk\Maya2022\bin\maya.exe C:\ProgramData\PCGM_Apps\App\Autodesk\Maya2022\bin\maya.exe</div>
+</div>
+<div id="trace-tree-view-container" style="margin:15px 0;"></div>
+<div class="lprint-trace-tree" style="display:none;">
+<div>├─ create [深度1 路径1 #1] [~0μs] → &lt;xgenm.xgGlobal.FolderTracker object at 0x00000255241A96C8&gt; (C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:307)</div>
+<div>├─ create [深度1 路径2 #2] [~0μs] → &lt;xgenm.xgGlobal.FolderTracker object at 0x00000255241A99C8&gt; (C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:307)</div>
+<div>└─ deleteAll [深度1 路径3 #3] [~0μs] (C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:233)</div>
+</div>
+<p class="lprint-trace-divider" style="color:#888;margin:10px 0;">─── 详细追踪 ───</p>
+<p class="lprint-trace-call" data-depth="1" data-path="1" data-call-id="call-1" id="call-1">深度1 路径1 #1: C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:307 in create() ← :410 ⏱️[~0μs] [PID:32280 主进程 TID:62908]</p>
+<p class="lprint-trace-call" data-depth="1" data-path="2" data-call-id="call-2" id="call-2">深度1 路径2 #2: C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:307 in create() ← :410 ⏱️[~0μs] [PID:32280 主进程 TID:62908]</p>
+<p class="lprint-trace-call" data-depth="1" data-path="3" data-call-id="call-3" id="call-3">深度1 路径3 #3: C:/ProgramData/PCGM_Apps/App/Autodesk/Maya2022/plug-ins/xgen/scripts/xgenm/xgGlobal.py:233 in deleteAll() ← :370 ⏱️[~0μs] [PID:32280 主进程 TID:62908]</p>
+<div class="lprint-trace-func" id="func-3">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">233
+234
+235
+236
+237</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">         def deleteAll( self ):  # 💡 self=&lt;xgenm.xgGlobal.FolderTracker.Cache object at 0x000002550EC5E5C8&gt;
+             &quot;&quot;&quot; Delete all paths stored in the cache &quot;&quot;&quot;
+             for key in self._folders:
+                self._deleteFolder( self._folders[key] )        
+             self._folders = {}  # ⬅️ (第237行) None</code></pre></div></div>
+</div>
+</div>
+<div class="lprint-trace-end-section">
+<p class="lprint-trace-end-header" style="color:#4a9eff;font-weight:bold;font-size:1.1em;margin:10px 0;">═══ 追踪结束 ═══</p>
+</div>
+
+
+
+
+<div data-component="trace-summary" class="trace-summary-section" style="background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); color: #e2e8f0; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-left: 4px solid #667eea; white-space: pre-line; line-height: 1.6;">📋 追踪摘要
+  • 起始函数: create() @ xgGlobal.py:307
+  • 总耗时: 246.5901s | 事件数: 24 | 显示: 3 | 省略: 0
+
+✓ 追踪完成 | 日志已保存</div>
+
+<div data-component="usage-guide" class="usage-guide-section" data-markdown-source="true" style="background: #1a202c; color: #cbd5e0; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #4a9eff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+---
+
+## 📖 文件格式说明
+
+本文件采用 **Markdown + JSON 索引** 混合格式，支持人类阅读和程序解析。
+
+### 👤 人类阅读
+
+- 📄 直接查看 Markdown 内容（调用树、详细追踪）
+- 🔧 使用任何 Markdown 编辑器或查看器
+- 🤖 AI 可以理解完整上下文
+
+### 💻 程序解析
+
+#### 1️⃣ 提取 JSON 索引
+
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">json</span>
+
+<span class="c1"># 读取文件</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;trace.md&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c1"># 提取 JSON 索引</span>
+<span class="n">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;&lt;&lt;JSON_INDEX&gt;&gt;&gt;\s*```json\s*\n(.*?)\n```&#39;</span><span class="p">,</span> <span class="n">content</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;版本: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;总调用: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;total_calls&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;最大深度: </span><span class="si">{</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">][</span><span class="s1">&#39;max_depth&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+#### 2️⃣ JSON 索引结构（规则驱动格式）
+
+
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="s2">&quot;version&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2.0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;format_version&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2026.03&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s2">&quot;rules&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// 基础配置</span>
+<span class="w">    </span><span class="s2">&quot;id_pattern&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;call-{seq}&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;depth_range&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">],</span>
+<span class="w">    </span><span class="s2">&quot;slow_threshold&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">500</span><span class="p">,</span>
+
+<span class="w">    </span><span class="c1">// 解析规则</span>
+<span class="w">    </span><span class="s2">&quot;parsing&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;call_pattern&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;callBy\\(深度(\\d+)\\s+路径([\\d\\-]+)\\s+#(\\d+)\\)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;func_pattern&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;in\\s+(\\w+)\\(\\)&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;return_pattern&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;⬅️\\s*返回值\\s*\\([^)]+\\)\\s*(.+?)(?:\\s*[═\\n]|$)&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// 组件命名规则</span>
+<span class="w">    </span><span class="s2">&quot;components&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;call_elements&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;call&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lprint-trace-call&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;code_block&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;lprint-trace-code-block&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="s2">&quot;interactive_elements&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;ai_button&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;ask-ai-code-btn&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;back_button&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;back-to-tree-code-btn&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="c1">// 功能开关</span>
+<span class="w">    </span><span class="s2">&quot;features&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s2">&quot;enable_params_extraction&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="s2">&quot;enable_return_expansion&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="s2">&quot;metadata&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s2">&quot;total_calls&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">23</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;max_depth&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">5</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;generated_at&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2026-03-28T15:20:00Z&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+#### 3️⃣ 前端解析器使用
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">// 初始化解析器</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">parser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">TraceDataParser</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">traceJsonData</span><span class="p">.</span><span class="nx">rules</span><span class="p">);</span>
+
+<span class="c1">// 查找元素</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">callElement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">findElement</span><span class="p">(</span><span class="s1">&#39;call&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">seq</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">treeContainer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">findComponent</span><span class="p">(</span><span class="s1">&#39;tree_view&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;container&#39;</span><span class="p">);</span>
+
+<span class="c1">// 提取数据</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">callInfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">extractCallInfo</span><span class="p">(</span><span class="nx">callElement</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">extractParams</span><span class="p">(</span><span class="nx">codeContent</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">returnValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">extractReturnValue</span><span class="p">(</span><span class="nx">codeContent</span><span class="p">);</span>
+
+<span class="c1">// 创建组件</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">returnBlock</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">createReturnBlock</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">returnValue</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">aiButton</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">createAIButton</span><span class="p">(</span><span class="nx">callBlock</span><span class="p">);</span>
+</code></pre></div>
+
+
+
+#### 4️⃣ 组件查找示例
+
+
+<div class="highlight"><pre><span></span><code><span class="c1">// 使用组件名称查找</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">allCalls</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">findAllComponents</span><span class="p">(</span><span class="s1">&#39;call_elements&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;call&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">expandButtons</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">findAllComponents</span><span class="p">(</span><span class="s1">&#39;interactive_elements&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;expand_toggle&#39;</span><span class="p">);</span>
+
+<span class="c1">// 生成CSS类名</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">callClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">generateCssClass</span><span class="p">(</span><span class="s1">&#39;trace&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;call&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;slow&#39;</span><span class="p">);</span>
+<span class="c1">// 结果: &quot;lprint-trace-call lprint-trace-call--slow&quot;</span>
+
+<span class="c1">// 生成元素ID</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">returnId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">parser</span><span class="p">.</span><span class="nx">generateId</span><span class="p">(</span><span class="s1">&#39;return&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">call_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;2&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="c1">// 结果: &quot;return-2&quot;</span>
+</code></pre></div>
+
+
+
+### 🎯 主要特性
+
+- 🏗️ **规则驱动**: 所有解析规则集中配置
+- 🎨 **组件化**: 统一的组件命名和查找
+- 🔧 **可扩展**: 易于添加新的解析规则
+- 📱 **响应式**: 支持功能开关和样式配置
+- 🔄 **向后兼容**: 保持与旧版本的兼容性
+
+### 📚 版本信息
+
+- **当前版本**: 2.0
+- **格式版本**: 2026.03
+- **解析器版本**: 2.1.0
+- **生成时间**: 自动记录
+
+---
+
+### 🚀 pytracemp 追踪系统
+
+**规则驱动 · 组件化 · 可扩展**
+
+*🔧 pytracemp v2.1.0*
+
+</div>
+        </div>
+        
+    </div>
+    <!-- 引入 marked.js CDN 用于渲染 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+            
+            // 延迟绑定滚动监听器和恢复滚动位置，确保 .tab-pane.active 已生成
+            setTimeout(() => {
+                // 保存滚动位置 - 监听可滚动容器
+                let scrollTimeout;
+                const saveScrollPosition = (event) => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const target = event.target;
+                        const scrollPos = target.scrollTop || 0;
+                        if (scrollPos > 0) {
+                            localStorage.setItem('scrollPosition_LogList/maya/maya_manual_trace', scrollPos);
+                            console.log('[Debug HTML] 保存滚动位置:', scrollPos, '容器:', target.className);
+                        }
+                    }, 100);
+                };
+                
+                // 查找可滚动容器
+                const scrollContainer = document.querySelector('.tab-pane.active') || 
+                                      document.querySelector('.log-content') ||
+                                      document.body;
+                
+                if (scrollContainer) {
+                    // 绑定滚动监听器
+                    scrollContainer.addEventListener('scroll', saveScrollPosition);
+                    console.log('[Debug HTML] 已绑定滚动监听器到:', scrollContainer.className);
+                    
+                    // 恢复滚动位置
+                    const savedScrollPos = localStorage.getItem('scrollPosition_LogList/maya/maya_manual_trace');
+                    if (savedScrollPos) {
+                        const scrollPos = parseInt(savedScrollPos);
+                        scrollContainer.scrollTop = scrollPos;
+                        console.log('[Debug HTML] 恢复滚动位置:', scrollPos, '容器:', scrollContainer.className);
+                    }
+                } else {
+                    console.log('[Debug HTML] 未找到滚动容器');
+                }
+                
+                // 备用：也监听 document 的滚动捕获
+                document.addEventListener('scroll', saveScrollPosition, true);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Toast 提示组件样式 */
+.toast-container {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    min-width: 250px;
+    max-width: 400px;
+    padding: 12px 16px;
+    background: #323233;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.toast.show {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+}
+
+/* 确保toast容器可见 */
+.toast-container {
+    pointer-events: none !important;
+}
+
+.toast {
+    pointer-events: auto !important;
+}
+
+.toast-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.toast-message {
+    flex: 1;
+    color: #e8e8e8;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* 不同类型的toast */
+.toast-success .toast-icon {
+    background: #52c41a;
+    color: #fff;
+}
+
+.toast-error .toast-icon {
+    background: #ff4d4f;
+    color: #fff;
+}
+
+.toast-warning .toast-icon {
+    background: #faad14;
+    color: #fff;
+}
+
+.toast-info .toast-icon {
+    background: #1890ff;
+    color: #fff;
+}
+
+/* 确认对话框样式 */
+.toast-confirm {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    padding: 16px;
+    min-width: 300px;
+}
+
+.toast-confirm-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.toast-confirm .toast-icon {
+    background: #1890ff;
+    color: #fff;
+}
+
+.toast-confirm-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.toast-btn {
+    padding: 6px 16px;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toast-btn-cancel {
+    background: #3e3e42;
+    color: #cccccc;
+}
+
+.toast-btn-cancel:hover {
+    background: #4e4e52;
+}
+
+.toast-btn-confirm {
+    background: #1890ff;
+    color: #fff;
+}
+
+.toast-btn-confirm:hover {
+    background: #40a9ff;
+}

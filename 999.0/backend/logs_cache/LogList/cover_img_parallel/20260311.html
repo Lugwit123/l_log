@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: LogList/cover_img_parallel/20260311.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> LogList/cover_img_parallel/20260311.md</p>
+            <p><strong>Log ID:</strong> LogList/cover_img_parallel/20260311</p>
+            <p><strong>生成时间:</strong> 2026-03-15 23:49:11</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            <p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:30:34 ======<br />
+[2026-03-11 00:29:35] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_AG_Global_Settings",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:35] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 1.050s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "kwargs",<br />
+    {}   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "_request",<br />
+    "GET",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/getAsset/69ae15d6bbcf5714f2bf883c",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "[MuseAPI] GET https://muse-open.netease.com/muse-service/api/open/v1/getAsset/69ae15d6bbcf5714f2bf883c 耗时 0.496s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:30:34 ======<br />
+[2026-03-11 00:29:35] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_AG_Global_Settings",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:35] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 1.050s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "kwargs",<br />
+    {}   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "_request",<br />
+    "GET",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/getAsset/69ae15d6bbcf5714f2bf883c",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:29:36] <br />
+{WARNING}     "[MuseAPI] GET https://muse-open.netease.com/muse-service/api/open/v1/getAsset/69ae15d6bbcf5714f2bf883c 耗时 0.496s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:33:29 ======<br />
+[2026-03-11 00:32:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Grass_01_Group_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:32:34] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.698s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.751s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:33:29 ======<br />
+[2026-03-11 00:32:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Grass_01_Group_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:32:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:32:34] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.698s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:32:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.751s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:55:49 ======<br />
+[2026-03-11 00:54:52] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Grass_01_Group_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:54:54] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.625s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:54] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.562s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:55:49 ======<br />
+[2026-03-11 00:54:52] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Grass_01_Group_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:54:52] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:54:54] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.625s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:54:54] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.562s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:59:20 ======<br />
+[2026-03-11 00:58:23] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_02_Sand",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:58:26] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.604s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:26] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.605s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 00:59:20 ======<br />
+[2026-03-11 00:58:23] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_02_Sand",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:23] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 00:58:26] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.604s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 00:58:26] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.605s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:01:51 ======<br />
+[2026-03-11 01:00:54] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_06_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:00:57] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.607s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:57] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.616s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:01:51 ======<br />
+[2026-03-11 01:00:54] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_06_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:54] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:00:57] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.607s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:00:57] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.616s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:05:53 ======<br />
+[2026-03-11 01:04:56] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_11_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_07_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:04:58] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.547s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:58] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.569s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:05:53 ======<br />
+[2026-03-11 01:04:56] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_11_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_07_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:04:56] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:04:58] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.547s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:04:58] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.569s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:10:07 ======<br />
+[2026-03-11 01:09:10] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_06_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:09:13] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.603s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:13] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.604s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:10:07 ======<br />
+[2026-03-11 01:09:10] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_10_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_06_Moss",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:09:10] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:09:13] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.603s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:09:13] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.604s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:15:16 ======<br />
+[2026-03-11 01:14:17] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_AG_Global_Settings",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 0.374s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:14:18] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 0.421s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:15:16 ======<br />
+[2026-03-11 01:14:17] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_AG_Global_Settings",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 0.374s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Helper_Vegetation_Fern_01",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:14:17] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:14:18] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 0.421s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:17:29 ======<br />
+[2026-03-11 01:16:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_13_Snow",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_15_Snow",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:16:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.656s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.666s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+<p>[LogFileHandler] ====== 批量写入 6 条 @ 2026-03-11 01:17:29 ======<br />
+[2026-03-11 01:16:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_13_Snow",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "kwargs",<br />
+    {<br />
+        "json": {<br />
+            "asset_name": "SM_Rock_15_Snow",<br />
+            "page_num": 1,<br />
+            "page_size": 1000<br />
+        }<br />
+    }   ----code_context : lprint("kwargs",kwargs,) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:99, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:16:32] <br />
+{WARNING}     "_request",<br />
+    "POST",<br />
+    "https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list",<br />
+    "d:\td_depot\wuzu-internal-latest\repository\pip-packages\certifi\2024.8.30\b99a49e4ec48ad4d9833734782ee775813473768\python\certifi\cacert.pem"   ----code_context : lprint("_request",method,final_url,self._verify) <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:100, -fn: _request, 打印次数: 2/2   </p>
+<p>[2026-03-11 01:16:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.656s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 1/2   </p>
+<p>[2026-03-11 01:16:35] <br />
+{WARNING}     "[MuseAPI] POST https://muse-open.netease.com/muse-service/api/open/v1/spliced/engineering/list 耗时 2.666s"   ----code_context : lprint(f"[MuseAPI] {method} {final_url} 耗时 {duration:.3f}s") <br />
+File: c:\users\wb.fengqingqing\packages\muse_python_api\999.0.0\src\muse_python_api\main.py:114, -fn: _request, 打印次数: 2/2   </p>
+        </div>
+        
+    </div>
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+        });
+    </script>
+</body>
+</html>

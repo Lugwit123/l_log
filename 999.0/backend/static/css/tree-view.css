@@ -1,0 +1,144 @@
+/* 调用树视图样式 */
+.trace-tree-view {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #3e3e42;
+    background: #252526;
+}
+
+.trace-tree-view h3 {
+    margin: 0 0 8px 0;
+    color: #4ec9b0;
+    font-size: 1.1em;
+}
+
+/* 树节点 */
+.tree-node {
+    margin: 0;
+    padding-left: 6px;
+    position: relative;
+}
+
+.tree-node-content {
+    display: flex;
+    align-items: center;
+    padding: 1px 4px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    color: #d4d4d4;
+    line-height: 1.25;
+}
+
+.tree-node-content:hover {
+    background-color: #2d2d30;
+}
+
+.tree-toggle {
+    margin-right: 6px;
+    cursor: pointer;
+    user-select: none;
+    color: #858585;
+    font-size: 0.9em;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.tree-toggle.collapsed {
+    transform: rotate(-90deg);
+}
+
+.tree-func-name {
+    color: #dcdcaa;
+    font-weight: 500;
+}
+
+.tree-file-ref {
+    color: #9cdcfe;
+    margin-left: 6px;
+    font-size: 0.9em;
+}
+
+.tree-time {
+    color: #ce9178;
+    margin-left: 6px;
+    font-size: 0.85em;
+}
+
+.tree-marker {
+    margin-left: 6px;
+    font-size: 0.85em;
+}
+
+.tree-marker.hot {
+    color: #ff6b6b;
+}
+
+.tree-marker.fast {
+    color: #51cf66;
+}
+
+.tree-return {
+    color: #858585;
+    margin-left: 6px;
+    font-size: 0.85em;
+}
+
+.tree-children {
+    margin-left: 3px;
+    padding-left: 4px;
+    border-left: 1px solid #3e3e42;
+    overflow: hidden;
+    max-height: 2000px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.tree-children.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+
+/* 按钮样式 */
+#expand-all-btn,
+#collapse-all-btn {
+    padding: 4px 10px;
+    border: 1px solid #4ec9b0;
+    background: transparent;
+    color: #4ec9b0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.2s;
+}
+
+#expand-all-btn:hover,
+#collapse-all-btn:hover {
+    background: #4ec9b0;
+    color: #1e1e1e;
+}
+
+/* 搜索框 */
+#tree-search {
+    padding: 6px 12px;
+    border: 1px solid #3e3e42;
+    border-radius: 4px;
+    width: 220px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 0.95em;
+}
+
+#tree-search:focus {
+    outline: none;
+    border-color: #4ec9b0;
+}
+
+/* 高亮跳转目标 */
+.lprint-trace-call.highlight {
+    background-color: #3e3e42 !important;
+    transition: background-color 0.3s;
+}

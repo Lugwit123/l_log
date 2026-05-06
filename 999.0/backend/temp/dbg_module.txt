@@ -1,0 +1,21 @@
+call_idx=0 call_depth=0 call_filename=d:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\test_trace_simple.py call_function=<module>
+total_trace_data=156
+  [1] type=call fn=main_function file=Lugwit_Module\l_src\test_trace_simple.py depth=0 lineno=60
+  [2] type=line fn=main_function file=Lugwit_Module\l_src\test_trace_simple.py depth=1 lineno=62
+  [3] type=line fn=main_function file=Lugwit_Module\l_src\test_trace_simple.py depth=1 lineno=65
+  [4] type=line fn=main_function file=Lugwit_Module\l_src\test_trace_simple.py depth=1 lineno=66
+  [5] type=line fn=main_function file=Lugwit_Module\l_src\test_trace_simple.py depth=1 lineno=69
+  [6] type=call fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=1 lineno=43
+  [7] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=45
+  [8] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=46
+  [9] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=47
+  [10] type=call fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=23
+  [11] type=line fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=3 lineno=25
+  [12] type=line fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=3 lineno=26
+  [13] type=line fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=3 lineno=27
+  [14] type=return fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=27
+  [15] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=48
+  [16] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=46
+  [17] type=line fn=process_data file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=47
+  [18] type=call fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=2 lineno=23
+  [19] type=line fn=helper_function file=Lugwit_Module\l_src\test_trace_simple.py depth=3 lineno=25

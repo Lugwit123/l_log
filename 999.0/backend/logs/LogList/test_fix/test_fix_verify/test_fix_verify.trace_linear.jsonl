@@ -1,0 +1,44 @@
+{"index": 0, "type": "call", "time": 0, "function": "<module>", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 26, "depth": 0, "params": [{"name": "sys", "type": "?"}, {"name": "lprint_info", "type": "?"}, {"name": "LPrint", "type": "?"}, {"name": "lprint", "type": "?"}, {"name": "os", "type": "?"}], "call_id": 1}
+{"index": 2, "type": "call", "time": 0.0020017623901367188, "function": "top", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 20, "depth": 1, "params": [], "call_id": 2}
+{"index": 6, "type": "call", "time": 0.0020017623901367188, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 3}
+{"index": 8, "type": "call", "time": 0.0030019283294677734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 4}
+{"index": 10, "type": "return", "time": 0.0030019283294677734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 11, "type": "return", "time": 0.0030019283294677734, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0010001659393310547}
+{"index": 14, "type": "call", "time": 0.0030019283294677734, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 5}
+{"index": 16, "type": "call", "time": 0.0035054683685302734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 6}
+{"index": 18, "type": "return", "time": 0.0035054683685302734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 19, "type": "return", "time": 0.0035054683685302734, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0005035400390625}
+{"index": 22, "type": "call", "time": 0.0035054683685302734, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 7}
+{"index": 24, "type": "call", "time": 0.0035054683685302734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 8}
+{"index": 26, "type": "return", "time": 0.0035054683685302734, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 27, "type": "return", "time": 0.0035054683685302734, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 30, "type": "call", "time": 0.004509449005126953, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 9}
+{"index": 32, "type": "call", "time": 0.004509449005126953, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 10}
+{"index": 34, "type": "return", "time": 0.004509449005126953, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 35, "type": "return", "time": 0.004509449005126953, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 38, "type": "call", "time": 0.004509449005126953, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 11}
+{"index": 40, "type": "call", "time": 0.004509449005126953, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 12}
+{"index": 42, "type": "return", "time": 0.004509449005126953, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 43, "type": "return", "time": 0.004509449005126953, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 46, "type": "call", "time": 0.005514621734619141, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 13}
+{"index": 48, "type": "call", "time": 0.006018161773681641, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 14}
+{"index": 50, "type": "return", "time": 0.006018161773681641, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 51, "type": "return", "time": 0.006018161773681641, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0005035400390625}
+{"index": 54, "type": "call", "time": 0.006018161773681641, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 15}
+{"index": 56, "type": "call", "time": 0.006018161773681641, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 16}
+{"index": 58, "type": "return", "time": 0.006018161773681641, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 59, "type": "return", "time": 0.006018161773681641, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 62, "type": "call", "time": 0.006018161773681641, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 17}
+{"index": 64, "type": "call", "time": 0.0070230960845947266, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 18}
+{"index": 66, "type": "return", "time": 0.0070230960845947266, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 67, "type": "return", "time": 0.0070230960845947266, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.001004934310913086}
+{"index": 70, "type": "call", "time": 0.0070230960845947266, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 19}
+{"index": 72, "type": "call", "time": 0.0070230960845947266, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 20}
+{"index": 74, "type": "return", "time": 0.0070230960845947266, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 75, "type": "return", "time": 0.0070230960845947266, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 78, "type": "call", "time": 0.00802302360534668, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 17, "depth": 2, "params": [], "call_id": 21}
+{"index": 80, "type": "call", "time": 0.00802302360534668, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "lineno": 14, "depth": 3, "params": [], "call_id": 22}
+{"index": 82, "type": "return", "time": 0.00802302360534668, "function": "leaf", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 3, "duration_s": 0.0}
+{"index": 83, "type": "return", "time": 0.00802302360534668, "function": "mid", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 2, "duration_s": 0.0}
+{"index": 126, "type": "return", "time": 0.00802302360534668, "function": "top", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 1, "duration_s": 0.006021261215209961}
+{"index": 614, "type": "return", "time": 0.3441152572631836, "function": "<module>", "filename": "d:\\Temp\\test_fix_verify.py", "depth": 0, "duration_s": 0.3441152572631836}

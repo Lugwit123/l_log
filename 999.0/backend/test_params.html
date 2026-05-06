@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>参数提取测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .result { background: #f5f5f5; padding: 10px; margin: 10px 0; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>函数参数提取测试</h1>
+    
+    <div class="test-section">
+        <h3>测试1: 简单参数提取</h3>
+        <div id="test1-result" class="result"></div>
+    </div>
+    
+    <div class="test-section">
+        <h3>测试2: 多个参数提取</h3>
+        <div id="test2-result" class="result"></div>
+    </div>
+
+    <script>
+        // 复制参数提取函数
+        function extractFunctionParams(codeContent) {
+            console.log('[参数提取] ===== 开始提取函数参数 =====');
+            console.log('[参数提取] 代码块内容:', codeContent);
+            
+            var functionParams = null;
+            
+            // 查找函数定义行和参数变量
+            var funcDefMatch = codeContent.match(/def\s+\w+\([^)]*\):/);
+            if (funcDefMatch) {
+                console.log('[参数提取] 找到函数定义:', funcDefMatch[0]);
+                
+                // 提取函数名和参数名
+                var funcParamNames = [];
+                var funcNameMatch = funcDefMatch[0].match(/def\s+(\w+)\(([^)]*)\):/);
+                if (funcNameMatch) {
+                    var paramNameStr = funcNameMatch[2].trim();
+                    if (paramNameStr) {
+                        funcParamNames = paramNameStr.split(',').map(p => p.trim()).filter(p => p);
+                    }
+                }
+                console.log('[参数提取] 函数参数名:', funcParamNames);
+                
+                // 首先从函数定义行提取参数值
+                var funcDefLine = funcDefMatch[0];
+                var paramLines = [];
+                var paramIndex = 0;
+                
+                // 检查函数定义行是否有参数值注释
+                if (funcDefLine.includes('# 💡')) {
+                    var commentMatch = funcDefLine.match(/# 💡\s*(\w+)\s*=\s*([^#\s]+)/);
+                    if (commentMatch) {
+                        var paramName = commentMatch[1];
+                        var paramValue = commentMatch[2].trim();
+                        paramLines.push(`${paramName} = ${paramValue}`);
+                        console.log('[参数提取] 从函数定义行提取到参数:', paramName, '=', paramValue);
+                        paramIndex++;
+                    }
+                }
+                
+                // 如果参数数量不够，继续从后续行查找
+                if (paramLines.length < funcParamNames.length) {
+                    var lines = codeContent.split('\n');
+                    var foundFuncDef = false;
+                    
+                    for (var j = 0; j < lines.length; j++) {
+                        var line = lines[j].trim();
+                        if (foundFuncDef) {
+                            // 匹配 💡 变量 格式
+                            if (line.includes('💡 变量')) {
+                                var paramMatch = line.match(/💡\s*变量\s+(\w+)\s*=\s*(.+)/);
+                                if (paramMatch) {
+                                    var paramName = paramMatch[1];
+                                    var paramValue = paramMatch[2].trim();
+                                    
+                                    // 如果有函数参数名且匹配，使用函数参数名
+                                    if (funcParamNames.length > 0 && paramIndex < funcParamNames.length) {
+                                        paramName = funcParamNames[paramIndex];
+                                        paramIndex++;
+                                    }
+                                    
+                                    paramLines.push(`${paramName} = ${paramValue}`);
+                                    console.log('[参数提取] 提取到参数:', paramName, '=', paramValue);
+                                }
+                            } else if (line.includes('变量')) {
+                                var paramMatch = line.match(/变量\s+(\w+)\s*=\s*(.+)/);
+                                if (paramMatch) {
+                                    var paramName = paramMatch[1];
+                                    var paramValue = paramMatch[2].trim();
+                                    paramLines.push(`${paramName} = ${paramValue}`);
+                                }
+                            } else if (line && !line.includes('│') && !line.includes('├') && !line.includes('└') && !line.includes('⬅️') && !line.includes('💡')) {
+                                // 如果遇到非空行且不是变量行，停止收集
+                                break;
+                            }
+                        } else if (line.includes('def ')) {
+                            foundFuncDef = true;
+                        }
+                    }
+                }
+                
+                if (paramLines.length > 0) {
+                    functionParams = paramLines.join(', ');
+                    console.log('[参数提取] 找到函数参数:', functionParams);
+                }
+            }
+            
+            console.log('[参数提取] 最终结果:', functionParams || '无参数');
+            return functionParams;
+        }
+        
+        // 测试用例
+        function runTests() {
+            console.log('=== 开始测试 ===');
+            
+            // 测试1: 简单参数
+            var test1Code = `def helper_function(x):  # 💡 x=3
+    """辅助函数：计算平方"""
+    result = x * x  # 💡 res
+    return result`;
+            
+            var result1 = extractFunctionParams(test1Code);
+            var resultDiv1 = document.getElementById('test1-result');
+            if (result1 === 'x = 3') {
+                resultDiv1.innerHTML = '<span class="success">✓ 测试1通过: ' + result1 + '</span>';
+            } else {
+                resultDiv1.innerHTML = '<span class="error">✗ 测试1失败: 期望 "x = 3"，实际 "' + result1 + '"</span>';
+            }
+            
+            // 测试2: 多个参数
+            var test2Code = `def process_data(data, multiplier):  # 💡 data=[1,2,3], multiplier=2
+    """处理数据"""
+    result = [x * multiplier for x in data]
+    return result`;
+            
+            var result2 = extractFunctionParams(test2Code);
+            var resultDiv2 = document.getElementById('test2-result');
+            if (result2 && result2.includes('data') && result2.includes('multiplier')) {
+                resultDiv2.innerHTML = '<span class="success">✓ 测试2通过: ' + result2 + '</span>';
+            } else {
+                resultDiv2.innerHTML = '<span class="error">✗ 测试2失败: 未正确提取多个参数，实际 "' + result2 + '"</span>';
+            }
+        }
+        
+        // 页面加载后运行测试
+        window.onload = runTests;
+    </script>
+</body>
+</html>

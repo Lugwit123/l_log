@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: test_trace_simple - 副本.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> test_trace_simple - 副本.md</p>
+            <p><strong>Log ID:</strong> test_trace_simple - 副本</p>
+            <p><strong>生成时间:</strong> 2026-03-15 23:46:46</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            <p>[向前追踪结果]</p>
+<p>[向前追踪] 总事件数: 155 (调用: 23, 返回: 22, 异常: 0)<br />
+[向前追踪] 总耗时: 0.177 秒</p>
+<div class="lprint-forward-trace">
+<div id="trace-tree-view-container" style="margin:15px 0;"></div>
+<div class="lprint-trace-tree" style="display:none;">
+<div>├─ &lt;module&gt; (test_trace_simple.py:100) #1 [177.21ms] 🔥</div>
+<div>├─ main_function (test_trace_simple.py:60) #2 [66.31ms] 🔥 → 55</div>
+<div>│   └─ process_data (test_trace_simple.py:43) #3 [53.21ms] 🔥 → [1, 4, 9, 16, 25]</div>
+<div>│       └─ helper_function (test_trace_simple.py:23) [×5次, 合计 52.69ms] [平均 10.54ms] 🔥</div>
+<div>└─ secondary_function (test_trace_simple.py:78) #9 [86.51ms] 🔥 → 101</div>
+<div>    ├─ batch_process (test_trace_simple.py:51) #10 [60.48ms] 🔥 → [1, 4, 9, 16, 25]</div>
+<div>    │   ├─ process_data (test_trace_simple.py:43) #11 [21.38ms] 🔥 → [1, 4]</div>
+<div>    │   │   └─ helper_function (test_trace_simple.py:23) #12 [10.88ms] ⚡ → 1</div>
+<div>    │   │   └─ helper_function (test_trace_simple.py:23) #13 [10.50ms] ⚡ → 4</div>
+<div>    │   └─ process_data (test_trace_simple.py:43) #14 [31.81ms] 🔥 → [9, 16, 25]</div>
+<div>    │       └─ helper_function (test_trace_simple.py:23) #15 [10.95ms] ⚡ → 9</div>
+<div>    │       └─ helper_function (test_trace_simple.py:23) #16 [10.46ms] ⚡ → 16</div>
+<div>    │       └─ helper_function (test_trace_simple.py:23) #17 [10.40ms] ⚡ → 25</div>
+<div>    └─ advanced_process (test_trace_simple.py:35) #18 [20.74ms] 🔥 → 96</div>
+<div>        ├─ helper_function (test_trace_simple.py:23) #19 [10.47ms] ⚡ → 9</div>
+<div>        ├─ calculate_factorial (test_trace_simple.py:29) #20 [~0μs] → 6</div>
+<div>        │   └─ calculate_factorial (test_trace_simple.py:29) #21 [~0μs] → 2</div>
+<div>        │       └─ calculate_factorial (test_trace_simple.py:29) #22 [~0μs] → 1</div>
+<div>        └─ helper_function (test_trace_simple.py:23) #23 [10.27ms] ⚡ → 81</div>
+</div>
+<p class="lprint-trace-divider" style="color:#888;margin:10px 0;">─── 详细追踪 ───</p>
+<p class="lprint-trace-call"># >>深度callBy(深度1 路径1 #1): <a href="openlogfile:test_trace_simple.py#100" class="lprint-file-link">test_trace_simple.py</a>:100 in &lt;module&gt;()</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度1 - &lt;module&gt;): [起始行号: 100]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     lprint.trace_start(trace_depth=6, clear_log=True)
+
+     # 2. 执行需要追踪的代码（调用两个主函数）
+     result1 = main_function()  # → 第1个根调用（路径1-x-y）  # → 调用 main_function()
+     lprint(&quot;&quot;)
+     result2 = secondary_function()  # → 第2个根调用（路径2-x-y）  # → 调用 secondary_function()
+
+     # 3. 停止追踪
+     lprint.trace_stop()
+     lprint(&quot;追踪已停止&quot;)
+
+     # 4. 显示追踪结果（会自动写入日志文件）
+     lprint(&quot;&quot;)
+     lprint(&quot;## 追踪结果&quot;)
+     lprint.trace_result()</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度1 路径1 #2): <a href="openlogfile:test_trace_simple.py#60" class="lprint-file-link">test_trace_simple.py</a>:60 in main_function() ← :103 ⏱️[66.31ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度1 - main_function): [起始行号: 60]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">60
+61
+62
+63
+64
+65
+
+66
+67
+68
+69
+
+70
+71
+72
+73
+
+74
+75
+76
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def main_function():
+     &quot;&quot;&quot;主函数：手动控制追踪&quot;&quot;&quot;
+     lprint(&quot;开始执行主函数&quot;)
+
+     # 测试数据
+     numbers = [1, 2, 3, 4, 5]
+    # 💡 变量 numbers=[1, 2, 3, 4, 5] (list)
+     lprint(&quot;输入数据: {}&quot;, numbers)
+
+     # 调用处理函数
+     results = process_data(numbers)  # → 调用 process_data()
+    # 💡 变量 results=[1, 4, 9, 16, 25] (list)
+     lprint(&quot;处理结果: {}&quot;, results)
+
+     # 计算总和
+     total = sum(results)
+    # 💡 变量 total=55 (int)
+     lprint(&quot;总和: {}&quot;, total)
+
+     return total
+    # ⬅️ 返回值 55</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度2 路径1-1 #3): <a href="openlogfile:test_trace_simple.py#43" class="lprint-file-link">test_trace_simple.py</a>:43 in process_data() ← :69 ⏱️[53.21ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度2 - process_data): [起始行号: 43]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">43
+44
+
+45
+
+46
+
+47
+
+48
+49
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def process_data(data):
+     &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;
+    # 💡 变量 data=[1, 2, 3, 4, 5] (list)
+     results = []
+    # 💡 变量 results=[] (list)
+     for item in data:
+    # 💡 变量 item=1 (int)
+         square = helper_function(item)  # → 调用 helper_function()
+        # 💡 变量 square=1 (int)
+         results.append(square)
+     return results
+    # ⬅️ 返回值 [1, 4, 9, 16, 25]</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-1 #4): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.47ms] ⚡</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - helper_function): [起始行号: 23]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">23
+24
+
+25
+
+26
+27
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def helper_function(x):
+     &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;
+    # 💡 变量 x=1 (int)
+     result = x * x
+    # 💡 变量 result=1 (int)
+     time.sleep(0.01)  # 模拟耗时操作
+     return result
+    # ⬅️ 返回值 1</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-2 #5): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.47ms] ⚡</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - helper_function): [起始行号: 23]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">23
+24
+
+25
+
+26
+27
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def helper_function(x):
+     &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;
+    # 💡 变量 x=2 (int)
+     result = x * x
+    # 💡 变量 result=4 (int)
+     time.sleep(0.01)  # 模拟耗时操作
+     return result
+    # ⬅️ 返回值 4</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-3 #6): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.58ms] ⚡</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - helper_function): [起始行号: 23]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">23
+24
+
+25
+
+26
+27
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def helper_function(x):
+     &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;
+    # 💡 变量 x=3 (int)
+     result = x * x
+    # 💡 变量 result=9 (int)
+     time.sleep(0.01)  # 模拟耗时操作
+     return result
+    # ⬅️ 返回值 9</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-4 #7): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.66ms] ⚡</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - helper_function): [起始行号: 23]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">23
+24
+
+25
+
+26
+27
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def helper_function(x):
+     &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;
+    # 💡 变量 x=4 (int)
+     result = x * x
+    # 💡 变量 result=16 (int)
+     time.sleep(0.01)  # 模拟耗时操作
+     return result
+    # ⬅️ 返回值 16</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-5 #8): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.49ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度1 路径1 #9): <a href="openlogfile:test_trace_simple.py#78" class="lprint-file-link">test_trace_simple.py</a>:78 in secondary_function() ← :105 ⏱️[86.51ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度1 - secondary_function): [起始行号: 78]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">78
+79
+80
+81
+82
+83
+
+84
+85
+86
+
+87
+
+88
+89
+90
+
+91
+92</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def secondary_function():
+     &quot;&quot;&quot;第二个主函数：创建第2个根调用&quot;&quot;&quot;
+     lprint(&quot;执行第二个主函数&quot;)
+
+     # 多批次处理
+     batches = [[1, 2], [3, 4, 5]]
+    # 💡 变量 batches=[[1, 2], [3, 4, 5]] (list)
+     results = batch_process(batches)
+
+     # 高级处理
+    # 💡 变量 results=[1, 4, 9, 16, 25] (list)
+     advanced_result = advanced_process(3)
+    # 💡 变量 advanced_result=96 (int)
+     lprint(&quot;高级处理结果: {}&quot;, advanced_result)
+
+     return len(results) + advanced_result
+    # ⬅️ 返回值 101
+
+ # ===== 运行测试 =====</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度2 路径1-1 #10): <a href="openlogfile:test_trace_simple.py#51" class="lprint-file-link">test_trace_simple.py</a>:51 in batch_process() ← :84 ⏱️[60.48ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度2 - batch_process): [起始行号: 51]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">51
+52
+
+53
+
+54
+
+55
+56
+
+57
+58
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def batch_process(batches):
+     &quot;&quot;&quot;批量处理：处理多个批次&quot;&quot;&quot;
+    # 💡 变量 batches=[[1, 2], [3, 4, 5]] (list)
+     all_results = []
+    # 💡 变量 all_results=[] (list)
+     for i, batch in enumerate(batches):
+    # 💡 变量 i=0 (int), batch=[1, 2] (list)
+         lprint(&quot;处理批次 {}&quot;, i + 1)
+         batch_results = process_data(batch)
+        # 💡 变量 batch_results=[1, 4] (list)
+         all_results.extend(batch_results)
+     return all_results
+    # ⬅️ 返回值 [1, 4, 9, 16, 25]</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-1 #11): <a href="openlogfile:test_trace_simple.py#43" class="lprint-file-link">test_trace_simple.py</a>:43 in process_data() ← :56 ⏱️[21.38ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - process_data): [起始行号: 43]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">43
+44
+
+45
+
+46
+
+47
+
+48
+49
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def process_data(data):
+     &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;
+    # 💡 变量 data=[1, 2] (list)
+     results = []
+    # 💡 变量 results=[] (list)
+     for item in data:
+    # 💡 变量 item=1 (int)
+         square = helper_function(item)
+        # 💡 变量 square=1 (int)
+         results.append(square)
+     return results
+    # ⬅️ 返回值 [1, 4]</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-1-1-1 #12): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.88ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-1-1-2 #13): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.50ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-1-2 #14): <a href="openlogfile:test_trace_simple.py#43" class="lprint-file-link">test_trace_simple.py</a>:43 in process_data() ← :56 ⏱️[31.81ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - process_data): [起始行号: 43]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">43
+44
+
+45
+
+46
+
+47
+
+48
+49
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def process_data(data):
+     &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;
+    # 💡 变量 data=[3, 4, 5] (list)
+     results = []
+    # 💡 变量 results=[] (list)
+     for item in data:
+    # 💡 变量 item=3 (int)
+         square = helper_function(item)
+        # 💡 变量 square=9 (int)
+         results.append(square)
+     return results
+    # ⬅️ 返回值 [9, 16, 25]</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-1-2-1 #15): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.95ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-1-2-2 #16): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.46ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-1-2-3 #17): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :47 ⏱️[10.40ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度2 路径1-2 #18): <a href="openlogfile:test_trace_simple.py#35" class="lprint-file-link">test_trace_simple.py</a>:35 in advanced_process() ← :87 ⏱️[20.74ms] 🔥</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度2 - advanced_process): [起始行号: 35]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">35
+36
+37
+
+38
+
+39
+
+40
+
+41
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def advanced_process(value):
+     &quot;&quot;&quot;高级处理：包含多个子调用&quot;&quot;&quot;
+     # 调用多个不同的辅助函数
+    # 💡 变量 value=3 (int)
+     square = helper_function(value)
+    # 💡 变量 square=9 (int)
+     factorial = calculate_factorial(value)
+    # 💡 变量 factorial=6 (int)
+     cube = helper_function(square)  # 嵌套调用
+    # 💡 变量 cube=81 (int)
+     return square + factorial + cube
+    # ⬅️ 返回值 96</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-2-1 #19): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :38 ⏱️[10.47ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-2-2 #20): <a href="openlogfile:test_trace_simple.py#29" class="lprint-file-link">test_trace_simple.py</a>:29 in calculate_factorial() ← :39 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度3 - calculate_factorial): [起始行号: 29]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">29
+30
+
+31
+32
+33
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def calculate_factorial(n):
+     &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;
+    # 💡 变量 n=3 (int)
+     if n &lt;= 1:
+         return 1
+     return n * calculate_factorial(n - 1)
+    # ⬅️ 返回值 6</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-2-2-1 #21): <a href="openlogfile:test_trace_simple.py#29" class="lprint-file-link">test_trace_simple.py</a>:29 in calculate_factorial() ← :33 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度4 - calculate_factorial): [起始行号: 29]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">29
+30
+
+31
+32
+33
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def calculate_factorial(n):
+     &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;
+    # 💡 变量 n=2 (int)
+     if n &lt;= 1:
+         return 1
+     return n * calculate_factorial(n - 1)
+    # ⬅️ 返回值 2</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-2-1-1 #22): <a href="openlogfile:test_trace_simple.py#29" class="lprint-file-link">test_trace_simple.py</a>:29 in calculate_factorial() ← :33 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度5 - calculate_factorial): [起始行号: 29]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">29
+30
+
+31
+32
+
+33</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python"> def calculate_factorial(n):
+     &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;
+    # 💡 变量 n=1 (int)
+     if n &lt;= 1:
+         return 1
+        # ⬅️ 返回值 1
+     return n * calculate_factorial(n - 1)</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-2-3 #23): <a href="openlogfile:test_trace_simple.py#23" class="lprint-file-link">test_trace_simple.py</a>:23 in helper_function() ← :40 ⏱️[10.27ms] ⚡</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<div class="lprint-trace-end-section">
+<p class="lprint-trace-end-header" style="color:#4a9eff;font-weight:bold;font-size:1.1em;margin:10px 0;">═══ 追踪结束 ═══</p>
+<p class="lprint-trace-summary-title" style="color:#4a9eff;font-weight:bold;margin:8px 0;">📋 追踪摘要</p>
+<p class="lprint-trace-summary-item" style="margin:4px 0;padding-left:20px;">起始函数: &lt;module&gt;() @ <a href="openlogfile:test_trace_simple.py#100" class="lprint-file-link">test_trace_simple.py</a>:100</p>
+<p class="lprint-trace-summary-item" style="margin:4px 0;padding-left:20px;">总耗时: 177.21ms | 事件数: 155 | 显示: 23 | 省略: 0</p>
+<p class="lprint-trace-summary-item" style="margin:4px 0;padding-left:20px;">性能热点:</p>
+<p class="lprint-trace-hotspot" style="margin:4px 0;padding-left:40px;">🔥 1. main_function - 66.31ms (37.4%)</p>
+<p class="lprint-trace-hotspot" style="margin:4px 0;padding-left:40px;">🔥 2. helper_function - 53.21ms (30.0%)</p>
+<p class="lprint-trace-hotspot" style="margin:4px 0;padding-left:40px;">⚡ 3. process_data - 10.47ms (5.9%)</p>
+<p class="lprint-trace-complete" style="color:#52c41a;margin:8px 0;">✓ 追踪完成 | 日志已保存</p>
+</div>
+</div>
+        </div>
+        
+    </div>
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+        });
+    </script>
+</body>
+</html>

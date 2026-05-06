@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日志查看器 v2.0</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/tabs.css">
+    <link rel="stylesheet" href="/static/css/log-viewer.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/modal.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/mobile.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <link rel="stylesheet" href="/static/css/scroll-buttons.css">
+</head>
+<body>
+    <!-- 滚动按钮 -->
+    <button id="scroll-to-top" class="scroll-button scroll-to-top" title="回到顶部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+    <button id="scroll-to-bottom" class="scroll-button scroll-to-bottom" title="回到底部">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </button>
+    
+    <div class="tabs-container">
+        <div class="tabs-header">
+            <button class="tab-list" title="日志列表">📋</button>
+            <button class="tab-new" title="上传新日志">+</button>
+            <button id="view-switch-simple" class="tab-new" title="切换到完整视图" style="margin-left: auto;">🔀 完整视图</button>
+        </div>
+        <div class="tabs-content"></div>
+    </div>
+    
+    <!-- 日志列表弹窗 -->
+    <div id="log-list-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>日志文件列表</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="log-list-container">
+                    <div class="loading">加载中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="file" id="file-input" accept=".md" style="display:none">
+    
+    <script src="/static/js/tabs.js"></script>
+    <script src="/static/js/log-viewer.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/scroll-buttons.js"></script>
+    
+    <script>
+        // 视图切换按钮
+        document.addEventListener('DOMContentLoaded', () => {
+            const switchBtn = document.getElementById('view-switch-simple');
+            if (switchBtn) {
+                switchBtn.addEventListener('click', () => {
+                    window.location.href = '/';
+                });
+            }
+        });
+        
+        // 自动加载演示日志
+        {% if demo_log_id %}
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                if (tabManager) {
+                    tabManager.loadLog('{{ demo_log_id }}', 'test_trace_simple.md');
+                }
+            }, 100);
+        });
+        {% endif %}
+    </script>
+</body>
+</html>

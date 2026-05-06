@@ -1,0 +1,585 @@
+==================================================
+[2026/04/20 周一 16:53:33.70] Start one-way sync (source to dest)
+==================================================
+
+---------- [samba_to_muse] D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\samba_to_muse to L:\temp\j_muse_backup\samba_to_muse ----------
+[CHECK][samba_to_muse] SRC=D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\samba_to_muse
+[CHECK][samba_to_muse] source exists: YES
+[CHECK][samba_to_muse] DST=L:\temp\j_muse_backup\samba_to_muse
+[CHECK][samba_to_muse] target exists before: YES
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Windows 的可靠文件复制                              
+-------------------------------------------------------------------------------
+
+  开始时间: 2026年4月20日 16:53:33
+        源: D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\samba_to_muse\
+      目标: L:\temp\j_muse_backup\samba_to_muse\
+
+      文件: *.*
+	    
+Exc 文件: *.pyc
+	    
+  执行目录: __pycache__
+	    
+      选项: *.* /FFT /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\samba_to_muse\
+
+------------------------------------------------------------------------------
+
+                  总数        复制        跳过       不匹配        失败        其他
+       目录:         1         0         1         0         0         0
+       文件:         4         0         4         0         0         0
+       字节:    78.3 k         0    78.3 k         0         0         0
+       时间:   0:00:00   0:00:00                       0:00:00   0:00:00
+   已结束: 2026年4月20日 16:53:33
+
+
+---------- [Lugwit_Module] D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module to D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module ----------
+[CHECK][Lugwit_Module] SRC=D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module
+[CHECK][Lugwit_Module] source exists: YES
+[CHECK][Lugwit_Module] DST=D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module
+[CHECK][Lugwit_Module] target exists before: YES
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Windows 的可靠文件复制                              
+-------------------------------------------------------------------------------
+
+  开始时间: 2026年4月20日 16:53:33
+        源: D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\
+      目标: D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\
+
+      文件: *.*
+	    
+Exc 文件: *.pyc
+	    
+  执行目录: __pycache__
+	    
+      选项: *.* /FFT /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                  29	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\
+	                 117	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\collections\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\ctypes\
+	                  16	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\email\
+	                  16	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\importlib\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\importlib\metadata\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\importlib\resources\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\json\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\logging\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\os\
+	                  10	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\PyQt5\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\PyQt6\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\PySide2\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\PySide6\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\shiboken6\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\Software\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\sys\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\zipfile\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.11\_typeshed\
+	                  97	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\collections\
+	                  16	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\email\
+	                  16	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\importlib\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\importlib\metadata\
+	                   8	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\importlib\resources\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\json\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\logging\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\os\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\Software\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\sys\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\zipfile\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\zipfile\_path\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\.mypy_cache\3.14\_typeshed\
+	                   3	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\countRunTime\
+	                   0	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\data\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\data\ins_location\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\docs\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\examples\
+	                  26	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\decorator\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\DingDing\
+	                  10	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\exception_hook\
+	                   8	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\generalLib\
+	                   3	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\IO\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\IO\zipFile\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\lib2\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\lib2\toml\
+	                   8	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\lib2\toml-0.10.2.dist-info\
+	                   0	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\test_lprint\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\test_markdown_trace\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\test_pyside6_trace\
+	                   7	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\test_simple_md\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\logs\test_trace_simple\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_compile\
+	                   7	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_cusQtWgt\
+	                  12	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\
+	                   3	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\icons\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\qt_json_view\
+	                   7	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\template\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_DataProcess\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_file\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_http\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_list\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_logger\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_MayaLib\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_MayaLib\GetInfoDirectRead\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_MayaLib\GetInfoPack\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_os\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_parse_args\
+	                   0	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy2\
+	                  68	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy2\qtpy\
+	                  70	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy2\qtpy\tests\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy2\qtpy\tests\optional_deps\
+	                  13	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy2\qtpy1\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy3\
+	                  68	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy3\qtpy\
+	                  70	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy3\qtpy\tests\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_qtpy3\qtpy\tests\optional_deps\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_rightMenu\
+	                  10	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_subprocess\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\l_winreg\
+	                   3	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\MayaToUe\
+	                   0	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\office\
+	                  28	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\office\xlrd\
+	                   9	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\
+	                  18	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\QTLib\
+	                  79	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\QTLib\images\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\QTLib\QSS\
+	                  94	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\QTLib\QSS\images\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\Lugwit_Module\l_src\UILib\QTLib\qt_decorator\
+
+------------------------------------------------------------------------------
+
+                  总数        复制        跳过       不匹配        失败        其他
+       目录:       112         0       112         0         0         0
+       文件:      1142         0      1142         0         0         0
+       字节:   76.83 m         0   76.83 m         0         0         0
+       时间:   0:00:00   0:00:00                       0:00:00   0:00:00
+   已结束: 2026年4月20日 16:53:33
+
+
+---------- [pytracemp] D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp to D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp ----------
+[CHECK][pytracemp] SRC=D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp
+[CHECK][pytracemp] source exists: YES
+[CHECK][pytracemp] DST=D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp
+[CHECK][pytracemp] target exists before: YES
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Windows 的可靠文件复制                              
+-------------------------------------------------------------------------------
+
+  开始时间: 2026年4月20日 16:53:34
+        源: D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\
+      目标: D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\
+
+      文件: *.*
+	    
+Exc 文件: *.pyc
+	    
+  执行目录: __pycache__
+	    
+      选项: *.* /FFT /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\
+	                  13	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\.github\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\.github\workflows\
+	                   3	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\docs\
+	                  19	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\docs\source\
+	                   2	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\example\
+	                   8	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\example\json\
+	                   8	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\example\src\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\img\
+	                   0	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\
+	                  22	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\
+	                  13	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\attach_process\
+	                   1	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\attach_process\linux_and_mac\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\html\
+	                  10	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\modules\
+	                   5	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\modules\vcompressor\
+	                   4	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\
+	                  11	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\v52.0-6b9586def\
+	                  39	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\v52.0-6b9586def\assets\
+	                  31	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\tests\
+	                   7	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\tests\data\
+	                   6	D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\pytracemp\src\pytracemp\usualFunc_helper\viztracer\tests\modules\
+
+------------------------------------------------------------------------------
+
+                  总数        复制        跳过       不匹配        失败        其他
+       目录:        27         0        27         0         0         0
+       文件:       229         0       229         0         0         0
+       字节:   67.87 m         0   67.87 m         0         0         0
+       时间:   0:00:00   0:00:00                       0:00:00   0:00:00
+   已结束: 2026年4月20日 16:53:34
+
+
+---------- [anim_upload_muse_tool] D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool to P:\packages\anim_upload_muse_tool\0.2.3\src\anim_upload_muse_tool ----------
+[CHECK][anim_upload_muse_tool] SRC=D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool
+[CHECK][anim_upload_muse_tool] source exists: YES
+[CHECK][anim_upload_muse_tool] DST=P:\packages\anim_upload_muse_tool\0.2.3\src\anim_upload_muse_tool
+[CHECK][anim_upload_muse_tool] target exists before: YES
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Windows 的可靠文件复制                              
+-------------------------------------------------------------------------------
+
+  开始时间: 2026年4月20日 16:53:34
+        源: D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\
+      目标: P:\packages\anim_upload_muse_tool\0.2.3\src\anim_upload_muse_tool\
+
+      文件: *.*
+	    
+Exc 文件: *.pyc
+	    
+  执行目录: __pycache__
+	    
+      选项: *.* /FFT /S /E /DCOPY:DA /COPY:DAT /PURGE /MIR /NP /R:0 /W:0 
+
+------------------------------------------------------------------------------
+
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\annotated_types\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\annotated_types-0.7.0.dist-info\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\annotated_types-0.7.0.dist-info\licenses\
+	                  11	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_execuder\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_execuder\doc\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_execuder\dot_ui\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_execuder\task_configs\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_work\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\async_work\tests\
+	                  23	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\attr\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\attrs\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\bite\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\bite\collection\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\bite\kind\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\cave\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_ast\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_ast\_kind\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_ast\_pep\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_ast\_scope\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_importlib\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\claw\_package\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_cls\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_cls\pep\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_cls\pep\pep484\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_cls\pep\pep484585\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_cls\util\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\door\_func\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\peps\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\plug\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\roar\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\typing\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\vale\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\vale\_core\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\vale\_is\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\vale\_util\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_cave\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\code\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\code\snip\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\code\_pep\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\code\_pep\pep484\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\code\_pep\pep484585\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\_nonpep\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\_nonpep\api\
+	                  15	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\_pep\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\_pep\pep484\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\convert\_reduce\_pep\pep484585\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\error\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\error\_nonpep\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\error\_pep\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\error\_pep\pep484\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\error\_pep\pep484585\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\forward\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\forward\reference\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\logic\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\metadata\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\metadata\hint\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\pep\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_check\signature\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_conf\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_conf\decorplace\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\api\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\api\external\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\api\standard\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\claw\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\cls\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\code\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\code\pep\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\conf\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\error\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\func\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\hint\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\hint\sign\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\kind\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\os\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_data\typing\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_decor\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_decor\_nontype\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_decor\_nontype\_wrap\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_decor\_type\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_decor\_type\_pep\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\api\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\api\external\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\api\standard\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\ast\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\bear\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\cache\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\cache\map\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\cache\pool\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\cls\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\cls\pep\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\error\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\func\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\func\arg\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\func\pep\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\nonpep\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\nonpep\api\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\pep\
+	                  20	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\pep\proposal\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\pep\proposal\pep484\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\pep\proposal\pep484585\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\hint\pep\proposal\pep484585\generic\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\kind\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\kind\integer\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\kind\maplike\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\kind\sequence\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\kind\setlike\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\module\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\module\pep\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\os\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\path\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\py\
+	                  11	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\beartype\_util\text\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\guard_process\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\guard_process\api\
+	                  13	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\guard_process\core\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\jsonlines\
+	                  29	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\
+	                 117	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\collections\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\ctypes\
+	                  16	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\email\
+	                  16	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\importlib\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\importlib\metadata\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\importlib\resources\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\json\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\logging\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\os\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\PyQt5\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\PyQt6\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\PySide2\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\PySide6\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\shiboken6\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\Software\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\sys\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\zipfile\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.11\_typeshed\
+	                  97	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\collections\
+	                  16	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\email\
+	                  16	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\importlib\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\importlib\metadata\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\importlib\resources\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\json\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\logging\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\os\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\Software\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\Software\Lugwit_syncPlug\lugwit_insapp\trayapp\Lib\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\sys\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\zipfile\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\zipfile\_path\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\.mypy_cache\3.14\_typeshed\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\countRunTime\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\data\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\data\ins_location\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\docs\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\examples\
+	                  26	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\decorator\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\DingDing\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\exception_hook\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\generalLib\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\IO\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\IO\zipFile\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\lib2\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\lib2\toml\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\lib2\toml-0.10.2.dist-info\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\test_lprint\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\test_markdown_trace\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\test_pyside6_trace\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\test_simple_md\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\logs\test_trace_simple\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_compile\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_cusQtWgt\
+	                  12	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\icons\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\qt_json_view\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_cusQtWgt\cusTreeWgt\template\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_DataProcess\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_file\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_http\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_list\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_logger\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_MayaLib\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_MayaLib\GetInfoDirectRead\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_MayaLib\GetInfoPack\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_os\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_parse_args\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy2\
+	                  68	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy2\qtpy\
+	                  70	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy2\qtpy\tests\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy2\qtpy\tests\optional_deps\
+	                  13	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy2\qtpy1\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy3\
+	                  68	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy3\qtpy\
+	                  70	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy3\qtpy\tests\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_qtpy3\qtpy\tests\optional_deps\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_rightMenu\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_subprocess\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\l_winreg\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\MayaToUe\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\office\
+	                  28	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\office\xlrd\
+	                   9	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\
+	                  18	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\QTLib\
+	                  79	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\QTLib\images\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\QTLib\QSS\
+	                  94	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\QTLib\QSS\images\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\Lugwit_Module\l_src\UILib\QTLib\qt_decorator\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\orjson\
+	                  36	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\deprecated\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\experimental\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\plugin\
+	                  27	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\v1\
+	                  29	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic\_internal\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic-2.12.5.dist-info\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic-2.12.5.dist-info\licenses\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic_core\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic_core-2.41.5.dist-info\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pydantic_core-2.41.5.dist-info\licenses\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\
+	                  13	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\.github\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\.github\workflows\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\docs\
+	                  19	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\docs\source\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\example\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\example\json\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\example\src\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\img\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\
+	                  22	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\
+	                  13	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\attach_process\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\attach_process\linux_and_mac\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\html\
+	                  10	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\modules\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\modules\vcompressor\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\
+	                  11	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\v52.0-6b9586def\
+	                  39	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\src\viztracer\web_dist\v52.0-6b9586def\assets\
+	                  31	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\tests\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\tests\data\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\pytracemp\usualFunc_helper\viztracer\tests\modules\
+	                  24	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\conditional_widgets\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\conditional_widgets\houdini_dock_widget\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\config\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\debug\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\linux\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\mac\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\titlebar\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\utils\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\webengine\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\windows\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\_rc\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow\_rc\title_bar\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\titlebar\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\utils\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\windows\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\_rc\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\qframelesswindow_old\_rc\title_bar\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\smart_widget\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\smart_widget\log_filter_lib\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\test\
+	                   9	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\test\test_conditional_widgets\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\test\test_conditional_widgets\layout_config\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\test\test_qframelesswindow\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\qt_wgt_lib\test\test_smart_widget\
+	                   6	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\thread_safe\
+	                  25	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\tqdm\
+	                   9	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\tqdm\contrib\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\typing_extensions-4.15.0.dist-info\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\typing_extensions-4.15.0.dist-info\licenses\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\typing_inspection\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\typing_inspection-0.4.2.dist-info\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\@baselibs\typing_inspection-0.4.2.dist-info\licenses\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\bat\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\bat_template\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\cli\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\config\
+	                   0	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\dependence\
+	                   5	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\dependence\maya_dependence\
+	                  21	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\j_disc_backtomuse\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\j_disc_backtomuse\asset_backuptomuse\
+	                  31	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\messiah_aciton_to_muse\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\muse_helper\
+	                   1	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\muse_helper\config\
+	                   7	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\muse_helper\services\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\p4_parallel_upload\
+	                   3	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\p4_to_muse_new\
+	                   4	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\samba_to_muse\
+	                   8	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\test\
+	                   2	D:\TD_Depot\Wuzu_dev\anim_upload_muse_tool\src\anim_upload_muse_tool\thread_mod\
+
+------------------------------------------------------------------------------
+
+                  总数        复制        跳过       不匹配        失败        其他
+       目录:       437         0       437         0         0         0
+       文件:      2307         0      2307         0         0         0
+       字节:  161.46 m         0  161.46 m         0         0         0
+       时间:   0:00:08   0:00:00                       0:00:00   0:00:08
+   已结束: 2026年4月20日 16:53:42
+

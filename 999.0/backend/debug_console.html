@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Debug Console</title>
+    <style>
+        body { font-family: monospace; background: #1e1e1e; color: #d4d4d4; padding: 20px; }
+        .console-output { background: #000; color: #0f0; padding: 10px; margin: 10px 0; height: 400px; overflow-y: auto; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { border: 1px solid #444; padding: 10px; margin: 10px 0; min-height: 100px; }
+    </style>
+</head>
+<body>
+    <h1>Trace Tree View Debug Console</h1>
+    <div class="console-output" id="console-output"></div>
+    <div id="trace-tree-view-container"></div>
+    
+    <div class="lprint-trace-tree">
+        <div>├─ <module> [深度1 路径1 #1] [1.2279s] 🔥 (test.py:108)</div>
+        <div>├─ main_function [深度1 路径2 #2] [512.25ms] 🔥 → 55 (test.py:65)</div>
+        <div>│   └─ process_data [深度2 路径2-1 #3] [502.09ms] 🔥 → [1, 4, 9, 16, 25] (test.py:48)</div>
+        <div>│       └─ helper_function [×5次, 合计 502.09ms] [平均 100.42ms] 🔥 (test.py:28)</div>
+        <div>└─ secondary_function [深度1 路径3 #9] [713.03ms] 🔥 → result (test.py:40)</div>
+    </div>
+    
+    <script>
+        // 捕获所有console.log输出
+        const originalLog = console.log;
+        const outputDiv = document.getElementById('console-output');
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            const message = args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg) : String(arg)
+            ).join(' ');
+            outputDiv.innerHTML += message + '\n';
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        };
+        
+        // 加载trace_tree_view.js
+        const script = document.createElement('script');
+        script.src = '/static/js/trace_tree_view.js';
+        script.onload = function() {
+            console.log('=== trace_tree_view.js 加载完成 ===');
+            
+            // 调用buildTraceTreeView
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('调用 buildTraceTreeView()');
+                buildTraceTreeView();
+                console.log('buildTraceTreeView() 调用完成');
+            } else {
+                console.log('buildTraceTreeView 函数未找到');
+            }
+        };
+        script.onerror = function() {
+            console.log('trace_tree_view.js 加载失败');
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

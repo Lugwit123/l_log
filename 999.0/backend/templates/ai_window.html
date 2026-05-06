@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 AI 助手</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .window-header {
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            border-bottom: 1px solid #3c3c3c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .window-header h1 {
+            margin: 0;
+            font-size: 1.3em;
+            color: #1890ff;
+            flex: 1;
+        }
+        
+        .window-body {
+            flex: 1;
+            padding: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        
+        select, textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            border-radius: 6px;
+            color: #d4d4d4;
+            font-family: inherit;
+            font-size: 0.95em;
+        }
+        
+        select:focus, textarea:focus {
+            outline: none;
+            border-color: #1890ff;
+            box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 50px;
+        }
+        
+        button {
+            padding: 8px;
+            background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        button:hover:not(:disabled) {
+            background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(24, 144, 255, 0.4);
+        }
+        
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+        
+        .btn-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        .btn-loading::before {
+            content: '⏳';
+            display: inline-block;
+            animation: spin 2s linear infinite;
+        }
+        
+        .result {
+            padding: 12px;
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            border-radius: 6px;
+            display: none;
+            flex: 1;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+        }
+        
+        .result[style*="display: block"] {
+            display: flex !important;
+        }
+        
+        .result-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #3c3c3c;
+            flex-shrink: 0;
+        }
+        
+        .result-content {
+            color: #d4d4d4;
+            line-height: 1.8;
+            word-wrap: break-word;
+            font-size: 1.05em;
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 8px;
+        }
+        
+        .result-content::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        .result-content::-webkit-scrollbar-track {
+            background: #1e1e1e;
+            border-radius: 5px;
+        }
+        
+        .result-content::-webkit-scrollbar-thumb {
+            background: #3c3c3c;
+            border-radius: 5px;
+        }
+        
+        .result-content::-webkit-scrollbar-thumb:hover {
+            background: #1890ff;
+        }
+        
+        .result-content h1,
+        .result-content h2,
+        .result-content h3 {
+            color: #1890ff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .result-content h1 { font-size: 1.5em; }
+        .result-content h2 { font-size: 1.3em; }
+        .result-content h3 { font-size: 1.1em; }
+        
+        .result-content code {
+            background: #2d2d2d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            color: #52c41a;
+        }
+        
+        .result-content pre {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 10px 0;
+            border-left: 3px solid #1890ff;
+        }
+        
+        .result-content pre code {
+            background: transparent;
+            padding: 0;
+            color: #d4d4d4;
+        }
+        
+        .result-content ul,
+        .result-content ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        
+        .result-content li {
+            margin: 5px 0;
+        }
+        
+        .result-content strong {
+            color: #1890ff;
+            font-weight: 600;
+        }
+        
+        .result-content em {
+            color: #52c41a;
+            font-style: italic;
+        }
+        
+        .copy-btn {
+            padding: 6px 12px;
+            background: transparent;
+            border: 1px solid #3c3c3c;
+            color: #999;
+            font-size: 0.9em;
+        }
+        
+        .copy-btn:hover {
+            background: #3c3c3c;
+            color: #fff;
+            transform: none;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="window-header">
+        <h1><span>🤖</span> <span id="window-title">AI 助手</span></h1>
+    </div>
+    
+    <div class="window-body">
+        <div class="input-section">
+            <select id="preset-select">
+                <option value="">💡 选择预设问题或输入自定义问题</option>
+            </select>
+            
+            <textarea id="question-input" placeholder="在此输入您的问题...（Ctrl+Enter提问）" rows="2"></textarea>
+            
+            <button id="ask-btn">
+                <span class="btn-text">🚀 提问</span>
+                <span class="btn-loading" style="display: none;">思考中...</span>
+            </button>
+        </div>
+        
+        <div id="result" class="result">
+            <div class="result-header">
+                <strong>AI 回答：</strong>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <span id="token-stats" style="font-size: 0.85em; color: #999;"></span>
+                    <button id="copy-btn" class="copy-btn">📋 复制</button>
+                </div>
+            </div>
+            <div id="result-content" class="result-content"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Markdown渲染函数
+        function renderMarkdown(text) {
+            // 使用marked.js渲染Markdown
+            if (typeof marked !== 'undefined') {
+                // 配置marked选项
+                marked.setOptions({
+                    breaks: true,  // 支持GFM换行
+                    gfm: true,     // 启用GitHub风格Markdown
+                    headerIds: false,  // 不生成header id
+                    mangle: false  // 不混淆邮箱地址
+                });
+                
+                return marked.parse(text);
+            } else {
+                // 降级：如果marked未加载，返回纯文本
+                return text.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\n/g, '<br>');
+            }
+        }
+        
+        // 预设问题配置
+        const presetQuestions = {
+            code: [
+                "这段代码的功能是什么？",
+                "有什么潜在的bug或性能问题吗？",
+                "如何优化这段代码？",
+                "这段代码的时间复杂度是多少？",
+                "请解释关键变量和逻辑"
+            ],
+            call_tree: [
+                "找出这个调用链中的性能瓶颈",
+                "哪些函数调用最频繁？",
+                "有异常的调用模式吗？",
+                "如何优化这个调用流程？",
+                "解释这个调用链的执行流程"
+            ],
+            trace_log: [
+                "总结这段日志的关键信息",
+                "有什么异常或错误吗？",
+                "执行流程是什么？",
+                "性能瓶颈在哪里？"
+            ]
+        };
+        
+        // 从localStorage获取上下文
+        const contextData = JSON.parse(localStorage.getItem('ai-assistant-context') || '{}');
+        
+        // 更新窗口标题显示当前分析内容
+        const windowTitle = document.getElementById('window-title');
+        if (windowTitle && contextData.type) {
+            let title = 'AI 助手';
+            if (contextData.type === 'code') {
+                // 从内容中提取函数名
+                const funcMatch = contextData.content.match(/def\s+(\w+)\s*\(/);
+                const funcName = funcMatch ? funcMatch[1] : '代码';
+                title = `分析函数: ${funcName}`;
+            } else if (contextData.type === 'call_tree') {
+                // 从调用链中提取主函数名
+                const lines = contextData.content.split('\n');
+                const firstCall = lines.find(line => line.includes('├─') || line.includes('└─'));
+                if (firstCall) {
+                    const funcMatch = firstCall.match(/[├└]─\s*(\w+)/);
+                    const funcName = funcMatch ? funcMatch[1] : '调用链';
+                    title = `分析调用链: ${funcName}`;
+                } else {
+                    title = '分析调用链';
+                }
+            } else if (contextData.type === 'trace_log') {
+                title = '分析追踪日志';
+            }
+            windowTitle.textContent = title;
+            document.title = title; // 同时更新浏览器标签页标题
+        }
+        
+        // 填充预设问题
+        const presetSelect = document.getElementById('preset-select');
+        const questions = presetQuestions[contextData.type] || [];
+        questions.forEach(q => {
+            const option = document.createElement('option');
+            option.value = q;
+            option.textContent = q;
+            presetSelect.appendChild(option);
+        });
+        
+        // 下拉框选择事件
+        presetSelect.addEventListener('change', (e) => {
+            if (e.target.value) {
+                document.getElementById('question-input').value = e.target.value;
+                e.target.value = '';
+            }
+        });
+        
+        // 提问按钮
+        document.getElementById('ask-btn').addEventListener('click', async () => {
+            const questionInput = document.getElementById('question-input');
+            const question = questionInput.value.trim();
+                if (!question) {
+                    alert('请输入问题');
+                    return;
+                }
+                
+                const askBtn = document.getElementById('ask-btn');
+                const resultDiv = document.getElementById('result');
+                const resultContent = document.getElementById('result-content');
+                const tokenStats = document.getElementById('token-stats');
+                
+                // 显示加载状态
+                askBtn.disabled = true;
+                askBtn.querySelector('.btn-text').style.display = 'none';
+                askBtn.querySelector('.btn-loading').style.display = 'inline';
+                
+                resultDiv.style.display = 'flex';
+                resultContent.textContent = '';
+                if (tokenStats) tokenStats.textContent = '';
+                
+                let fullText = '';
+                let usageData = null;
+                
+                try {
+                    const response = await fetch('/api/ai/analyze-stream', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            content: contextData.content,
+                            question: question,
+                            type: contextData.type
+                        })
+                    });
+                    
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder();
+                    
+                    while (true) {
+                        const {done, value} = await reader.read();
+                        if (done) break;
+                        
+                        const chunk = decoder.decode(value);
+                        const lines = chunk.split('\n');
+                        
+                        for (const line of lines) {
+                            if (line.startsWith('data: ')) {
+                                const data = line.slice(6);
+                                if (data === '[DONE]') break;
+                                
+                                try {
+                                    const parsed = JSON.parse(data);
+                                    
+                                    if (parsed.type === 'content') {
+                                        fullText += parsed.data;
+                                        // 实时渲染Markdown
+                                        resultContent.innerHTML = renderMarkdown(fullText);
+                                        // 自动滚动到底部
+                                        resultContent.scrollTop = resultContent.scrollHeight;
+                                    } else if (parsed.type === 'usage') {
+                                        usageData = parsed.data;
+                                    } else if (parsed.type === 'error') {
+                                        resultContent.textContent = `错误: ${parsed.data}`;
+                                    }
+                                } catch (e) {
+                                    // 忽略JSON解析错误
+                                }
+                            }
+                        }
+                    }
+                    
+                    // 显示token统计信息
+                    if (tokenStats && usageData) {
+                        const promptTokens = usageData.prompt_tokens || 0;
+                        const completionTokens = usageData.completion_tokens || 0;
+                        const totalTokens = usageData.total_tokens || 0;
+                        
+                        // DeepSeek定价：输入¥0.001/1K，输出¥0.002/1K
+                        const promptCost = (promptTokens / 1000) * 0.001;
+                        const completionCost = (completionTokens / 1000) * 0.002;
+                        const totalCost = promptCost + completionCost;
+                        
+                        // 显示格式：输入/输出分开显示
+                        tokenStats.textContent = `📊 输入:${promptTokens} 输出:${completionTokens} (¥${totalCost.toFixed(4)})`;
+                        tokenStats.title = `【Token统计】\n━━━━━━━━━━━━━━━━\n输入: ${promptTokens} tokens\n  单价: ¥0.001/1K tokens\n  费用: ¥${promptCost.toFixed(4)}\n\n输出: ${completionTokens} tokens\n  单价: ¥0.002/1K tokens\n  费用: ¥${completionCost.toFixed(4)}\n━━━━━━━━━━━━━━━━\n总计: ${totalTokens} tokens\n总费用: ¥${totalCost.toFixed(4)}`;
+                    }
+                } catch (error) {
+                    resultContent.textContent = `网络错误: ${error.message}`;
+                } finally {
+                    askBtn.disabled = false;
+                    askBtn.querySelector('.btn-text').style.display = 'inline';
+                    askBtn.querySelector('.btn-loading').style.display = 'none';
+                }
+        });
+        
+        // 复制按钮
+        document.getElementById('copy-btn').addEventListener('click', () => {
+            const content = document.getElementById('result-content').textContent;
+            navigator.clipboard.writeText(content).then(() => {
+                const btn = document.getElementById('copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✓ 已复制';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        });
+        
+        // Ctrl+Enter快捷键提问
+        document.getElementById('question-input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                document.getElementById('ask-btn').click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+/* || LOG VIEWER COMPONENTS */
+.lprint-log-entry {
+    margin: 2px 0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+}
+
+.lprint-log-time {
+    color: #888;
+    margin-right: 8px;
+}
+
+.lprint-log-body {
+    color: #333;
+}
+
+/* Log level colors */
+.log-error {
+    color: #ff4d4f;
+    font-weight: bold;
+}
+
+.log-warning {
+    color: #faad14;
+}
+
+.log-info {
+    color: #1890ff;
+}
+
+.log-debug {
+    color: #52c41a;
+}
+
+/* Code blocks */
+pre {
+    background: #f6f8fa;
+    padding: 12px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 13px;
+}

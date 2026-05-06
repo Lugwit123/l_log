@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日志查看器 v2.0</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <link rel="stylesheet" href="/static/css/menubar.css">
+    <link rel="stylesheet" href="/static/css/toolbar.css">
+    <link rel="stylesheet" href="/static/css/file-list.css">
+    <link rel="stylesheet" href="/static/css/tabs.css?v=3">
+    <link rel="stylesheet" href="/static/css/log-viewer.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css?v=14">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/modal.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/mobile.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/toast.css">
+    <link rel="stylesheet" href="/static/css/scroll-buttons.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+</head>
+<body>
+    <!-- 菜单栏 -->
+    <div class="menubar">
+        <div class="menu-item">
+            <span class="menu-label">文件(F)</span>
+            <div class="menu-dropdown">
+                <div class="menu-option" data-action="open">打开日志文件... <span class="shortcut">Ctrl+O</span></div>
+                <div class="menu-option" data-action="export">导出当前日志... <span class="shortcut">Ctrl+E</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="clear-cache">清理缓存</div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="exit">退出 <span class="shortcut">Alt+F4</span></div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="menu-label">编辑(E)</span>
+            <div class="menu-dropdown">
+                <div class="menu-option" data-action="search">搜索... <span class="shortcut">Ctrl+F</span></div>
+                <div class="menu-option" data-action="find-next">查找下一个 <span class="shortcut">F3</span></div>
+                <div class="menu-option" data-action="find-prev">查找上一个 <span class="shortcut">Shift+F3</span></div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="menu-label">视图(V)</span>
+            <div class="menu-dropdown">
+                <div class="menu-option" data-action="toggle-sidebar">显示/隐藏侧边栏 <span class="shortcut">Ctrl+B</span></div>
+                <div class="menu-option" data-action="toggle-toolbar">显示/隐藏工具栏</div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="refresh">刷新 <span class="shortcut">F5</span></div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="menu-label">工具(T)</span>
+            <div class="menu-dropdown">
+                <div class="menu-option" data-action="api-docs">API文档 (Swagger UI)</div>
+                <div class="menu-divider"></div>
+                <div class="menu-option submenu-parent">
+                    <span>代码高亮主题 ▶</span>
+                    <div class="menu-submenu">
+                        <div class="menu-option" data-action="theme-vscode">VS Code Dark+</div>
+                        <div class="menu-option" data-action="theme-onedark">One Dark</div>
+                        <div class="menu-option" data-action="theme-dracula">Dracula</div>
+                        <div class="menu-option" data-action="theme-monokai">Monokai</div>
+                        <div class="menu-option" data-action="theme-nord">Nord</div>
+                    </div>
+                </div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" id="toggle-ai-popup-mode" data-action="toggle-ai-popup">
+                    <span id="ai-popup-mode-text">AI助手：嵌入模式</span>
+                </div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="settings">设置...</div>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="menu-label">帮助(H)</span>
+            <div class="menu-dropdown">
+                <div class="menu-option" data-action="help">📚 使用说明 <span class="shortcut">F1</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="docs">📖 API文档</div>
+                <div class="menu-option" data-action="redoc">📄 ReDoc</div>
+                <div class="menu-divider"></div>
+                <div class="menu-option" data-action="about">关于</div>
+            </div>
+        </div>
+        <div class="menu-path" style="flex: 1; margin-left: 20px; display: flex; align-items: center; overflow: hidden;">
+            <span style="color: #999; font-size: 0.9em; margin-right: 8px;">📁</span>
+            <span id="current-log-path" style="color: #d4d4d4; font-size: 0.9em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="">未选择日志</span>
+        </div>
+    </div>
+
+    <!-- 工具栏 -->
+    <div class="toolbar">
+        <div class="toolbar-section">
+            <label>搜索:</label>
+            <input type="text" id="search-input" placeholder="输入搜索内容... (Ctrl+F)" class="search-input">
+            <button class="toolbar-btn" id="search-prev" title="上一个 (Shift+F3)">↑</button>
+            <button class="toolbar-btn" id="search-next" title="下一个 (F3)">↓</button>
+            <span id="search-match-hint" class="search-match-hint" aria-live="polite"></span>
+        </div>
+        <div class="toolbar-section">
+            <label>过滤:</label>
+            <input type="checkbox" id="filter-regex">
+            <label for="filter-regex">正则表达式</label>
+            <input type="checkbox" id="filter-case">
+            <label for="filter-case">大小写敏感</label>
+        </div>
+        <div class="toolbar-section">
+            <label for="font-size-slider">字体:</label>
+            <input type="range" id="font-size-slider" min="10" max="36" value="15" step="1">
+            <span id="font-size-value">15px</span>
+        </div>
+        <div class="toolbar-section toolbar-actions">
+            <button class="toolbar-btn" id="view-switch-btn" title="切换到简单视图">🔀 视图</button>
+            <button class="toolbar-btn" id="md-html-toggle-btn" title="切换Markdown源码/HTML渲染">📝 Markdown</button>
+            <button class="toolbar-btn" id="refresh-log-btn" title="刷新当前日志">🔄 刷新</button>
+            <button class="toolbar-btn" id="export-btn">导出</button>
+            <button class="toolbar-btn" id="settings-btn">⚙️</button>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="main-container">
+        <!-- 展开侧边栏按钮（仅在收缩时显示） -->
+        <button class="sidebar-expand-btn" id="sidebar-expand-btn" title="展开文件列表 (Ctrl+B)">▶</button>
+        
+        <!-- 左侧文件列表 -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h3>文件列表</h3>
+                <button class="sidebar-toggle" id="sidebar-toggle">◀</button>
+            </div>
+            <div class="sidebar-toolbar">
+                <button class="sidebar-btn" id="refresh-files" title="刷新">🔄</button>
+                <button class="sidebar-btn" id="sort-files" title="排序">⇅</button>
+            </div>
+            <div class="file-list" id="file-list">
+                <div class="loading">加载中...</div>
+            </div>
+        </div>
+
+        <!-- 调整分隔条 -->
+        <div class="resizer" id="resizer"></div>
+
+        <!-- 右侧内容区 -->
+        <div class="content-area">
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-new" title="上传新日志">+</button>
+                </div>
+                <div class="tabs-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 日志列表弹窗 -->
+    <div id="log-list-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>日志文件列表</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="log-list-container">
+                    <div class="loading">加载中...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="file" id="file-input" accept=".md,.log,.txt" style="display:none">
+    
+    <!-- 悬浮滚动按钮 -->
+    <div id="scroll-buttons" class="scroll-buttons">
+        <button id="scroll-to-top" class="scroll-btn scroll-btn-top" title="回到顶部">
+            <span>▲</span>
+        </button>
+        <button id="scroll-to-bottom" class="scroll-btn scroll-btn-bottom" title="回到底部">
+            <span>▼</span>
+        </button>
+    </div>
+    
+    <script src="/static/js/frontend_logger.js?v=1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script src="/static/js/toast.js"></script>
+    <script src="/static/js/context-menu.js?v=2"></script>
+    <script src="/static/js/menubar.js"></script>
+    <script src="/static/js/toolbar.js?v=16"></script>
+    <script src="/static/js/file-list.js?v=7"></script>
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/tabs.js?v=24"></script>
+    <script src="/static/js/log-viewer.js?v=3"></script>
+    <script src="/static/js/help-modal.js?v=1"></script>
+    <script src="/static/js/ai-assistant.js?v=18"></script>
+    <script src="/static/js/trace_tree_view.js?v=30"></script>
+    <script src="/static/js/trace-data-parser.js"></script>
+    <script src="/static/js/code-block-ai.js?v=2"></script>
+    <script src="/static/js/function_call_highlight.js?v=2"></script>
+    <script src="/static/js/expand_links.js?v=1"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/scroll-buttons.js"></script>
+    <script src="/static/js/app.js"></script>
+    
+    <script>
+        // 只在沒有已保存標籤時才自動加載演示日誌
+        {% if demo_log_id %}
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // 檢查 localStorage 是否已有保存的標籤
+                try {
+                    const saved = localStorage.getItem('openTabs');
+                    const hasSavedTabs = saved && JSON.parse(saved).tabs && JSON.parse(saved).tabs.length > 0;
+                    if (!hasSavedTabs && tabManager) {
+                        tabManager.loadLog('{{ demo_log_id }}', 'test_trace_simple.md');
+                    }
+                } catch(e) {
+                    if (tabManager) {
+                        tabManager.loadLog('{{ demo_log_id }}', 'test_trace_simple.md');
+                    }
+                }
+            }, 200);
+        });
+        {% endif %}
+    </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: LogList/test_trace_simple/test_trace_simple.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+        
+        /* 完整的 lprint-trace 样式 */
+        .lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+        .lprint-trace-func { margin:6px 0 8px 0; }
+        .lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+          background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+        .lprint-trace-code-pre-wrap { display:flex; align-items:stretch; margin:0 0 4px 0; background:transparent; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-line-nums { flex-shrink:0; width:3.2em; min-width:3.2em; margin:0; padding:0 4px 0 0;
+          font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.35; color:#6a6a6a; background:transparent;
+          border:none; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-pre-inner { flex:1; min-width:0; overflow:auto; }
+        .lprint-trace-code-pre-wrap .lprint-trace-pre { margin:0; padding:0; flex:1; min-width:0; background:transparent; border:none; white-space:pre; }
+        .lprint-trace-call { color:#9cdcfe; margin:4px 0 2px 0; font-size:11px; font-family:monospace; 
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-func-code { color: #4ec9b0; font-weight: bold; margin: 8px 0 4px 0; font-size: 12px; font-family: monospace;
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-divider { color: #888; margin: 10px 0; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { margin: 15px 0; }
+        
+        /* USAGE_GUIDE 代码块样式 */
+        [data-component="usage-guide"] pre, [data-component="usage-guide"] code, [data-component="usage-guide"] pre code {
+            font-size: 15px !important; line-height: 1.6 !important; font-family: "Consolas", "Monaco", monospace !important; }
+        div[data-component="usage-guide"] { font-size: 15px !important; }
+        div[data-component="usage-guide"] * { font-size: inherit !important; }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> LogList/test_trace_simple/test_trace_simple.md</p>
+            <p><strong>Log ID:</strong> LogList/test_trace_simple/test_trace_simple</p>
+            <p><strong>生成时间:</strong> 2026-04-13 16:18:39</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            
+            <div class="lprint-trace-metadata-panel" data-component="lprint-trace-meta">
+<h3>追踪日志元数据</h3>
+<ul>
+<li><strong>生成时间</strong>：2026-04-13 16:18:04</li>
+<li><strong>pytracemp 版本</strong>：<code>0.1.0</code></li>
+<li><strong>trace_line_locals</strong>：否 — 轻量：仅 <strong>call</strong> 形参与 <strong>return</strong>（通常无 <strong>line</strong>）</li>
+<li><strong>总事件数</strong>：<strong>44</strong>（本段 <code>trace_data</code> 列表长度）。分项 — <strong>调用</strong> 21（<code>call</code> 与 <code>loop_limit</code> 之和）、<strong>返回</strong> 23（<code>return</code>）、<strong>异常</strong> 0（<code>exception</code>）、<strong>line</strong> 0（逐行 locals 快照；当前为 0（多为 <code>trace_line_locals=False</code>））。</li>
+<li><strong>总耗时</strong>：1.280 秒（<code>trace_start</code> → <code>trace_stop</code> 墙钟，含被追踪代码与 <code>sys.settrace</code> 等开销）</li>
+<li><strong>日志路径</strong>：<code>D:\Temp\Log\test_trace_simple\test_trace_simple.md</code></li>
+</ul>
+</div>
+
+<div class="lprint-forward-trace">
+<div class="lprint-forward-trace">
+<div class="lprint-cmd-info" style="background:#2d3748;color:#e2e8f0;padding:8px 12px;margin:10px 0;border-radius:4px;font-family:monospace;font-size:12px;border-left:4px solid #4299e1;">
+<div style="font-weight:bold;color:#4299e1;margin-bottom:4px;">🔧 执行命令</div>
+<div>D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\python_env\lugwit_python.exe d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</div>
+</div>
+<div id="trace-tree-view-container" style="margin:15px 0;"></div>
+<div class="lprint-trace-tree" style="display:none;">
+<div>└─ &lt;module&gt; [深度1 路径1 #1] [1.2527s] 🔥 → &#x27;96&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:21)</div>
+<div>    ├─ main_function [深度2 路径1-1 #2] [517.59ms] 🔥 → &#x27;55&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:69)</div>
+<div>    │   └─ process_data [深度3 路径1-1-1 #3] [502.66ms] 🔥 → &#x27;[1, 4, 9, 16, 25]&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:52)</div>
+<div>    │       └─ helper_function [深度4 路径1-1-1-1 #4] [×5次, 合计 502.66ms] [平均 100.53ms] → &#x27;1&#x27; (首次) 🔥 (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>    └─ secondary_function [深度2 路径1-2 #9] [714.31ms] 🔥 → &#x27;81&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:87)</div>
+<div>        ├─ batch_process [深度3 路径1-2-1 #10] [510.14ms] 🔥 → &#x27;[1, 4, 9, 16, 25]&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:60)</div>
+<div>        │   ├─ process_data [深度4 路径1-2-1-1 #11] [200.92ms] 🔥 → &#x27;[1, 4]&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:52)</div>
+<div>        │   │   └─ helper_function [深度5 路径1-2-1-1-1 #12] [100.52ms] ⚡ → &#x27;1&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>        │   │   └─ helper_function [深度5 路径1-2-1-1-2 #13] [100.39ms] ⚡ → &#x27;4&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>        │   └─ process_data [深度4 路径1-2-1-2 #14] [302.30ms] 🔥 → &#x27;[9, 16, 25]&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:52)</div>
+<div>        │       └─ helper_function [深度5 路径1-2-1-2-1 #15] [100.42ms] ⚡ → &#x27;9&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>        │       └─ helper_function [深度5 路径1-2-1-2-2 #16] [100.52ms] ⚡ → &#x27;16&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>        │       └─ helper_function [深度5 路径1-2-1-2-3 #17] [100.35ms] ⚡ → &#x27;25&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:32)</div>
+<div>        ├─ advanced_process [深度3 路径1-2-2 #18] [100.62ms] ⚡ → &#x27;9&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:44)</div>
+<div>        └─ calculate_factorial [深度3 路径1-2-3 #19] [~0μs] → &#x27;6&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:38)</div>
+<div>            └─ calculate_factorial [深度4 路径1-2-3-1 #20] [~0μs] → &#x27;2&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:38)</div>
+<div>                └─ calculate_factorial [深度5 路径1-2-3-1-1 #21] [~0μs] → &#x27;1&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py:38)</div>
+</div>
+<p class="lprint-trace-divider" style="color:#888;margin:10px 0;">─── 详细追踪 ───</p>
+<p id="call-1" class="lprint-trace-call"># >>深度1 路径1 #1 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#21" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:21 in &lt;module&gt;() ⏱️[1.2803s] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">21</span><code class="language-python">lprint.trace_start(trace_depth=6, clear_log=True, auto_result=True,trace_line_locals=False)  # 💡 sys=&lt;module &#x27;sys&#x27; (built-in)&gt;, os=&lt;module &#x27;os&#x27; (frozen)&gt;, time=&lt;module &#x27;time&#x27; (built-in)&gt;, lprint_info=True, lprint=&lt;pytracemp.usualFunc.LPrint object at 0x0000018DC438A3D0&gt;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">22</span><code class="language-python"># 默认 trace_markdown_mode=True 时，追踪正文只写入 .md（避免控制台刷屏）；</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">23</span><code class="language-python"># 本脚本要在终端看到完整追踪树，需关闭 Markdown 专载并配合 trace_result(console_output=True)。</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">24</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">25</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">26</span><code class="language-python"># ===== 配置实时写入 =====</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">27</span><code class="language-python"># 设置每隔1秒自动将追踪结果写入文件（默认3秒）</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">28</span><code class="language-python"># 设置为0则禁用实时写入，只在 trace_result() 时写入</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">29</span><code class="language-python">lprint.trace_flush_interval = 1  # 每1秒刷新一次</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">30</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">31</span><code class="language-python"># ===== 测试函数 =====</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">37</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">38</span><code class="language-python">def calculate_factorial(n):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">39</span><code class="language-python">    &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">40</span><code class="language-python">    if n &lt;= 1:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">41</span><code class="language-python">        return 1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">42</span><code class="language-python">    return n * calculate_factorial(n - 1)  # → 调用 calculate_factorial()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">43</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">44</span><code class="language-python">def advanced_process(value):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">45</span><code class="language-python">    &quot;&quot;&quot;高级处理：包含多个子调用&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">46</span><code class="language-python">    # 调用多个不同的辅助函数</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">47</span><code class="language-python">    square = helper_function(value)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">48</span><code class="language-python">    factorial = calculate_factorial(value)  # → 调用 calculate_factorial()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">49</span><code class="language-python">    cube = helper_function(square)  # 嵌套调用</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">50</span><code class="language-python">    return square + factorial + cube</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">51</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">52</span><code class="language-python">def process_data(data):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">53</span><code class="language-python">    &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">54</span><code class="language-python">    results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">55</span><code class="language-python">    for item in data:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">56</span><code class="language-python">        square = helper_function(item)  # → 调用 helper_function()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">57</span><code class="language-python">        results.append(square)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">58</span><code class="language-python">    return results</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">59</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">60</span><code class="language-python">def batch_process(batches):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">    &quot;&quot;&quot;批量处理：处理多个批次&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">62</span><code class="language-python">    all_results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">63</span><code class="language-python">    for i, batch in enumerate(batches):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        lprint(&quot;处理批次 {}&quot;, i + 1)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">65</span><code class="language-python">        batch_results = process_data(batch)  # → 调用 process_data()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">66</span><code class="language-python">        all_results.extend(batch_results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">    return all_results</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">68</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">69</span><code class="language-python">def main_function():</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">70</span><code class="language-python">    &quot;&quot;&quot;主函数：手动控制追踪&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">71</span><code class="language-python">    lprint(&quot;开始执行主函数&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">72</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">73</span><code class="language-python">    # 测试数据</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">74</span><code class="language-python">    numbers = [1, 2, 3, 4, 5]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">75</span><code class="language-python">    lprint(&quot;输入数据: {}&quot;, numbers)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">76</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">77</span><code class="language-python">    # 调用处理函数</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">78</span><code class="language-python">    results = process_data(numbers)  # → 调用 process_data()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">79</span><code class="language-python">    lprint(&quot;处理结果: {}&quot;, results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">80</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">81</span><code class="language-python">    # 计算总和</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">82</span><code class="language-python">    total = sum(results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">83</span><code class="language-python">    lprint(&quot;总和: {}&quot;, total)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">84</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">85</span><code class="language-python">    return total</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">86</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">87</span><code class="language-python">def secondary_function():</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">88</span><code class="language-python">    &quot;&quot;&quot;第二个主函数：创建第2个根调用&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">89</span><code class="language-python">    lprint(&quot;执行第二个主函数&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">90</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">91</span><code class="language-python">    # 多批次处理</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">92</span><code class="language-python">    batches = [[1, 2], [3, 4, 5]]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">93</span><code class="language-python">    results = batch_process(batches)  # → 调用 batch_process()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">94</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">95</span><code class="language-python">    # 高级处理</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">96</span><code class="language-python">    advanced_result = advanced_process(3)  # → 调用 advanced_process()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">97</span><code class="language-python">    lprint(&quot;高级处理结果: {}&quot;, advanced_result)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">98</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">99</span><code class="language-python">    # 测试长变量</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">100</span><code class="language-python">    a = [1, 2, 3, 4, 5]*10</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">101</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">102</span><code class="language-python">    return len(results) + advanced_result,a</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">103</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">104</span><code class="language-python"># ===== 运行测试 =====</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">105</span><code class="language-python">if __name__ == &quot;__main__&quot;:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">106</span><code class="language-python">    lprint(&quot;=&quot; * 50)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">107</span><code class="language-python">    lprint(&quot;# 代码跟踪测试 - 手动控制方式&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">108</span><code class="language-python">    lprint(&quot;&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">109</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">110</span><code class="language-python">    # 1. 开始追踪</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">111</span><code class="language-python">    lprint(&quot;开始追踪...&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">112</span><code class="language-python">    # auto_result=False：不在 trace_stop 时自动落盘/打印，只在下方 trace_result() 结束时提示一次</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">113</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">114</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">115</span><code class="language-python">    # 2. 执行需要追踪的代码（调用两个主函数）</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">116</span><code class="language-python">    result1 = main_function()  # → 第1个根调用（路径1-x-y）  # → 调用 main_function()  # 💡 result1=&#x27;55&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">117</span><code class="language-python">    lprint(&quot;&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">118</span><code class="language-python">    result2 = secondary_function()  # → 第2个根调用（路径2-x-y）  # → 调用 secondary_function()  # 💡 [[EXPAND:var_expand_2491246852784_136:变量·&#x27;(101, [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, …·共92字符·点击展开]]</code></pre><div class="lprint-trace-expand-container" id="var_expand_2491246852784_136" style="display:none;"><div class="lprint-trace-expand-header">💡 变量 result2=str (result2), 92 字符</div><pre class="lprint-trace-return-pre">&#x27;(101, [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5... len=2)&#x27;</pre></div><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">119</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">120</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">121</span><code class="language-python">    lprint(&quot;追踪已停止&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">122</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">123</span><code class="language-python">    # 4. 显示追踪结果（会自动写入日志文件）</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">124</span><code class="language-python">    lprint(&quot;&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">125</span><code class="language-python">    lprint(&quot;## 追踪结果&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">126</span><code class="language-python">    # console_output=True：在控制台打印追踪 Markdown；默认 False 仅写文件并提示路径</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">127</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">128</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">129</span><code class="language-python">    lprint(&quot;&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">130</span><code class="language-python">    lprint(&quot;**第一个结果**: {}&quot;, result1)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">131</span><code class="language-python">    lprint(&quot;**第二个结果**: {}&quot;, result2)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">132</span><code class="language-python">    # lprint(&quot;**总结果**: {}&quot;, result1 + result2)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">133</span><code class="language-python">    lprint(&quot;=&quot; * 50)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">134</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">135</span><code class="language-python">    # 日志文件会自动保存到: logs/test_trace_simple.md</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">136</span><code class="language-python">    print(&quot;\n追踪日志已保存，请查看生成的 Markdown 文件&quot;)  # 返回值 (第136行) &#x27;None&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-2" class="lprint-trace-call"># >>深度2 路径1-1 #2 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#69" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:69 in main_function() ← :116 ⏱️[517.59ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">69</span><code class="language-python">def main_function():</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">70</span><code class="language-python">    &quot;&quot;&quot;主函数：手动控制追踪&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">71</span><code class="language-python">    lprint(&quot;开始执行主函数&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">72</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">73</span><code class="language-python">    # 测试数据</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">74</span><code class="language-python">    numbers = [1, 2, 3, 4, 5]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">75</span><code class="language-python">    lprint(&quot;输入数据: {}&quot;, numbers)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">76</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">77</span><code class="language-python">    # 调用处理函数</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">78</span><code class="language-python">    results = process_data(numbers)  # → 调用 process_data()  # 💡 results=&#x27;[1, 4, 9, 16, 25]&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">79</span><code class="language-python">    lprint(&quot;处理结果: {}&quot;, results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">80</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">81</span><code class="language-python">    # 计算总和</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">82</span><code class="language-python">    total = sum(results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">83</span><code class="language-python">    lprint(&quot;总和: {}&quot;, total)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">84</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">85</span><code class="language-python">    return total  # 返回值 (第85行) &#x27;55&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-3" class="lprint-trace-call"># >>深度3 路径1-1-1 #3 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#52" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:52 in process_data() ← :78 ⏱️[502.66ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">52</span><code class="language-python">def process_data(data):  # 💡 data=[1, 2, 3, 4, 5]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">53</span><code class="language-python">    &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">54</span><code class="language-python">    results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">55</span><code class="language-python">    for item in data:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">56</span><code class="language-python">        square = helper_function(item)  # → 调用 helper_function()  # 💡 square=&#x27;25&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">57</span><code class="language-python">        results.append(square)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">58</span><code class="language-python">    return results  # 返回值 (第58行) &#x27;[1, 4, 9, 16, 25]&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-4" class="lprint-trace-call"># >>深度4 路径1-1-1-1 #4 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.94ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;1&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-5" class="lprint-trace-call"># >>深度4 路径1-1-1-2 #5 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.46ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=2</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;4&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-6" class="lprint-trace-call"># >>深度4 路径1-1-1-3 #6 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.39ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;9&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-7" class="lprint-trace-call"># >>深度4 路径1-1-1-4 #7 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.61ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=4</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;16&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-8" class="lprint-trace-call"># >>深度4 路径1-1-1-5 #8 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.26ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=5</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;25&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-9" class="lprint-trace-call"># >>深度2 路径1-2 #9 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#87" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:87 in secondary_function() ← :118 ⏱️[717.31ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">87</span><code class="language-python">def secondary_function():</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">88</span><code class="language-python">    &quot;&quot;&quot;第二个主函数：创建第2个根调用&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">89</span><code class="language-python">    lprint(&quot;执行第二个主函数&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">90</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">91</span><code class="language-python">    # 多批次处理</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">92</span><code class="language-python">    batches = [[1, 2], [3, 4, 5]]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">93</span><code class="language-python">    results = batch_process(batches)  # → 调用 batch_process()  # 💡 results=&#x27;[1, 4, 9, 16, 25]&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">94</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">95</span><code class="language-python">    # 高级处理</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">96</span><code class="language-python">    advanced_result = advanced_process(3)  # → 调用 advanced_process()  # 💡 advanced_result=&#x27;96&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">97</span><code class="language-python">    lprint(&quot;高级处理结果: {}&quot;, advanced_result)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">98</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">99</span><code class="language-python">    # 测试长变量</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">100</span><code class="language-python">    a = [1, 2, 3, 4, 5]*10</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">101</span><code class="language-python">    </code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">102</span><code class="language-python">    return len(results) + advanced_result,a  # 返回值 (第102行) &#x27;(101, [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5... len=2)&#x27;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">103</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">104</span><code class="language-python"># ===== 运行测试 =====</code></pre></div>
+</div>
+</div>
+<p id="call-10" class="lprint-trace-call"># >>深度3 路径1-2-1 #10 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#60" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:60 in batch_process() ← :93 ⏱️[510.14ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">60</span><code class="language-python">def batch_process(batches):  # 💡 batches=[[1, 2], [3, 4, 5]]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">    &quot;&quot;&quot;批量处理：处理多个批次&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">62</span><code class="language-python">    all_results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">63</span><code class="language-python">    for i, batch in enumerate(batches):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        lprint(&quot;处理批次 {}&quot;, i + 1)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">65</span><code class="language-python">        batch_results = process_data(batch)  # → 调用 process_data()  # 💡 batch_results=&#x27;[9, 16, 25]&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">66</span><code class="language-python">        all_results.extend(batch_results)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">    return all_results  # 返回值 (第67行) &#x27;[1, 4, 9, 16, 25]&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-11" class="lprint-trace-call"># >>深度4 路径1-2-1-1 #11 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#52" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:52 in process_data() ← :65 ⏱️[200.92ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">52</span><code class="language-python">def process_data(data):  # 💡 data=[1, 2]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">53</span><code class="language-python">    &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">54</span><code class="language-python">    results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">55</span><code class="language-python">    for item in data:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">56</span><code class="language-python">        square = helper_function(item)  # → 调用 helper_function()  # 💡 square=&#x27;4&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">57</span><code class="language-python">        results.append(square)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">58</span><code class="language-python">    return results  # 返回值 (第58行) &#x27;[1, 4]&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-12" class="lprint-trace-call"># >>深度5 路径1-2-1-1-1 #12 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.52ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;1&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-13" class="lprint-trace-call"># >>深度5 路径1-2-1-1-2 #13 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.39ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=2</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;4&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-14" class="lprint-trace-call"># >>深度4 路径1-2-1-2 #14 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#52" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:52 in process_data() ← :65 ⏱️[302.30ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">52</span><code class="language-python">def process_data(data):  # 💡 data=[3, 4, 5]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">53</span><code class="language-python">    &quot;&quot;&quot;处理数据：对列表中每个元素求平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">54</span><code class="language-python">    results = []</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">55</span><code class="language-python">    for item in data:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">56</span><code class="language-python">        square = helper_function(item)  # → 调用 helper_function()  # 💡 square=&#x27;25&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">57</span><code class="language-python">        results.append(square)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">58</span><code class="language-python">    return results  # 返回值 (第58行) &#x27;[9, 16, 25]&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-15" class="lprint-trace-call"># >>深度5 路径1-2-1-2-1 #15 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.42ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;9&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-16" class="lprint-trace-call"># >>深度5 路径1-2-1-2-2 #16 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.52ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=4</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;16&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-17" class="lprint-trace-call"># >>深度5 路径1-2-1-2-3 #17 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#32" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:32 in helper_function() ← :56 ⏱️[100.35ms] ⚡ [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">32</span><code class="language-python">def helper_function(x):  # 💡 x=5</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">33</span><code class="language-python">    &quot;&quot;&quot;辅助函数：计算平方&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">34</span><code class="language-python">    result = x * x</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">35</span><code class="language-python">    time.sleep(0.1)  # 模拟耗时操作</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">36</span><code class="language-python">    return result  # 返回值 (第36行) &#x27;25&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-18" class="lprint-trace-call"># >>深度3 路径1-2-2 #18 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#44" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:44 in advanced_process() ← :96 ⏱️[201.16ms] 🔥 [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">44</span><code class="language-python">def advanced_process(value):  # 💡 value=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">45</span><code class="language-python">    &quot;&quot;&quot;高级处理：包含多个子调用&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">46</span><code class="language-python">    # 调用多个不同的辅助函数</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">47</span><code class="language-python">    square = helper_function(value)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">48</span><code class="language-python">    factorial = calculate_factorial(value)  # → 调用 calculate_factorial()  # 💡 factorial=&#x27;6&#x27; (str)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">49</span><code class="language-python">    cube = helper_function(square)  # 嵌套调用</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">50</span><code class="language-python">    return square + factorial + cube  # 返回值 (第50行) &#x27;96&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-19" class="lprint-trace-call"># >>深度4 路径1-2-2-1 #19 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#38" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:38 in calculate_factorial() ← :48 ⏱️[~0μs] [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">38</span><code class="language-python">def calculate_factorial(n):  # 💡 n=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">39</span><code class="language-python">    &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">40</span><code class="language-python">    if n &lt;= 1:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">41</span><code class="language-python">        return 1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">42</span><code class="language-python">    return n * calculate_factorial(n - 1)  # → 调用 calculate_factorial()  # 返回值 (第42行) &#x27;6&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-20" class="lprint-trace-call"># >>深度5 路径1-2-2-1-1 #20 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#38" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:38 in calculate_factorial() ← :42 ⏱️[~0μs] [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">38</span><code class="language-python">def calculate_factorial(n):  # 💡 n=2</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">39</span><code class="language-python">    &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">40</span><code class="language-python">    if n &lt;= 1:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">41</span><code class="language-python">        return 1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">42</span><code class="language-python">    return n * calculate_factorial(n - 1)  # → 调用 calculate_factorial()  # 返回值 (第42行) &#x27;2&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-21" class="lprint-trace-call"># >>深度6 路径1-2-2-1-1-1 #21 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py#38" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py</a>:38 in calculate_factorial() ← :42 ⏱️[~0μs] [PID:16884 主进程 TID:68048]</p>
+<div class="lprint-trace-func" id="func-21">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">38</span><code class="language-python">def calculate_factorial(n):  # 💡 n=1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">39</span><code class="language-python">    &quot;&quot;&quot;计算阶乘&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">40</span><code class="language-python">    if n &lt;= 1:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">41</span><code class="language-python">        return 1  # 返回值 (第41行) &#x27;1&#x27;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">42</span><code class="language-python">    return n * calculate_factorial(n - 1)  # → 调用 calculate_factorial()</code></pre></div>
+</div>
+</div>
+<div class="lprint-trace-end-section">
+<p class="lprint-trace-end-header" style="color:#4a9eff;font-weight:bold;font-size:1.1em;margin:10px 0;">═══ 追踪结束 ═══</p>
+</div>
+
+
+</div>
+
+
+
+<div data-component="trace-summary" class="trace-summary-section" style="background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); color: #e2e8f0; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-left: 4px solid #667eea; white-space: pre-line; line-height: 1.6;">📋 追踪摘要
+  • 起始函数: <module>() @ test_trace_simple.py:21
+  • 总耗时: 1.2803s | 事件数: 44 | 显示: 21 | 省略: 0
+  • 性能热点:
+    🔥 1. <module> - 1.2803s (100.0%)
+    🔥 2. helper_function - 717.31ms (56.0%)
+    🔥 3. main_function - 517.59ms (40.4%)
+
+✓ 追踪完成 | 日志已保存</div>
+
+<div data-component="usage-guide" class="usage-guide-section" data-markdown-source="true" style="background: #1a202c; color: #cbd5e0; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #4a9eff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+<hr />
+<h2>📖 文件格式说明</h2>
+<p>本文件采用 <strong>Markdown + JSON 索引</strong> 混合格式，支持人类阅读和程序解析。</p>
+<h3>👤 人类阅读</h3>
+<ul>
+<li>📄 直接查看 Markdown 内容（调用树、详细追踪）</li>
+<li>🔧 使用任何 Markdown 编辑器或查看器</li>
+<li>🤖 AI 可以理解完整上下文</li>
+</ul>
+<h3>💻 程序解析</h3>
+<h4>1️⃣ 提取 JSON 索引</h4>
+<pre><code class="language-python">import re, json
+
+# 读取文件
+with open(&quot;trace.md&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    content = f.read()
+
+# 提取 JSON 索引
+match = re.search(r'&lt;&lt;&lt;JSON_INDEX&gt;&gt;&gt;\s*```json\s*\n(.*?)\n```', content, re.DOTALL)
+if match:
+    data = json.loads(match.group(1))
+    print(f&quot;版本: {data['version']}&quot;)
+    print(f&quot;总调用: {data['metadata']['total_calls']}&quot;)
+    print(f&quot;最大深度: {data['metadata']['max_depth']}&quot;)
+</code></pre>
+<h4>2️⃣ JSON 索引结构（规则驱动格式）</h4>
+<pre><code class="language-javascript">{
+  &quot;version&quot;: &quot;2.0&quot;,
+  &quot;format_version&quot;: &quot;2026.03&quot;,
+  &quot;rules&quot;: {
+    // 基础配置
+    &quot;id_pattern&quot;: &quot;call-{seq}&quot;,
+    &quot;depth_range&quot;: [1, 5],
+    &quot;slow_threshold&quot;: 500,
+
+    // 解析规则
+    &quot;parsing&quot;: {
+      &quot;call_pattern&quot;: &quot;callBy\\(深度(\\d+)\\s+路径([\\d\\-]+)\\s+#(\\d+)\\)&quot;,
+      &quot;func_pattern&quot;: &quot;in\\s+(\\w+)\\(\\)&quot;,
+      &quot;return_pattern&quot;: &quot;⬅️\\s*返回值\\s*\\([^)]+\\)\\s*(.+?)(?:\\s*[═\\n]|$)&quot;
+    },
+
+    // 组件命名规则
+    &quot;components&quot;: {
+      &quot;call_elements&quot;: {
+        &quot;call&quot;: &quot;lprint-trace-call&quot;,
+        &quot;code_block&quot;: &quot;lprint-trace-code-block&quot;
+      },
+      &quot;interactive_elements&quot;: {
+        &quot;ai_button&quot;: &quot;ask-ai-code-btn&quot;,
+        &quot;back_button&quot;: &quot;back-to-tree-code-btn&quot;
+      }
+    },
+
+    // 功能开关
+    &quot;features&quot;: {
+      &quot;enable_params_extraction&quot;: true,
+      &quot;enable_return_expansion&quot;: true
+    }
+  },
+  &quot;metadata&quot;: {
+    &quot;total_calls&quot;: 23,
+    &quot;max_depth&quot;: 5,
+    &quot;generated_at&quot;: &quot;2026-03-28T15:20:00Z&quot;
+  }
+}
+</code></pre>
+<h4>3️⃣ 前端解析器使用</h4>
+<pre><code class="language-javascript">// 初始化解析器
+const parser = new TraceDataParser(window.traceJsonData.rules);
+
+// 查找元素
+const callElement = parser.findElement('call', { seq: '2' });
+const treeContainer = parser.findComponent('tree_view', 'container');
+
+// 提取数据
+const callInfo = parser.extractCallInfo(callElement);
+const params = parser.extractParams(codeContent);
+const returnValue = parser.extractReturnValue(codeContent);
+
+// 创建组件
+const returnBlock = parser.createReturnBlock('2', returnValue, params);
+const aiButton = parser.createAIButton(callBlock);
+</code></pre>
+<h4>4️⃣ 组件查找示例</h4>
+<pre><code class="language-javascript">// 使用组件名称查找
+const allCalls = parser.findAllComponents('call_elements', 'call');
+const expandButtons = parser.findAllComponents('interactive_elements', 'expand_toggle');
+
+// 生成CSS类名
+const callClass = parser.generateCssClass('trace', 'call', 'slow');
+// 结果: &quot;lprint-trace-call lprint-trace-call--slow&quot;
+
+// 生成元素ID
+const returnId = parser.generateId('return', { call_id: '2' });
+// 结果: &quot;return-2&quot;
+</code></pre>
+<h3>🎯 主要特性</h3>
+<ul>
+<li>🏗️ <strong>规则驱动</strong>: 所有解析规则集中配置</li>
+<li>🎨 <strong>组件化</strong>: 统一的组件命名和查找</li>
+<li>🔧 <strong>可扩展</strong>: 易于添加新的解析规则</li>
+<li>📱 <strong>响应式</strong>: 支持功能开关和样式配置</li>
+<li>🔄 <strong>向后兼容</strong>: 保持与旧版本的兼容性</li>
+</ul>
+<h3>📚 版本信息</h3>
+<ul>
+<li><strong>当前版本</strong>: 2.0</li>
+<li><strong>格式版本</strong>: 2026.03</li>
+<li><strong>解析器版本</strong>: 2.1.0</li>
+<li><strong>生成时间</strong>: 自动记录</li>
+</ul>
+<hr />
+<h3>🚀 pytracemp 追踪系统</h3>
+<p><strong>规则驱动 · 组件化 · 可扩展</strong></p>
+<p><em>🔧 pytracemp v2.1.0</em></p>
+</div>
+
+=== 追踪摘要 ===
+总耗时: 1.280 秒
+
+执行信息:
+  脚本: d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/pytracemp/test/test_trace_simple.py
+
+函数调用次数排行（Top 10）:
+  1. helper_function - 10 次
+  2. process_data - 3 次
+  3. calculate_factorial - 3 次
+  4. <module> - 1 次
+  5. main_function - 1 次
+  6. secondary_function - 1 次
+  7. batch_process - 1 次
+  8. advanced_process - 1 次
+
+文件调用次数排行（Top 5）:
+  1. test_trace_simple.py - 21 次
+        </div>
+        
+    </div>
+    <!-- 引入 marked.js CDN 用于渲染 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+            
+            // 延迟绑定滚动监听器和恢复滚动位置，确保 .tab-pane.active 已生成
+            setTimeout(() => {
+                // 保存滚动位置 - 监听可滚动容器
+                let scrollTimeout;
+                const saveScrollPosition = (event) => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const target = event.target;
+                        const scrollPos = target.scrollTop || 0;
+                        if (scrollPos > 0) {
+                            localStorage.setItem('scrollPosition_LogList/test_trace_simple/test_trace_simple', scrollPos);
+                            console.log('[Debug HTML] 保存滚动位置:', scrollPos, '容器:', target.className);
+                        }
+                    }, 100);
+                };
+                
+                // 查找可滚动容器
+                const scrollContainer = document.querySelector('.tab-pane.active') || 
+                                      document.querySelector('.log-content') ||
+                                      document.body;
+                
+                if (scrollContainer) {
+                    // 绑定滚动监听器
+                    scrollContainer.addEventListener('scroll', saveScrollPosition);
+                    console.log('[Debug HTML] 已绑定滚动监听器到:', scrollContainer.className);
+                    
+                    // 恢复滚动位置
+                    const savedScrollPos = localStorage.getItem('scrollPosition_LogList/test_trace_simple/test_trace_simple');
+                    if (savedScrollPos) {
+                        const scrollPos = parseInt(savedScrollPos);
+                        scrollContainer.scrollTop = scrollPos;
+                        console.log('[Debug HTML] 恢复滚动位置:', scrollPos, '容器:', scrollContainer.className);
+                    }
+                } else {
+                    console.log('[Debug HTML] 未找到滚动容器');
+                }
+                
+                // 备用：也监听 document 的滚动捕获
+                document.addEventListener('scroll', saveScrollPosition, true);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

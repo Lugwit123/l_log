@@ -1,0 +1,33 @@
+/* || MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .tab-pane {
+        padding: 10px;
+    }
+    
+    .tree-toggle,
+    .tree-node-content {
+        min-height: 44px;
+        padding: 10px;
+    }
+    
+    pre {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tab-title {
+        max-width: 100px;
+    }
+    
+    .tabs-header {
+        flex-wrap: nowrap;
+    }
+    
+    .lprint-log-entry {
+        font-size: 12px;
+    }
+}

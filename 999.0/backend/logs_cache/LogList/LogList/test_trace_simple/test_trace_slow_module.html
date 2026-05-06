@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: LogList/LogList/test_trace_simple/test_trace_slow_module.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+        
+        /* 完整的 lprint-trace 样式 */
+        .lprint-forward-trace { margin:10px 0; padding:6px 0; border-top:1px solid #2d2d2d; }
+        .lprint-trace-func { margin:6px 0 8px 0; }
+        .lprint-trace-code-block { font-family: "Consolas", "Monaco", monospace; font-size:11px; line-height:1.35;
+          background:#252526; color:#d4d4d4; padding:8px 10px; border-radius:4px; border:1px solid #3c3c3c; margin:4px 0; }
+        .lprint-trace-code-pre-wrap { display:flex; align-items:stretch; margin:0 0 4px 0; background:transparent; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-line-nums { flex-shrink:0; width:3.2em; min-width:3.2em; margin:0; padding:0 4px 0 0;
+          font-family:"Consolas","Monaco",monospace; font-size:11px; line-height:1.35; color:#6a6a6a; background:transparent;
+          border:none; white-space:pre; overflow:hidden; user-select:none; text-align:right; }
+        .lprint-trace-code-pre-wrap .lprint-trace-code-pre-inner { flex:1; min-width:0; overflow:auto; }
+        .lprint-trace-code-pre-wrap .lprint-trace-pre { margin:0; padding:0; flex:1; min-width:0; background:transparent; border:none; white-space:pre; }
+        .lprint-trace-call { color:#9cdcfe; margin:4px 0 2px 0; font-size:11px; font-family:monospace; 
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-func-code { color: #4ec9b0; font-weight: bold; margin: 8px 0 4px 0; font-size: 12px; font-family: monospace;
+          white-space: pre-wrap !important; word-wrap: break-word !important; overflow-wrap: break-word !important; word-break: break-all !important; }
+        .lprint-trace-divider { color: #888; margin: 10px 0; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { margin: 15px 0; }
+        
+        /* USAGE_GUIDE 代码块样式 */
+        [data-component="usage-guide"] pre, [data-component="usage-guide"] code, [data-component="usage-guide"] pre code {
+            font-size: 15px !important; line-height: 1.6 !important; font-family: "Consolas", "Monaco", monospace !important; }
+        div[data-component="usage-guide"] { font-size: 15px !important; }
+        div[data-component="usage-guide"] * { font-size: inherit !important; }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> LogList/LogList/test_trace_simple/test_trace_slow_module.md</p>
+            <p><strong>Log ID:</strong> LogList/LogList/test_trace_simple/test_trace_slow_module</p>
+            <p><strong>生成时间:</strong> 2026-04-13 12:51:28</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            
+            <div class="lprint-trace-metadata-panel" data-component="lprint-trace-meta">
+<h3>追踪日志元数据</h3>
+<ul>
+<li><strong>生成时间</strong>：2026-04-13 11:50:43</li>
+<li><strong>pytracemp 版本</strong>：<code>0.1.0</code></li>
+<li><strong>trace_line_locals</strong>：否 — 轻量：仅 <strong>call</strong> 形参与 <strong>return</strong>（通常无 <strong>line</strong>）</li>
+<li><strong>总事件数</strong>：<strong>518</strong>（本段 <code>trace_data</code> 列表长度）。分项 — <strong>调用</strong> 24（<code>call</code> 与 <code>loop_limit</code> 之和）、<strong>返回</strong> 494（<code>return</code>）、<strong>异常</strong> 0（<code>exception</code>）、<strong>line</strong> 0（逐行 locals 快照；当前为 0（多为 <code>trace_line_locals=False</code>））。</li>
+<li><strong>总耗时</strong>：5.009 秒（<code>trace_start</code> → <code>trace_stop</code> 墙钟，含被追踪代码与 <code>sys.settrace</code> 等开销）</li>
+</ul>
+</div>
+
+<div class="lprint-forward-trace">
+<div class="lprint-forward-trace">
+<div class="lprint-cmd-info" style="background:#2d3748;color:#e2e8f0;padding:8px 12px;margin:10px 0;border-radius:4px;font-family:monospace;font-size:12px;border-left:4px solid #4299e1;">
+<div style="font-weight:bold;color:#4299e1;margin-bottom:4px;">🔧 执行命令</div>
+<div>D:\TD_Depot\Software\Lugwit_syncPlug\lugwit_insapp\python_env\lugwit_python.exe d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</div>
+</div>
+<div id="trace-tree-view-container" style="margin:15px 0;"></div>
+<div class="lprint-trace-tree" style="display:none;">
+<div>├─ &lt;module&gt; [深度1 路径1 #1] [158.81ms] → &#x27;14&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:113)</div>
+<div>│   └─ main [深度2 路径1-1 #2] [148.16ms] → &#x27;13&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:79)</div>
+<div>│       └─ _workload [深度3 路径1-1-1 #3] [136.77ms] → &#x27;12&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:54)</div>
+<div>│           └─ top [深度4 路径1-1-1-1 #4] [126.19ms] → &#x27;11&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:69)</div>
+<div>│               └─ mid [深度5 路径1-1-1-1-1 #5] [115.84ms] → &#x27;10&#x27; (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:63)</div>
+<div>│                   └─ leaf [深度6 路径1-1-1-1-1-1-(:10) #6] [×480次] → &#x27;0&#x27; (首次) (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_...</div>
+<div>│                       ├─ [LOOP:10] #6-#15 → &#x27;9&#x27; (第10次)</div>
+<div>│                       └─ [LOOP10:] #476-#485 (最后)</div>
+<div>└─ mid [深度1 路径2 #16] [×9次, 合计 95.40ms] [平均 10.60ms] → &#x27;100&#x27; (首次) (d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py:63)</div>
+</div>
+<p class="lprint-trace-divider" style="color:#888;margin:10px 0;">─── 详细追踪 ───</p>
+<p id="call-1" class="lprint-trace-call"># >>深度1 路径1 #1 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#113" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:113 in &lt;module&gt;() [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">113</span><code class="language-python">    sys.exit(main())  # → 调用 main()  # 💡 print_function=_Feature((2, 6, 0, &#x27;alpha&#x27;, 2), (3, 0, 0, &#x27;alpha&#x27;, 0), 1048576), argparse=&lt;module &#x27;argparse&#x27; from &#x27;D:\\TD_Depot\\Software\\Lugwit_syncPlug\\lugwit_insapp\\python_env\\Lib\\argparse.py&#x27;&gt;, os=&lt;module &#x27;os&#x27; (frozen)&gt;, sys=&lt;module &#x27;sys&#x27; (built-in)&gt;, time=&lt;module &#x27;time&#x27; (built-in)&gt;</code></pre></div>
+</div>
+</div>
+<p id="call-2" class="lprint-trace-call"># >>深度2 路径1-1 #2 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#79" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:79 in main() ← :113 [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">79</span><code class="language-python">def main() -&gt; int:  # 💡 parser=ArgumentParser(prog=&#x27;run_slow_trace_demo.py&#x27;, usage=None, description=&#x27;生成 test_trace_slow_module.md 耗时追踪演示&#x27;, formatter_class=&lt;class &#x27;argparse.HelpFormatter&#x27;&gt;, conflict_handler=&#x27;error&#x27;, add_help=True), args=Namespace(quick=False), lprint=&lt;pytracemp.usualFunc.LPrint object at 0x000002A150862DD0&gt;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">80</span><code class="language-python">    parser = argparse.ArgumentParser(description=&quot;生成 test_trace_slow_module.md 耗时追踪演示&quot;)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">81</span><code class="language-python">    parser.add_argument(</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">82</span><code class="language-python">        &quot;--quick&quot;,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">83</span><code class="language-python">        action=&quot;store_true&quot;,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">84</span><code class="language-python">        help=&quot;缩短循环与 sleep，约数秒完成&quot;,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">85</span><code class="language-python">    )</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">86</span><code class="language-python">    args = parser.parse_args()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">87</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">88</span><code class="language-python">    lprint = _import_lprint()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">89</span><code class="language-python">    _patch_log_paths(lprint)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">90</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">91</span><code class="language-python">    lprint.trace_start(</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">92</span><code class="language-python">        clear_log=True,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">93</span><code class="language-python">        auto_result=False,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">94</span><code class="language-python">        trace_line_locals=False,  # type: ignore[call-arg]</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">95</span><code class="language-python">        trace_depth=None,</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">96</span><code class="language-python">    )</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">97</span><code class="language-python">    t0 = time.time()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">98</span><code class="language-python">    try:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">99</span><code class="language-python">        _workload(quick=args.quick)  # → 调用 _workload()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">100</span><code class="language-python">    finally:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">101</span><code class="language-python">        lprint.trace_stop()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">102</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">103</span><code class="language-python">    lprint.trace_result(max_events=9999, console_output=False, announce_save=True)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">104</span><code class="language-python">    lprint.trace_summary(console_output=False, announce_save=True)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">105</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">106</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">107</span><code class="language-python">    dt = time.time() - t0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">108</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">109</span><code class="language-python">    return 0</code></pre></div>
+</div>
+</div>
+<p id="call-3" class="lprint-trace-call"># >>深度3 路径1-1-1 #3 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#54" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:54 in _workload() ← :99 ⏱️[5.0076s] 🔥 [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">54</span><code class="language-python">def _workload(quick: bool) -&gt; None:  # 💡 quick=False</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">55</span><code class="language-python">    &quot;&quot;&quot;被追踪的业务：嵌套 + sleep，拉长墙钟并产生多条 call/return。&quot;&quot;&quot;</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">56</span><code class="language-python">    inner_loops = 8 if quick else 40</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">57</span><code class="language-python">    sleep_s = 0.01</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">58</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">62</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">68</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">69</span><code class="language-python">    def top() -&gt; int:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">70</span><code class="language-python">        total = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">71</span><code class="language-python">        outer = 3 if quick else 12</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">72</span><code class="language-python">        for i in range(outer):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">73</span><code class="language-python">            total += mid(i)  # → 调用 mid()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">74</span><code class="language-python">        return total</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">75</span><code class="language-python"></code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">76</span><code class="language-python">    _ = top()  # → 调用 top()  # 💡 _=&#x27;273360&#x27; (str)  # 返回值 (第76行) &#x27;None&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-4" class="lprint-trace-call"># >>深度4 路径1-1-1-1 #4 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#69" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:69 in top() ← :76 ⏱️[5.0076s] 🔥 [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">69</span><code class="language-python">    def top() -&gt; int:</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">70</span><code class="language-python">        total = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">71</span><code class="language-python">        outer = 3 if quick else 12</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">72</span><code class="language-python">        for i in range(outer):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">73</span><code class="language-python">            total += mid(i)  # → 调用 mid()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">74</span><code class="language-python">        return total  # 返回值 (第74行) &#x27;273360&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-5" class="lprint-trace-call"># >>深度5 路径1-1-1-1-1 #5 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[417.65ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-6" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-1 #6 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[11.08ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;0&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-7" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-2 #7 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.52ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;1&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-8" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-3 #8 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.56ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=2</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;2&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-9" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-4 #9 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.51ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;3&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-10" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-5 #10 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.33ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=4</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;4&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-11" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-6 #11 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.39ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=5</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;5&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-12" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-7 #12 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.60ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=6</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;6&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-13" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-8 #13 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.66ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=7</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;7&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-14" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-9 #14 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.25ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=8</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;8&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-15" class="lprint-trace-call"># >>深度6 路径1-1-1-1-1-10 #15 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#59" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:59 in leaf() ← :66 ⏱️[10.30ms] [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">59</span><code class="language-python">    def leaf(i: int, j: int) -&gt; int:  # 💡 i=0, j=9</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">60</span><code class="language-python">        time.sleep(sleep_s)</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">61</span><code class="language-python">        return i * 100 + j  # 返回值 (第61行) &#x27;9&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-16" class="lprint-trace-call"># >>深度5 路径1-1-1-1-2 #16 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[419.85ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=1</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;4780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-17" class="lprint-trace-call"># >>深度5 路径1-1-1-1-3 #17 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[418.10ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=2</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;8780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-18" class="lprint-trace-call"># >>深度5 路径1-1-1-1-4 #18 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[420.43ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=3</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;12780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-19" class="lprint-trace-call"># >>深度5 路径1-1-1-1-5 #19 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[417.46ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=4</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;16780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-20" class="lprint-trace-call"># >>深度5 路径1-1-1-1-6 #20 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[418.03ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=5</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;20780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-21" class="lprint-trace-call"># >>深度5 路径1-1-1-1-7 #21 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[416.99ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=6</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;24780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-22" class="lprint-trace-call"># >>深度5 路径1-1-1-1-8 #22 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[413.41ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=7</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;28780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-23" class="lprint-trace-call"># >>深度5 路径1-1-1-1-9 #23 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[415.26ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=8</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;32780&#x27;</code></pre></div>
+</div>
+</div>
+<p id="call-24" class="lprint-trace-call"># >>深度5 路径1-1-1-1-10 #24 <a href="openlogfile:d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py#63" class="lprint-file-link">d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py</a>:63 in mid() ← :73 ⏱️[417.31ms] ⚡ [PID:62436 主进程 TID:36036]</p>
+<div class="lprint-trace-func" id="func-24">
+<div class="lprint-trace-code-block">
+<div class="lprint-trace-code-block-inner"><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-def"><span class="lprint-trace-inline-num lprint-trace-line-num-def">63</span><code class="language-python">    def mid(k: int) -&gt; int:  # 💡 k=9</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">64</span><code class="language-python">        s = 0</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">65</span><code class="language-python">        for j in range(inner_loops):</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code lprint-trace-line-call-jump"><span class="lprint-trace-inline-num lprint-trace-line-num-call-jump">66</span><code class="language-python">            s += leaf(k, j)  # → 调用 leaf()</code></pre><pre class="lprint-trace-pre-line lprint-trace-semantic-code"><span class="lprint-trace-inline-num lprint-trace-line-num">67</span><code class="language-python">        return s  # 返回值 (第67行) &#x27;36780&#x27;</code></pre></div>
+</div>
+</div>
+<div class="lprint-trace-end-section">
+<p class="lprint-trace-end-header" style="color:#4a9eff;font-weight:bold;font-size:1.1em;margin:10px 0;">═══ 追踪结束 ═══</p>
+</div>
+
+
+</div>
+
+
+
+<div data-component="trace-summary" class="trace-summary-section" style="background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%); color: #e2e8f0; padding: 20px; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border-left: 4px solid #667eea; white-space: pre-line; line-height: 1.6;">📋 追踪摘要
+  • 起始函数: <module>() @ run_slow_trace_demo.py:113
+  • 总耗时: 5.0086s | 事件数: 518 | 显示: 24 | 省略: 0
+  • 性能热点:
+    🔥 1. top - 5.0076s (100.0%)
+    🔥 2. _workload - 5.0076s (100.0%)
+    ⚡ 3. mid - 417.65ms (8.3%)
+
+✓ 追踪完成 | 日志已保存</div>
+
+<div data-component="usage-guide" class="usage-guide-section" data-markdown-source="true" style="background: #1a202c; color: #cbd5e0; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #4a9eff; box-shadow: 0 2px 8px rgba(0,0,0,0.3);">
+<hr />
+<h2>📖 文件格式说明</h2>
+<p>本文件采用 <strong>Markdown + JSON 索引</strong> 混合格式，支持人类阅读和程序解析。</p>
+<h3>👤 人类阅读</h3>
+<ul>
+<li>📄 直接查看 Markdown 内容（调用树、详细追踪）</li>
+<li>🔧 使用任何 Markdown 编辑器或查看器</li>
+<li>🤖 AI 可以理解完整上下文</li>
+</ul>
+<h3>💻 程序解析</h3>
+<h4>1️⃣ 提取 JSON 索引</h4>
+<pre><code class="language-python">import re, json
+
+# 读取文件
+with open(&quot;trace.md&quot;, &quot;r&quot;, encoding=&quot;utf-8&quot;) as f:
+    content = f.read()
+
+# 提取 JSON 索引
+match = re.search(r'&lt;&lt;&lt;JSON_INDEX&gt;&gt;&gt;\s*```json\s*\n(.*?)\n```', content, re.DOTALL)
+if match:
+    data = json.loads(match.group(1))
+    print(f&quot;版本: {data['version']}&quot;)
+    print(f&quot;总调用: {data['metadata']['total_calls']}&quot;)
+    print(f&quot;最大深度: {data['metadata']['max_depth']}&quot;)
+</code></pre>
+<h4>2️⃣ JSON 索引结构（规则驱动格式）</h4>
+<pre><code class="language-javascript">{
+  &quot;version&quot;: &quot;2.0&quot;,
+  &quot;format_version&quot;: &quot;2026.03&quot;,
+  &quot;rules&quot;: {
+    // 基础配置
+    &quot;id_pattern&quot;: &quot;call-{seq}&quot;,
+    &quot;depth_range&quot;: [1, 5],
+    &quot;slow_threshold&quot;: 500,
+
+    // 解析规则
+    &quot;parsing&quot;: {
+      &quot;call_pattern&quot;: &quot;callBy\\(深度(\\d+)\\s+路径([\\d\\-]+)\\s+#(\\d+)\\)&quot;,
+      &quot;func_pattern&quot;: &quot;in\\s+(\\w+)\\(\\)&quot;,
+      &quot;return_pattern&quot;: &quot;⬅️\\s*返回值\\s*\\([^)]+\\)\\s*(.+?)(?:\\s*[═\\n]|$)&quot;
+    },
+
+    // 组件命名规则
+    &quot;components&quot;: {
+      &quot;call_elements&quot;: {
+        &quot;call&quot;: &quot;lprint-trace-call&quot;,
+        &quot;code_block&quot;: &quot;lprint-trace-code-block&quot;
+      },
+      &quot;interactive_elements&quot;: {
+        &quot;ai_button&quot;: &quot;ask-ai-code-btn&quot;,
+        &quot;back_button&quot;: &quot;back-to-tree-code-btn&quot;
+      }
+    },
+
+    // 功能开关
+    &quot;features&quot;: {
+      &quot;enable_params_extraction&quot;: true,
+      &quot;enable_return_expansion&quot;: true
+    }
+  },
+  &quot;metadata&quot;: {
+    &quot;total_calls&quot;: 23,
+    &quot;max_depth&quot;: 5,
+    &quot;generated_at&quot;: &quot;2026-03-28T15:20:00Z&quot;
+  }
+}
+</code></pre>
+<h4>3️⃣ 前端解析器使用</h4>
+<pre><code class="language-javascript">// 初始化解析器
+const parser = new TraceDataParser(window.traceJsonData.rules);
+
+// 查找元素
+const callElement = parser.findElement('call', { seq: '2' });
+const treeContainer = parser.findComponent('tree_view', 'container');
+
+// 提取数据
+const callInfo = parser.extractCallInfo(callElement);
+const params = parser.extractParams(codeContent);
+const returnValue = parser.extractReturnValue(codeContent);
+
+// 创建组件
+const returnBlock = parser.createReturnBlock('2', returnValue, params);
+const aiButton = parser.createAIButton(callBlock);
+</code></pre>
+<h4>4️⃣ 组件查找示例</h4>
+<pre><code class="language-javascript">// 使用组件名称查找
+const allCalls = parser.findAllComponents('call_elements', 'call');
+const expandButtons = parser.findAllComponents('interactive_elements', 'expand_toggle');
+
+// 生成CSS类名
+const callClass = parser.generateCssClass('trace', 'call', 'slow');
+// 结果: &quot;lprint-trace-call lprint-trace-call--slow&quot;
+
+// 生成元素ID
+const returnId = parser.generateId('return', { call_id: '2' });
+// 结果: &quot;return-2&quot;
+</code></pre>
+<h3>🎯 主要特性</h3>
+<ul>
+<li>🏗️ <strong>规则驱动</strong>: 所有解析规则集中配置</li>
+<li>🎨 <strong>组件化</strong>: 统一的组件命名和查找</li>
+<li>🔧 <strong>可扩展</strong>: 易于添加新的解析规则</li>
+<li>📱 <strong>响应式</strong>: 支持功能开关和样式配置</li>
+<li>🔄 <strong>向后兼容</strong>: 保持与旧版本的兼容性</li>
+</ul>
+<h3>📚 版本信息</h3>
+<ul>
+<li><strong>当前版本</strong>: 2.0</li>
+<li><strong>格式版本</strong>: 2026.03</li>
+<li><strong>解析器版本</strong>: 2.1.0</li>
+<li><strong>生成时间</strong>: 自动记录</li>
+</ul>
+<hr />
+<h3>🚀 pytracemp 追踪系统</h3>
+<p><strong>规则驱动 · 组件化 · 可扩展</strong></p>
+<p><em>🔧 pytracemp v2.1.0</em></p>
+</div>
+
+=== 追踪摘要 ===
+总耗时: 5.009 秒
+
+执行信息:
+  脚本: d:/TD_Depot/Software/Lugwit_syncPlug/lugwit_insapp/trayapp/Lib/l_log/backend/logs/LogList/test_trace_simple/run_slow_trace_demo.py
+
+函数调用次数排行（Top 10）:
+  1. mid - 10 次
+  2. leaf - 10 次
+  3. <module> - 1 次
+  4. main - 1 次
+  5. _workload - 1 次
+  6. top - 1 次
+
+文件调用次数排行（Top 5）:
+  1. run_slow_trace_demo.py - 24 次
+        </div>
+        
+    </div>
+    <!-- 引入 marked.js CDN 用于渲染 Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+    
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script src="/static/js/markdown_renderer.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+            
+            // 延迟绑定滚动监听器和恢复滚动位置，确保 .tab-pane.active 已生成
+            setTimeout(() => {
+                // 保存滚动位置 - 监听可滚动容器
+                let scrollTimeout;
+                const saveScrollPosition = (event) => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        const target = event.target;
+                        const scrollPos = target.scrollTop || 0;
+                        if (scrollPos > 0) {
+                            localStorage.setItem('scrollPosition_LogList/LogList/test_trace_simple/test_trace_slow_module', scrollPos);
+                            console.log('[Debug HTML] 保存滚动位置:', scrollPos, '容器:', target.className);
+                        }
+                    }, 100);
+                };
+                
+                // 查找可滚动容器
+                const scrollContainer = document.querySelector('.tab-pane.active') || 
+                                      document.querySelector('.log-content') ||
+                                      document.body;
+                
+                if (scrollContainer) {
+                    // 绑定滚动监听器
+                    scrollContainer.addEventListener('scroll', saveScrollPosition);
+                    console.log('[Debug HTML] 已绑定滚动监听器到:', scrollContainer.className);
+                    
+                    // 恢复滚动位置
+                    const savedScrollPos = localStorage.getItem('scrollPosition_LogList/LogList/test_trace_simple/test_trace_slow_module');
+                    if (savedScrollPos) {
+                        const scrollPos = parseInt(savedScrollPos);
+                        scrollContainer.scrollTop = scrollPos;
+                        console.log('[Debug HTML] 恢复滚动位置:', scrollPos, '容器:', scrollContainer.className);
+                    }
+                } else {
+                    console.log('[Debug HTML] 未找到滚动容器');
+                }
+                
+                // 备用：也监听 document 的滚动捕获
+                document.addEventListener('scroll', saveScrollPosition, true);
+            }, 200);
+        });
+    </script>
+</body>
+</html>

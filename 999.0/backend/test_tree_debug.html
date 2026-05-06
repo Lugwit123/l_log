@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tree Debug</title>
+</head>
+<body>
+    <h1>調用樹調試</h1>
+    <div id="trace-tree-view-container" style="margin:15px 0;border:2px solid red;min-height:100px;"></div>
+    <div class="lprint-trace-tree" style="display:none;">
+        <div>├─ &lt;module&gt; (cover_img_parallel.py:3331) #1 [24.2936s] 🔥</div>
+        <div>├─ __init__ (cover_img_parallel.py:439) #2 [566.04ms]</div>
+        <div>│   └─ make_uploader (utils.py:166) #3 [565.53ms] → &lt;muse_uploader.MuseUploader object at 0x00000154B496CD10&gt;</div>
+    </div>
+    
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script>
+        console.log("=== 手動調試 ===");
+        console.log("DOMContentLoaded 狀態:", document.readyState);
+        
+        // 手動觸發
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', function() {
+                console.log("DOMContentLoaded 觸發");
+                buildTraceTreeView();
+            });
+        } else {
+            console.log("直接調用 buildTraceTreeView");
+            buildTraceTreeView();
+        }
+    </script>
+</body>
+</html>

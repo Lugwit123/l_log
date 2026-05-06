@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Debug: LogList/__main__/p4_parallel_upload.md</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/markdown.css">
+    <link rel="stylesheet" href="/static/css/lprint-trace.css">
+    <link rel="stylesheet" href="/static/css/trace.css">
+    <link rel="stylesheet" href="/static/css/tree-view.css">
+    <link rel="stylesheet" href="/static/css/prism.css">
+    <link rel="stylesheet" href="/static/css/dark-theme.css">
+    <style>
+        body {
+            padding: 20px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .debug-header {
+            background: #252526;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4ec9b0;
+        }
+        .debug-header h1 {
+            margin: 0 0 10px 0;
+            color: #4ec9b0;
+        }
+        .debug-info {
+            color: #858585;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-header">
+        <h1>🐛 Debug View</h1>
+        <div class="debug-info">
+            <p><strong>文件名:</strong> LogList/__main__/p4_parallel_upload.md</p>
+            <p><strong>Log ID:</strong> LogList/__main__/p4_parallel_upload</p>
+            <p><strong>生成时间:</strong> 2026-03-24 21:47:06</p>
+        </div>
+    </div>
+    <div class="log-content">
+        
+        <div class="markdown-body" style="padding: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+            
+                <div style="background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); 
+                            color: #cbd5e0; 
+                            padding: 12px 20px; 
+                            border-radius: 8px; 
+                            margin-bottom: 20px;
+                            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+                            font-size: 13px;
+                            border-left: 4px solid #4a5568;">
+                    <div style="display: flex; align-items: center; flex-wrap: wrap;">
+                        <span style="margin-right: 15px; font-size: 16px;">📋</span>
+                        <span style="margin-right: 20px;"><strong>生成时间:</strong> 2026-03-24 21:45:58</span> <span style="margin-right: 20px;"><strong>追踪库版本:</strong> 0.1.0</span>
+                    </div>
+                </div>
+                
+            <!-- 日志元数据
+生成时间: 2026-03-24 21:45:58
+追踪库版本: 0.1.0
+-->
+
+<p>[向前追踪] 总事件数: 130 (调用: 19, 返回: 16, 异常: 0)<br />
+[向前追踪] 总耗时: 6.309 秒</p>
+<div class="lprint-forward-trace">
+<div id="trace-tree-view-container" style="margin:15px 0;"></div>
+<div class="lprint-trace-tree" style="display:none;">
+<div>└─ &lt;module&gt; (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_parallel_upload/__main__.py:8) #1 [6.3094s] 🔥</div>
+<div>    └─ &lt;module&gt; (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/__init__.py:0) #2 [504.26μs]</div>
+<div>    └─ &lt;module&gt; (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/p4_to_muse_new.py:0) #3 [?s]</div>
+<div>        └─ &lt;module&gt; (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/__init__.py:0) #4 [328.86ms] ⚡</div>
+<div>            └─ &lt;module&gt; (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:0) #5 [327.33ms] ⚡</div>
+<div>                ├─ UploadStatus (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:13) #6 [997.78μs]</div>
+<div>                ├─ UploadTask (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:21) #7 [~0μs]</div>
+<div>                ├─ UploadResult (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:34) #8 [~0μs]</div>
+<div>                ├─ BatchUploader (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:44) #9 [2.52ms]</div>
+<div>                └─ BatchUploadStats (c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py:192) #10 [~0μs]</div>
+<div>                    └─ &lt;module&gt; (narcolab:0) #11 [?s]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #12 [~0μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #13 [~0μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #14 [~0μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #15 [518.56μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #16 [~0μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #17 [~0μs]</div>
+<div>                        └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #18 [~0μs]</div>
+<div>                            └─ find_module (d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py:184) #19 [~0μs]</div>
+</div>
+<p class="lprint-trace-divider" style="color:#888;margin:10px 0;">─── 详细追踪 ───</p>
+<p class="lprint-trace-call"># >>深度callBy(深度1 路径1 #1): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_parallel_upload/__main__.py#8" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_parallel_upload/__main__.py</a>:8 in &lt;module&gt;()</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度1 - &lt;module&gt;): [起始行号: 8]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">8</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     main()</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度2 路径1-1 #2): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/__init__.py#0" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/__init__.py</a>:0 in &lt;module&gt;() ← &lt;frozen importlib._bootstrap&gt;:241 ⏱️[504.26μs]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度2 路径1-2 #3): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/p4_to_muse_new.py#0" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/p4_to_muse_new/p4_to_muse_new.py</a>:0 in &lt;module&gt;() ← &lt;frozen importlib._bootstrap&gt;:241</p>
+<p class="lprint-trace-call"># >>深度callBy(深度3 路径1-2-1 #4): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/__init__.py#0" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/__init__.py</a>:0 in &lt;module&gt;() ← &lt;frozen importlib._bootstrap&gt;:241 ⏱️[328.86ms] ⚡</p>
+<p class="lprint-trace-call"># >>深度callBy(深度4 路径1-2-1-1 #5): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#0" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:0 in &lt;module&gt;() ← &lt;frozen importlib._bootstrap&gt;:241 ⏱️[327.33ms] ⚡</p>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-1-1-1 #6): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#13" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:13 in UploadStatus() ← :13 ⏱️[997.78μs]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-1-1-2 #7): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#21" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:21 in UploadTask() ← :22 ⏱️[~0μs]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-1-1-3 #8): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#34" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:34 in UploadResult() ← :35 ⏱️[~0μs]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-1-1-4 #9): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#44" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:44 in BatchUploader() ← :44 ⏱️[2.52ms]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度5 路径1-2-1-1-5 #10): <a href="openlogfile:c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py#192" class="lprint-file-link">c:/users/wb.fengqingqing/packages/anim_upload_muse_tool/999.0.0/src/anim_upload_muse_tool/muse_helper/batch_uploader.py</a>:192 in BatchUploadStats() ← :192 ⏱️[~0μs]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度6 路径1-2-1-1-5-1 #11): narcolab:0 in &lt;module&gt;() ← &lt;frozen src.ncloader.loader&gt;:166</p>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-1 #12): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度7 - find_module): [起始行号: 184]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">184
+
+185
+186
+187
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     def find_module(self, fullname, path=None):
+    # 💡 变量 self=&lt;rez.vendor.six.six._SixMetaPathImporter object at 0x000001A083CA9FD0&gt; (_SixMetaPathImporter), fullname=&#x27;brotlicffi&#x27; (str), path=None (NoneType)
+         if fullname in self.known_modules:
+             return self
+         return None
+        # ⬅️ 返回值 (第187行) None</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-2 #13): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度7 - find_module): [起始行号: 184]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">184
+
+185
+186
+187
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     def find_module(self, fullname, path=None):
+    # 💡 变量 self=&lt;rez.vendor.six.six._SixMetaPathImporter object at 0x000001A083CA9FD0&gt; (_SixMetaPathImporter), fullname=&#x27;brotli&#x27; (str), path=None (NoneType)
+         if fullname in self.known_modules:
+             return self
+         return None
+        # ⬅️ 返回值 (第187行) None</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-3 #14): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度7 - find_module): [起始行号: 184]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">184
+
+185
+186
+187
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     def find_module(self, fullname, path=None):
+    # 💡 变量 self=&lt;rez.vendor.six.six._SixMetaPathImporter object at 0x000001A083CA9FD0&gt; (_SixMetaPathImporter), fullname=&#x27;zstandard&#x27; (str), path=None (NoneType)
+         if fullname in self.known_modules:
+             return self
+         return None
+        # ⬅️ 返回值 (第187行) None</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-4 #15): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[518.56μs]</p>
+<p class="lprint-trace-func-code">&gt;&gt;Function Code (深度7 - find_module): [起始行号: 184]</p>
+<div class="lprint-trace-func"><div class="lprint-trace-code-block">
+<div class="lprint-trace-code-pre-wrap"><pre class="lprint-trace-code-line-nums" aria-hidden="true">184
+
+185
+186
+187
+</pre><div class="lprint-trace-code-pre-inner"><pre class="lprint-trace-pre lprint-trace-semantic-code"><code class="language-python">     def find_module(self, fullname, path=None):
+    # 💡 变量 self=&lt;rez.vendor.six.six._SixMetaPathImporter object at 0x000001A083CA9FD0&gt; (_SixMetaPathImporter), fullname=&#x27;brotlicffi&#x27; (str), path=None (NoneType)
+         if fullname in self.known_modules:
+             return self
+         return None
+        # ⬅️ 返回值 (第187行) None</code></pre></div></div>
+</div></div>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-5 #16): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-6 #17): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度7 路径1-2-1-1-5-1-7 #18): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<p class="lprint-trace-call"># >>深度callBy(深度8 路径1-2-1-1-5-1-7-1 #19): <a href="openlogfile:d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py#184" class="lprint-file-link">d:/td_depot/wuzu-internal-latest/repository/packages/rez/2.111.3/platform-windows/arch-AMD64/os-windows-10.0.19041.SP0/rez/vendor/six/six.py</a>:184 in find_module() ← &lt;frozen importlib._bootstrap&gt;:1048 ⏱️[~0μs]</p>
+<p class="lprint-trace-skip"># [同一函数已展示上限 4 次]</p>
+<div class="lprint-trace-end-section">
+<p class="lprint-trace-end-header" style="color:#4a9eff;font-weight:bold;font-size:1.1em;margin:10px 0;">═══ 追踪结束 ═══</p>
+<p class="lprint-trace-summary-title" style="color:#4a9eff;font-weight:bold;margin:8px 0;">📋 追踪摘要</p>
+<p class="lprint-trace-summary-item" style="margin:4px 0;padding-left:20px;">起始函数: &lt;module&gt;() @ <a href="openlogfile:__main__.py#8" class="lprint-file-link">__main__.py</a>:8</p>
+<p class="lprint-trace-summary-item" style="margin:4px 0;padding-left:20px;">总耗时: 6.3094s | 事件数: 151 | 显示: 19 | 省略: 0</p>
+<p class="lprint-trace-complete" style="color:#52c41a;margin:8px 0;">✓ 追踪完成 | 日志已保存</p>
+</div>
+</div>
+        </div>
+        
+    </div>
+    <script src="/static/js/prism.js"></script>
+    <script src="/static/js/trace_tree_view.js"></script>
+    <script src="/static/js/function_call_highlight.js"></script>
+    <script src="/static/js/unused_highlight.js"></script>
+    <script>
+        // 页面加载后初始化所有功能
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('[Debug HTML] 页面加载完成，初始化功能...');
+            
+            // 高亮代码
+            if (window.Prism) {
+                Prism.highlightAll();
+            }
+            
+            // 渲染树视图
+            if (typeof buildTraceTreeView === 'function') {
+                console.log('[Debug HTML] 調用 buildTraceTreeView');
+                buildTraceTreeView();
+            }
+            
+            console.log('[Debug HTML] 初始化完成');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* || TOOLBAR */
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 8px 12px;
+    background: #252526;
+    border-bottom: 1px solid #3e3e42;
+    flex-wrap: wrap;
+}
+
+.toolbar-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toolbar-section label {
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.search-input {
+    padding: 4px 8px;
+    background: #3c3c3c;
+    border: 1px solid #3e3e42;
+    color: #cccccc;
+    font-size: 13px;
+    width: 250px;
+    border-radius: 2px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #007acc;
+}
+
+.search-match-hint {
+    font-size: 12px;
+    color: #9cdcfe;
+    min-width: 4.5em;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+.search-match-hint.is-zero {
+    color: #888;
+}
+
+.toolbar-btn {
+    padding: 4px 12px;
+    background: #3c3c3c;
+    border: 1px solid #3e3e42;
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 2px;
+}
+
+.toolbar-btn:hover {
+    background: #2a2d2e;
+    border-color: #007acc;
+}
+
+.toolbar-actions {
+    margin-left: auto;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* 字体大小滑块 */
+#font-size-slider {
+    width: 100px;
+    height: 4px;
+    background: #3c3c3c;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#font-size-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #007acc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#font-size-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #007acc;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+#font-size-value {
+    color: #cccccc;
+    font-size: 12px;
+    min-width: 35px;
+    display: inline-block;
+}

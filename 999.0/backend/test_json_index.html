@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JSON_INDEX Test</title>
+    <style>
+        body { font-family: monospace; background: #1e1e1e; color: #d4d4d4; padding: 20px; }
+        .lprint-trace-tree { display: none; }
+        #trace-tree-view-container { border: 1px solid #444; padding: 10px; margin: 10px 0; min-height: 200px; }
+        .json-info { background: #2d3748; padding: 10px; margin: 10px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>JSON_INDEX 数据测试</h1>
+    <div class="json-info" id="json-info">JSON数据加载中...</div>
+    <div id="trace-tree-view-container"></div>
+    
+    <div class="lprint-trace-tree">
+        <div>├─ <module> [深度1 路径1 #1] [1.2279s] 🔥 (test.py:108)</div>
+        <div>├─ main_function [深度1 路径2 #2] [512.25ms] 🔥 → 55 (test.py:65)</div>
+        <div>│   └─ process_data [深度2 路径2-1 #3] [502.09ms] 🔥 → [1, 4, 9, 16, 25] (test.py:48)</div>
+        <div>│       └─ helper_function [×5次, 合计 502.09ms] [平均 100.42ms] 🔥 (test.py:28)</div>
+        <div>└─ secondary_function [深度1 路径3 #9] [713.03ms] 🔥 → (101, [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, ... (test.py:83)</div>
+    </div>
+    
+    <script>
+        // 模拟JSON_INDEX数据
+        window.traceJsonData = {
+            "calls": {
+                "1": {"id": "1", "depth": 1, "path": "1", "time": 12279, "hasReturn": false, "htmlId": "call-1"},
+                "2": {"id": "2", "depth": 1, "path": "2", "time": 512, "hasReturn": true, "htmlId": "call-2"},
+                "3": {"id": "3", "depth": 2, "path": "2-1", "time": 502, "hasReturn": true, "htmlId": "call-3"},
+                "9": {"id": "9", "depth": 1, "path": "3", "time": 713, "hasReturn": true, "htmlId": "call-9"}
+            }
+        };
+        
+        // 显示JSON信息
+        const jsonInfo = document.getElementById('json-info');
+        jsonInfo.innerHTML = `
+            <h3>JSON_INDEX 数据已加载</h3>
+            <p>包含 ${Object.keys(window.traceJsonData.calls).length} 个调用记录</p>
+            <p>调用ID列表: ${Object.keys(window.traceJsonData.calls).join(', ')}</p>
+        `;
+        
+        // 加载trace_tree_view.js
+        const script = document.createElement('script');
+        script.src = '/static/js/trace_tree_view.js';
+        script.onload = function() {
+            console.log('trace_tree_view.js 加载完成');
+            if (typeof buildTraceTreeView === 'function') {
+                buildTraceTreeView();
+            }
+        };
+        document.head.appendChild(script);
+    </script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+/* || FILE LIST */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 13px;
+    color: #cccccc;
+    font-weight: 600;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    color: #858585;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 4px;
+}
+
+.sidebar-toggle:hover {
+    color: #cccccc;
+}
+
+.sidebar-toolbar {
+    display: flex;
+    gap: 4px;
+    padding: 4px 8px;
+    border-bottom: 1px solid #3e3e42;
+}
+
+.sidebar-btn {
+    background: none;
+    border: none;
+    color: #858585;
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+}
+
+.sidebar-btn:hover {
+    color: #cccccc;
+    background: #2a2d2e;
+}
+
+.file-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 4px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.file-item:hover {
+    background: #2a2d2e;
+}
+
+.file-item.active {
+    background: #37373d;
+}
+
+.file-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.file-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.file-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-meta {
+    font-size: 11px;
+    color: #858585;
+    display: flex;
+    gap: 8px;
+}
+
+.file-size {
+    flex-shrink: 0;
+}
+
+.file-time {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* || FOLDER ITEMS */
+.folder-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #cccccc;
+    font-size: 13px;
+}
+
+.folder-item:hover {
+    background: #2a2d2e;
+}
+
+.folder-toggle {
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #858585;
+    cursor: pointer;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+.folder-toggle.empty {
+    cursor: default;
+}
+
+.folder-toggle:hover:not(.empty) {
+    color: #cccccc;
+}
+
+.folder-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.folder-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.folder-children {
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.folder-children.collapsed {
+    display: none;
+}
