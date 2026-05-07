@@ -408,18 +408,26 @@ async def index(request: Request):
         with open(html_file, 'w', encoding='utf-8') as f:
             f.write(html_content)
 
-    return templates.TemplateResponse("app.html.j2", {
-        "request": request,
-        "demo_log_id": demo_log_id
-    })
+    return templates.TemplateResponse(
+        request=request,
+        name="app.html.j2",
+        context={
+            "request": request,
+            "demo_log_id": demo_log_id,
+        },
+    )
 
 
 @app.get("/simple")
 async def simple_view(request: Request):
     """简单视图（仅标签页）"""
-    return templates.TemplateResponse("index.html.j2", {
-        "request": request
-    })
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html.j2",
+        context={
+            "request": request,
+        },
+    )
 
 
 @app.post("/upload")
@@ -1196,7 +1204,11 @@ async def debug_view(log_id: str):
 async def ai_assistant_window(request: Request):
     """AI助手独立窗口"""
     templates = Jinja2Templates(directory="templates")
-    return templates.TemplateResponse("ai_window.html", {"request": request})
+    return templates.TemplateResponse(
+        request=request,
+        name="ai_window.html",
+        context={"request": request},
+    )
 
 
 # ============ AI API 端点 ============

@@ -33290,3 +33290,19 @@ File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_u
             ) 
 File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\j_disc_backtomuse\j_disc_backup_ui.py:11658, -fn: _on_muse_asset_sync_finished, 打印次数: 1/4   
 
+
+[LogFileHandler] ====== 批量写入 3 条 @ 2026-05-06 19:41:49 ======
+[2026-05-06 19:41:49] [2026-05-06 19:41:49] {WARNING}
+[arg0] "窗口正在关闭..."   ----code_context : lprint("窗口正在关闭...") 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\j_disc_backtomuse\j_disc_backup_ui.py:4621, -fn: on_window_close, 打印次数: 1/4   
+
+[2026-05-06 19:41:49] [2026-05-06 19:41:49] {WARNING}
+[arg0] "[ui_state] 已写入: L:\\temp\\j_muse_backup_new\\ui_state_cache.json"   ----code_context : lprint(f"[ui_state] 已写入: {self._ui_state_cache_file}")
+        except Exception as e: 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\j_disc_backtomuse\j_disc_backup_ui.py:12366, -fn: save_combo_state_to_temp_file, 打印次数: 1/4   
+
+[2026-05-06 19:41:49] [2026-05-06 19:41:49] {WARNING}
+[arg0] "[ui_state] 已保存: L:\\temp\\j_muse_backup_new\\ui_state_cache.json"   ----code_context : lprint(f"[ui_state] 已保存: {self._ui_state_cache_file}")
+        except Exception: 
+File: c:\users\wb.fengqingqing\packages\anim_upload_muse_tool\999.0.0\src\anim_upload_muse_tool\j_disc_backtomuse\j_disc_backup_ui.py:4626, -fn: on_window_close, 打印次数: 1/4   
+
